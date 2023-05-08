@@ -4,7 +4,7 @@
 
 <template>
     <footer>
-        Made by me :)
+        Made by the Codebusters! :)
     </footer>
 </template>
 
