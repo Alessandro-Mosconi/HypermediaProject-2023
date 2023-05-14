@@ -4,9 +4,9 @@
 <template>
     <main>
     <CenterTitlewithImage message="INVESTMENT AREAS"/>
-    <CenterTitlewithImage message="INVESTMENT AREAS"/>
-    <CenterTitlewithImage message="INVESTMENT AREAS"/>
-    <CenterTitlewithImage message="INVESTMENT AREAS"/>
+    <CenterTitlewithImage message="AREA 1"/>
+    <CenterTitlewithImage message="AREA 2"/>
+    <CenterTitlewithImage message="AREA 3"/>
 </main>
 </template>
 
