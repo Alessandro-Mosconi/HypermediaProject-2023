@@ -3,7 +3,7 @@
 -->
 <template>
     <header>
-        <t>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit Lorem ipsum dolor sit amet Lorem ipsum dolor dolor sit amet  Lorem ipsum  sit
+        <t>NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS
         </t>
     </header>
 </template>
