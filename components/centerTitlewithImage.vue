@@ -26,6 +26,7 @@ export default {
         color: white;
         font-size: 1000%;
         font-family: bold;
+        text-align: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

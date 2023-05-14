@@ -12,7 +12,7 @@
             <NuxtLink to="/">ABOUT</NuxtLink>
             <NuxtLink to="/dogs">TEAM</NuxtLink>
             <NuxtLink to="/locations">PROJECTS</NuxtLink>
-            <NuxtLink to="/about">INVESTMENT AREAS</NuxtLink>
+            <NuxtLink to="/areas">INVESTMENT AREAS</NuxtLink>
             <NuxtLink to="/contact">CONTACTS</NuxtLink>
         </nav>
     </header>
