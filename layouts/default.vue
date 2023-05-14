@@ -27,6 +27,11 @@
         src: url('@/assets/fonts/ABCWhyte/ABCWhytePlusVariable-Trial.ttf') format('truetype');
     }
 
+    @font-face {
+        font-family: 'Bold';
+        src: url('@/assets/fonts/ABCWhyte/ABCWhyteInktrap-Bold-Trial.otf') format('truetype');
+    }
+
     h1 {
         font-size: 2em;
     }
