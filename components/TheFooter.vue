@@ -17,12 +17,12 @@
                 <td>+39 333 12345678</td>
             </tr>
         </table>
-        © 2023 Capital Ventures
-        <h2>LOREM IPSUM DOLOR SIT AMET</h2>
-        <li v-for="p in persone">
+        <p>© 2023 Capital Ventures</p>
+        <h2>LOREM IPSUM DOLOR SIT AMET LOREM IPSUM</h2>
+        <!-- <li v-for="p in persone">
             {{ p.name + ' ' + p.surname }}
         </li>
-        <p>Made by the Codebusters! :)</p>
+        <p>Made by the Codebusters! :)</p> -->
     </footer>
 </template>
 
@@ -42,18 +42,19 @@ export default defineNuxtComponent({
 
 <style>
 p {
-    font-size: 2em;
+    padding: 3em 0 0 0;
+    font-size: 1.3em;
 }
 
 h2 {
-    font-size: 5em;
+    font-size: 3em;
 }
 
 footer {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(0, 0, 0);
     /*flex-shrink: 0;*/
     text-align: left;
-    padding: 7em 3em;
+    padding: 5em 3em;
     color: white;
     min-height: 1vh;
 }
@@ -65,6 +66,6 @@ table {
 }
 
 td {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 </style>
