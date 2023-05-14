@@ -5,7 +5,7 @@
 <template>
     <main>
         <div class = "info-group">
-            <img id = "main-img" src = "~/assets/img/home-planet_tmp.jpg" />
+            <img id = "main-img" src = "~/assets/img/home-planet_tmp.png" />
             <div id = "data-container">
                 <p class = "data">Name: <span>{{ location.name }}</span></p>
                 <p class = "data">City: <span>{{ location.city }}</span></p>
