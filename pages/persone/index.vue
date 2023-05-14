@@ -8,6 +8,9 @@
         <li v-for="p in persone">
             {{ p.name + ' ' + p.surname }}
         </li>
+        <div v-for="p in persone" class="persone">
+            <ImageCard class="persone" :img_link = "p.img_url"/>
+        </div>
     </main>
 </template>
 
@@ -39,6 +42,11 @@
         align-content: flex-start;
         gap: 20px;
     }
+
+.persone{
+    margin-right: auto;
+    margin-left: auto;
+}
 
     main
     {
