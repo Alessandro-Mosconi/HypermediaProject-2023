@@ -4,7 +4,6 @@
 <template>
     <head>
         <title>Space Odyssey Capital</title>
-        <meta charset="utf-8">
     </head>
     <div class = 'page'>
         <TheHeader />
