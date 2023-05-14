@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     const body = await readBody(event);
 
-    const { data, error }= await client.from('dogs').insert([
+    const { data, error } = await client.from('dogs').insert([
         {
             name: body.name,
             breed: body.breed,
@@ -14,9 +14,9 @@ export default defineEventHandler(async (event) => {
             locationId: Math.floor(Math.random * 2),
         }
     ])
-    
-    if(error) {
-        throw createError({statusCode: error.code, statusMessage: error.message})
+
+    if (error) {
+        throw createError({ statusCode: error.code, statusMessage: error.message })
     }
 
     return data
