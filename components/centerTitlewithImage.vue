@@ -4,9 +4,16 @@
 <template>
     <main>
         <img src = "~/assets/img/home_planet_tmp.png"/>
-        <div class="centeredTitle">ABOUT US</div>
+        <div class="centeredTitle">{{message}}</div>
     </main>
 </template>
+
+<script>
+export default {
+  props: ['message']
+}
+</script>
+
 
 <style>
     main {

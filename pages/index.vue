@@ -3,7 +3,7 @@
 -->
 <template>
     <main>
-    <CenterTitlewithImage />
+    <CenterTitlewithImage message="ABOUT US"/>
     <Manifest />
 </main>
 </template>
