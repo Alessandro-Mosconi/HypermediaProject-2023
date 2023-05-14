@@ -10,8 +10,8 @@
         <h1>Celesta Capital</h1>
         <nav>
             <NuxtLink to="/">ABOUT</NuxtLink>
-            <NuxtLink to="/dogs">TEAM</NuxtLink>
-            <NuxtLink to="/locations">PROJECTS</NuxtLink>
+            <NuxtLink to="/team">TEAM</NuxtLink>
+            <NuxtLink to="/projects">PROJECTS</NuxtLink>
             <NuxtLink to="/areas">INVESTMENT AREAS</NuxtLink>
             <NuxtLink to="/contact">CONTACTS</NuxtLink>
         </nav>
