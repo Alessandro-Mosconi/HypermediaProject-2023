@@ -3,6 +3,9 @@
 -->
 
 <template>
+    add a white line as a separator before the footer
+
+
     <footer>
         <table>
             <tr>
@@ -57,6 +60,7 @@ footer {
     padding: 5em 3em;
     color: white;
     min-height: 1vh;
+    border-top: 5px solid white;
 }
 
 table {
