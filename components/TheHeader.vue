@@ -37,10 +37,17 @@ header {
     
 }
 
+h1 {
+    font-size: 1.5em;
+    font-family: Bold;
+}
+
 .logo {
-    height: 45px;
-    width: 45px;
-    margin-right: 15px;
+    height: 35px;
+    width: 35px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
 }
 
 nav {
@@ -53,8 +60,8 @@ nav {
 }
 
 a {
-    font-size: 0.8em;
-    margin: 0 15px;
+    font-size: 1em;
+    margin: 0 30px;
 }
 
 a:first-of-type {
@@ -68,10 +75,23 @@ a:last-of-type {
 a {
     color: white;
     text-decoration: none;
+    position: relative;
+  display: inline-block;
 }
 
-a:hover {
-    text-decoration: underline;
+a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
 }
 
 @font-face {

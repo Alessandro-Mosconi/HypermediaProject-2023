@@ -20,6 +20,7 @@
         flex-direction: column;
         background-color: rgb(0, 0, 0);
         margin: 0;
+        color: white;
     }
 
     @font-face {
