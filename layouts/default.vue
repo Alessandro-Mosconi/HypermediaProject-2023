@@ -3,7 +3,7 @@
 -->
 <template>
     <head>
-        <title>Space Odyssey Capital</title>
+        <title>Celesta Capital</title>
     </head>
     <div class = 'page'>
         <TheHeader />
