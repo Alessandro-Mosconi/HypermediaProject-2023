@@ -3,24 +3,30 @@
 -->
 <template>
     <main>
+        <div class="container">
         <img id = "main-img" src = "~/assets/img/home_planet_tmp.png" />
-        <h2>
-            NUKE MARS
-        </h2>
+        <div class="SuperTitle">about us</div>
+        </div> 
     </main>
+    <Manifest />
 </template>
 
 <style>
-    #main-img {
-    width: 60%;
-    min-width: 1000px;
-    height: auto;
-    }
-
     main {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: whitesmoke;
+    }
+
+    SuperTitle{
+        font-size: xx-large;
+    }
+
+    .container {
+    position: relative;
+    text-align: center;
+    color: white;
     }
 </style>
