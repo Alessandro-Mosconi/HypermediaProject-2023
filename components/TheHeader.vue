@@ -10,6 +10,7 @@
             <NuxtLink to = "/locations">LOCATIONS</NuxtLink>
             <NuxtLink to = "/about">ABOUT US</NuxtLink>
             <NuxtLink to = "/contact">CONTACT US</NuxtLink>
+            <NuxtLink to = "/persone">PERSONE</NuxtLink>
         </nav>
     </header>
 </template>

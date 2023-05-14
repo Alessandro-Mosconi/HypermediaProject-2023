@@ -5,8 +5,26 @@
 <template>
     <footer>
         Made by the Codebusters! :)
+        <li v-for="p in persone">
+            {{ p.name + ' ' + p.surname }}
+        </li>
     </footer>
+
 </template>
+
+
+<script>
+    export default defineNuxtComponent({
+        async asyncData() {
+            // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+            const persone = await $fetch('/api/persone')
+
+            return {
+                persone
+            }
+        }
+    })
+</script>
 
 <style>
     footer
