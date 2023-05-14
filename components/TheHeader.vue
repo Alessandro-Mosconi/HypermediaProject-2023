@@ -5,14 +5,14 @@
     <header>
 
         <NuxtLink to="/">
-            <img class="logo" src="@/assets/img/CELESTA_WHITE.png" alt="pace Odyssey Capital">
+            <img class="logo" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital">
         </NuxtLink>
         <h1>Celesta Capital</h1>
         <nav>
             <NuxtLink to="/">ABOUT</NuxtLink>
             <NuxtLink to="/dogs">TEAM</NuxtLink>
             <NuxtLink to="/locations">PROJECTS</NuxtLink>
-            <NuxtLink to="/about">INVESTEMENT AREAS</NuxtLink>
+            <NuxtLink to="/about">INVESTMENT AREAS</NuxtLink>
             <NuxtLink to="/contact">CONTACTS</NuxtLink>
         </nav>
     </header>
@@ -24,7 +24,7 @@ header {
     margin-bottom: 2%; */
     font-family: ABCWhyteLight;
     /* background-color: rgb(255, 166, 0); */
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     padding: 0px 4% 0px 4%;
     display: flex;
     align-items: center;
@@ -44,12 +44,16 @@ header {
 }
 
 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
 }
 
 a {
-    font-size: 0.6em;
+    font-size: 0.8em;
     margin: 0 15px;
 }
 
@@ -73,12 +77,5 @@ a:hover {
 @font-face {
     font-family: 'ABCWhyteLight';
     src: url('@/assets/fonts/ABCWhyte/ABCWhyte-Extralight-Trial.otf') format('truetype');
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-    font-size: 17pt;
-    font-weight: bold;
 }
 </style>
