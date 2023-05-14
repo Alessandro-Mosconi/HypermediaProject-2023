@@ -38,9 +38,12 @@ header {
 }
 
 .logo {
-    height: 45px;
-    width: 45px;
-    margin-right: 15px;
+    height: 35px;
+    width: 35px;
+    margin-right: 30px;
+    /*center vertically*/
+    display: flex;
+    align-items: center;
 }
 
 nav {
@@ -53,7 +56,7 @@ nav {
 }
 
 a {
-    font-size: 0.8em;
+    font-size: 1.2em;
     margin: 0 15px;
 }
 
