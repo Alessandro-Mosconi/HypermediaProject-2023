@@ -3,7 +3,7 @@
 -->
 <template>
     <header>
-        <h1>The Dog Shelter</h1>
+        <h1>Space Odyssey Capital</h1> 
         <nav>
             <NuxtLink to = "/">HOME</NuxtLink>
             <NuxtLink to = "/dogs">DOGS</NuxtLink>
@@ -17,18 +17,13 @@
 <style>
     header
     {
-        background-color: orange;
-    }
-
-    header
-    {
-        padding: 0px 20px 0px 20px;
-        margin-bottom: 5px;
-        border-bottom: 5px solid brown;
-        
+        background-color: rgba(255, 166, 0, 0);
+        color: whitesmoke;
+        padding: 0px 4% 0px 4%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        width:92%;
+        justify-content: space-between;
     }
 
     nav {

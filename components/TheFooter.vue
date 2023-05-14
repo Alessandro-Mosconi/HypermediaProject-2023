@@ -11,13 +11,11 @@
 <style>
     footer
     {
-        background-color: orange;
+        background-color: rgba(255, 166, 0, 0);
         flex-shrink: 0;
         text-align: center;
-        margin-top: auto;
-        border-top: 5px solid brown;
         padding: 10px;
-
+        color: white;
         min-height: 1vh;
     }
 </style>

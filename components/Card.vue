@@ -11,7 +11,7 @@
 <template>
     <div class="card">
         <div class="image-container">
-            <img class="img" src='~/assets/img/home-image.jpg' />
+            <img class="img" src='~/assets/img/home_planet_tmp.png' />
         </div>
         <span class="title">{{ title }}</span>
         <span class="subtitle">{{ subtitle }}</span>
