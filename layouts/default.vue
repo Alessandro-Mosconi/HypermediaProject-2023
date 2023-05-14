@@ -27,4 +27,13 @@
         src: url('@/assets/fonts/ABCWhyte/ABCWhytePlusVariable-Trial.ttf') format('truetype');
     }
 
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+
 </style>
