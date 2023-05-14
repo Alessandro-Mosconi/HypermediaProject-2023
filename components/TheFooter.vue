@@ -3,9 +3,6 @@
 -->
 
 <template>
-    add a white line as a separator before the footer
-
-
     <footer>
         <table>
             <tr>
