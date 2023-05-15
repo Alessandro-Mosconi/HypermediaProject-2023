@@ -4,9 +4,8 @@
 -->
 <template>
     <main>
-        <CenterTitlewithImage 
-            title="MEET OUR TEAM" 
-            img_url="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/home_planet_tmp.png" 
+        <CenterTitlewithImage
+            title="MEET OUR TEAM"
             description="LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET" />
             
         <TeamList :people="persone"/>

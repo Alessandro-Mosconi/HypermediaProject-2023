@@ -5,7 +5,10 @@
     <main>
         <div class="card">
             <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg" class="image">
-            <h2 class="text">{{ title }}</h2>
+            <div class="text-container">
+                <h2 class="text">{{ title }}</h2>
+                <p class="text">{{ description }}</p>
+            </div>
         </div>
     </main>
 </template>
@@ -14,7 +17,7 @@
 export default {
     props: {
         title: String,
-        image: String,
+        description: String,
     },
 }
 </script>
@@ -27,14 +30,17 @@ main {
 }
 
 .card {
-    font-size: 3em;
-    font-family: Bold;
     text-align: center;
     background-color: purple;
     display: flex;
     align-items: center;
-    position: relative;
-    justify-content: center;
+    width: 100%;
+    height: 25em;
+}
+
+.image-container {
+    position: absolute;
+    width: 100%;
     height: 100%;
 }
 
@@ -43,12 +49,23 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    background-color: black;
+    filter: brightness(0.5);
+    border-radius: 50px;
+    box-shadow: 0px -10px 40px rgba(0, 0, 0, 0.555);
+    height: 50em;
 }
 
-.text {
+.text-container {
+    font-size: 2em;
+    background-color: orange;
     color: white;
     z-index: 1;
+    line-height: 0.4em;
+}
+
+p {
+    font-style: normal;
 }
 </style>
