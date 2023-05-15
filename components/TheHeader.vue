@@ -3,17 +3,16 @@
 -->
 <template>
     <header>
-
         <NuxtLink to="/">
             <img class="logo" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital">
         </NuxtLink>
         <h1>Celesta Capital</h1>
         <nav>
-            <NuxtLink to="/">ABOUT</NuxtLink>
-            <NuxtLink to="/team">TEAM</NuxtLink>
-            <NuxtLink to="/projects">PROJECTS</NuxtLink>
-            <NuxtLink to="/areas">INVESTMENT AREAS</NuxtLink>
-            <NuxtLink to="/contact">CONTACTS</NuxtLink>
+            <NuxtLink id="page" to="/">ABOUT</NuxtLink>
+            <NuxtLink id="page" to="/team">TEAM</NuxtLink>
+            <NuxtLink id="page" to="/projects">PROJECTS</NuxtLink>
+            <NuxtLink id="page" to="/areas">INVESTMENT AREAS</NuxtLink>
+            <NuxtLink id="page" to="/contact">CONTACTS</NuxtLink>
         </nav>
     </header>
 </template>
@@ -33,9 +32,12 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.24);
     
 }
+
+
 
 h1 {
     font-size: 1.5em;
@@ -62,6 +64,10 @@ nav {
 a {
     font-size: 1em;
     margin: 0 30px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
 }
 
 a:first-of-type {
@@ -72,14 +78,7 @@ a:last-of-type {
     margin-right: 0;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-  display: inline-block;
-}
-
-a::before {
+#page::before {
   content: '';
   position: absolute;
   width: 0;
@@ -90,7 +89,7 @@ a::before {
   transition: width 0.3s ease-in-out;
 }
 
-a:hover::before {
+#page:hover::before {
   width: 100%;
 }
 
