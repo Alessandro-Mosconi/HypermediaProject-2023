@@ -9,8 +9,11 @@
     - link: link to the page description
 -->
 <template>
-    <div class="mask1" >
-        <img class="img-person" :src="img_link" alt="ciao">
+    <div class="mask1 pos-abs" >
+        <img class="bg-black" src="@/assets/img/black.jpg" alt="ciao" >
+    </div>
+    <div class="mask1 center" >
+        <img class="img-person" :src="img_link" alt="ciao" >
     </div>
  
 </template>
@@ -32,11 +35,23 @@
   mask-repeat: no-repeat;
   mask-size: contain;
 }
+.pos-abs{
+    position: absolute;
+}
+
+.center{
+  margin-left: .7%;
+  margin-top: .8%;
+}
 
 .img-person {
-  width: 150px; 
-  height: 200px; 
+  width: 300px; 
+  height: 360px; 
   object-fit: cover;
   background-color: gainsboro;
+}
+.bg-black {
+  width: 302px; 
+  height: 360px; 
 }
 </style>

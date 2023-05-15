@@ -4,13 +4,12 @@
 -->
 <template>
     <main>
-        <h1>Persone</h1>
-        <li v-for="p in persone">
-            {{ p.name + ' ' + p.surname }}
-        </li>
-        <div v-for="p in persone" class="persone">
-            <ImageCard class="persone" :img_link = "p.img_url"/>
-        </div>
+        <CenterTitlewithImage 
+            title="MEET OUR TEAM" 
+            img_url="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/home_planet_tmp.png" 
+            description="LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET LOREM IPSUM DOLOR SIT AMET" />
+            
+        <TeamList :people="persone"/>
     </main>
 </template>
 
