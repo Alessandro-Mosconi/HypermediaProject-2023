@@ -29,6 +29,7 @@ export default {
 main {
     width: 100%;
     position: relative;
+    background-color: orange;
 }
 
 .area-component {
