@@ -3,11 +3,13 @@
 -->
 <template>
     <main>
-        <div class="card">
-            <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg" class="image">
+        <div class="area-component">
+            <div class="image-container">
+                <img src="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg" alt="background image" />
+            </div>
             <div class="text-container">
-                <h2 class="text">{{ title }}</h2>
-                <p class="text">{{ description }}</p>
+                <h2>{{ title }}</h2>
+                <descr id="descr">{{ description }}</descr>
             </div>
         </div>
     </main>
@@ -29,43 +31,66 @@ main {
     position: relative;
 }
 
-.card {
-    text-align: center;
-    background-color: purple;
+.area-component {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 55em;
     width: 100%;
-    height: 25em;
+    background-color: blue;
 }
 
 .image-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.image {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: salmon;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    background-color: black;
     filter: brightness(0.5);
-    border-radius: 50px;
-    box-shadow: 0px -10px 40px rgba(0, 0, 0, 0.555);
-    height: 50em;
+    background-color: aqua;
 }
 
 .text-container {
-    font-size: 2em;
-    background-color: orange;
-    color: white;
     z-index: 1;
-    line-height: 0.4em;
+    text-align: center;
+    /* @TODO: fix this */
+    background-color: green;
+    
 }
 
-p {
-    font-style: normal;
+h2 {
+    margin: 0 0;
+    font-size: 7em;
+    line-height: 1.2em;
+    background-color: blueviolet;
+}
+
+#descr {
+    font-size: 2em;
+    margin: 0 0;
+    background-color: purple;
+}
+
+#descr::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
+#descr:hover::before {
+  width: 100%;
 }
 </style>

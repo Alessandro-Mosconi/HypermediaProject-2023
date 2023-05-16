@@ -46,8 +46,9 @@ main {
 }
 
 h3 {
+    margin: 3em 0;
     font-size: 1.5em;
-    line-height: 0.8em;
+    line-height: 0.9em;
     text-align: justify;
 
 }
