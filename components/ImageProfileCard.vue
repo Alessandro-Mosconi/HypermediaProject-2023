@@ -1,19 +1,9 @@
-<!--
-    Card to display information in the list page.
-    This component could be achieved with the SmallCard component by using a <slot> to insert the div with the image. The solution used here allows for better control of the layout.
-    Since the information shown can be categorized into title and subtitle, it was preferred to use only one component for both dogs and location.
-
-    PROPS:
-    - persona_id: main information to display
-    - desc: second information to display
-    - link: link to the page description
--->
 <template>
     <div class="mask1 pos-abs" >
         <img class="bg-black" src="@/assets/img/transparent.png" alt="ciao" >
     </div>
     <div class="mask1 center" >
-        <img class="img-person" :src="img_link" alt="ciao" >
+        <img class="img-profile-person" :src="img_link" alt="ciao" >
     </div>
  
 </template>
@@ -44,11 +34,10 @@
   margin-top: .8%;
 }
 
-.img-person {
+.img-profile-person {
   width: 300px; 
   height: 360px; 
   object-fit: cover;
-  background-color: white;
 }
 .bg-black {
   background-color: #bb86fc;

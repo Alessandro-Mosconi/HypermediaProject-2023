@@ -2,6 +2,7 @@
     Contact Page
 -->
 <template>
+    <CenterTitlewithImage title="CONTACT US"/>
     <main>
         <main>
             <p>

@@ -19,26 +19,8 @@
         </table>
         <p>© 2023 Capital Ventures</p>
         <h2>LOREM IPSUM DOLOR SIT AMET LOREM IPSUM</h2>
-        <!-- <li v-for="p in persone">
-            {{ p.name + ' ' + p.surname }}
-        </li>
-        <p>Made by the Codebusters! :)</p> -->
     </footer>
 </template>
-
-
-<script>
-export default defineNuxtComponent({
-    async asyncData() {
-        // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-        const persone = await $fetch('/api/persone')
-
-        return {
-            persone
-        }
-    }
-})
-</script>
 
 <style>
 p {
@@ -57,7 +39,7 @@ footer {
     padding: 5em 3em;
     color: white;
     min-height: 1vh;
-    border-top: 5px solid white;
+    border-top: 4px solid white;
 }
 
 table {

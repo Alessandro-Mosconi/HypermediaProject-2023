@@ -4,16 +4,7 @@
 -->
 <template>
     <main>
-        <div class = "info-group">
-            <img src = "@/assets/img/home_planet_tmp.png"/>
-            <div id = "data-container">
-                <p class = "data">Name: <span>{{ location.name }}</span></p>
-                <p class = "data">City: <span>{{ location.city }}</span></p>
-            </div>
-        </div>
-        <div id = "dog-card-container">
-            <SmallCard v-for = "dog of location.dogs" :link = "'/dogs/' + dog.id" :title = "dog.name" :subtitle = "dog.breed"/>
-        </div>
+        <ImageProfileCard  :img_link = "person.img_url"/>
     </main>
 </template>
 
@@ -27,10 +18,10 @@
         async asyncData() {
             // Despite using the options API, this.$route is not available in asyncData.
             const route = useRoute()
-            const location = await $fetch('/api/locations/' + route.params.id)
+            const person = await $fetch('/api/people/' + route.params.id)
 
             return {
-                location
+                person
             }
         }
     })

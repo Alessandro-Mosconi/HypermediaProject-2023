@@ -3,16 +3,16 @@
 -->
 <template>
     <main>
-    <CenterTitlewithImage message="INVESTMENT AREAS"/>
-    <CenterTitlewithImage message="AREA 1"/>
-    <CenterTitlewithImage message="AREA 2"/>
-    <CenterTitlewithImage message="AREA 3"/>
-</main>
+        <CenterTitlewithImage title="INVESTMENT AREAS" description="" />
+        <AreaComponent title="AREA 1" description="DISCOVER MORE" />
+        <AreaComponent title="AREA 2" description="DISCOVER MORE" />
+        <AreaComponent title="AREA 3" description="DISCOVER MORE" />
+    </main>
 </template>
 
 <style>
-    main {
-        width: 100%;
-        position: relative;
-    }
+main {
+    width: 100%;
+    position: relative;
+}
 </style>

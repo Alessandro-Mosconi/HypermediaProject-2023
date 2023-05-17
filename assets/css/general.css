@@ -5,6 +5,21 @@ html, body
 
 body
 {
-    background-color: lightgoldenrodyellow;
+    background-color: #121212;
     margin: 0;
+    font-family: ABCWhyte;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+
+@font-face {
+    font-family: 'ABCWhyte';
+    src: url('@/assets/fonts/ABCWhyte/ABCWhytePlusVariable-Trial.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('@/assets/fonts/ABCWhyte/ABCWhyteInktrap-Bold-Trial.otf') format('truetype');
 }
