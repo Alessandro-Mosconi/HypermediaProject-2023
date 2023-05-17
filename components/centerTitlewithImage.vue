@@ -45,7 +45,7 @@ main {
     line-height: 2em;
 }
 
-h3 {
+.centeredTitle h3 {
     margin: 3em 0;
     font-size: 1.5em;
     line-height: 0.9em;
