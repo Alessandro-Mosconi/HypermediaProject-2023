@@ -30,12 +30,6 @@
 
 <style>
     .people-container{
-        background-color: whitesmoke;
-        width: 100%;
-        padding-left: 5%;
-        padding-top: 5%;
-        padding-right: 5%;
-        padding-bottom: 5%;
         color: black;
     }
 
@@ -51,5 +45,6 @@
     .people{
         display: inline-table;
         margin-left: 20px;
+        margin-top: 20px;
     }
 </style>

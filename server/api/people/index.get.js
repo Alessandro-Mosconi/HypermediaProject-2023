@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
     const { data, error } = await client
-        .from('persone')
+        .from('people')
         .select('*')
 
     if (error) {

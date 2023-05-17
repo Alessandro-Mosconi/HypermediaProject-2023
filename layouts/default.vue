@@ -5,32 +5,21 @@
     <head>
         <title>Celesta Capital</title>
     </head>
-    <div class = 'page'>
+    <div>
         <TheHeader />
-        <slot />
+        <div class = 'page'>
+            <slot />
+        </div>
         <TheFooter />
     </div>
 </template>
 
 <style>
     .page {
-        font-family: ABCWhyte;
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
         background-color: rgb(0, 0, 0);
-        margin: 0;
-        color: white;
-    }
-
-    @font-face {
-        font-family: 'ABCWhyte';
-        src: url('@/assets/fonts/ABCWhyte/ABCWhytePlusVariable-Trial.ttf') format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Bold';
-        src: url('@/assets/fonts/ABCWhyte/ABCWhyteInktrap-Bold-Trial.otf') format('truetype');
+        /*margin-left: 10%;
+        margin-right: 10%;*/
     }
 
     h1 {

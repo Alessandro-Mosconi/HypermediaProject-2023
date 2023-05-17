@@ -10,7 +10,7 @@
 -->
 <template>
     <div class="mask1 pos-abs" >
-        <img class="bg-black" src="@/assets/img/black.jpg" alt="ciao" >
+        <img class="bg-black" src="@/assets/img/transparent.png" alt="ciao" >
     </div>
     <div class="mask1 center" >
         <img class="img-person" :src="img_link" alt="ciao" >
@@ -48,9 +48,10 @@
   width: 300px; 
   height: 360px; 
   object-fit: cover;
-  background-color: gainsboro;
+  background-color: white;
 }
 .bg-black {
+  background-color: #bb86fc;
   width: 302px; 
   height: 360px; 
 }
