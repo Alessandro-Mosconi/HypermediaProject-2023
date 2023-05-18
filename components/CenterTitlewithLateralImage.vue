@@ -3,7 +3,7 @@
 -->
 <template>
     <main>
-        <div class="back-img">
+        <div class="back-img zoom">
             <img src="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>   
         </div>
                  
@@ -23,20 +23,38 @@ export default {
     props: {
         title: String,
         description: String,
-    }
+    },
+    mounted() {
+        const zoomElement = document.querySelector(".zoom");
+        let zoom = 1;
+        const ZOOM_SPEED = 0.01;
+
+        document.addEventListener("wheel", function (e) {
+        if (e.deltaY > 0) {
+            if(zoom <1.5){
+            zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`; }
+        } else {
+            if(zoom>1){
+                zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+            }
+        }
+        });
+    },
 }
 </script>
 
 
 <style>
 
-
+.zoom {
+}
 
 .back-img {
     position: absolute;
+    top: 10%;
     margin-right: 50%;
     margin-left: 5%;
-    float: left;
+    margin-left: 5%;
     filter: brightness(50%);
 }
 
@@ -51,7 +69,7 @@ export default {
     text-align: center;
     line-height: 0.9em;
     width: 95%;
-    min-height: 900px;
+    min-height: 1200px;
 }
 
 .centerTitle {
