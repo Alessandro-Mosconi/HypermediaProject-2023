@@ -8,21 +8,19 @@
         </NuxtLink>
         <h1>Celesta Capital</h1>
         <nav>
-            <NuxtLink id="page" to="/">ABOUT</NuxtLink>
-            <NuxtLink id="page" to="/team">TEAM</NuxtLink>
-            <NuxtLink id="page" to="/projects">PROJECTS</NuxtLink>
-            <NuxtLink id="page" to="/areas">INVESTMENT AREAS</NuxtLink>
-            <NuxtLink id="page" to="/contact">CONTACTS</NuxtLink>
+            <NuxtLink id="about" class="pg" to="/">HOME</NuxtLink>
+            <NuxtLink id="about" class="pg" to="/about">ABOUT</NuxtLink>
+            <NuxtLink id="team" class="pg" to="/team">TEAM</NuxtLink>
+            <NuxtLink id="projects" class="pg" to="/projects">PROJECTS</NuxtLink>
+            <NuxtLink id="areas" class="pg" to="/areas">INVESTMENT AREAS</NuxtLink>
+            <NuxtLink id="contacts" class="pg" to="/contact">CONTACTS</NuxtLink>
         </nav>
     </header>
 </template>
 
 <style>
 header {
-    /* margin-top: 2%;
-    margin-bottom: 2%; */
     font-family: ABCWhyteLight;
-    /* background-color: rgb(255, 166, 0); */
     color: rgb(255, 255, 255);
     padding: 0px 4% 0px 4%;
     display: flex;
@@ -36,8 +34,6 @@ header {
     background-color: rgba(0, 0, 0, 0.24);
     
 }
-
-
 
 h1 {
     font-size: 1.5em;
@@ -63,7 +59,7 @@ nav {
 
 a {
     font-size: 1em;
-    margin: 0 30px;
+    margin: 0 40px;
     color: white;
     text-decoration: none;
     position: relative;
@@ -78,7 +74,11 @@ a:last-of-type {
     margin-right: 0;
 }
 
-#page::before {
+/* a:active {
+    color: rgb(255, 102, 0);
+} */
+
+.pg::before {
   content: '';
   position: absolute;
   width: 0;
@@ -89,7 +89,7 @@ a:last-of-type {
   transition: width 0.3s ease-in-out;
 }
 
-#page:hover::before {
+.pg:hover::before {
   width: 100%;
 }
 
