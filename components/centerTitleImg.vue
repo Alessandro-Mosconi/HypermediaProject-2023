@@ -17,6 +17,7 @@ export default {
     props: {
         title: String,
         description: String,
+        img_url: String,
     },
 }
 </script>
