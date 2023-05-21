@@ -7,7 +7,7 @@
         <CenterTitlewithLateralImage
             title="MEET OUR TEAM"
             description="A FUSION OF VISIONARY STRATEGISTS, SEASONED INVESTORS, AND INDUSTRY PIONEERS, UNITED BY A PASSION FOR FUELLING SPACE INNOVATION AND DRIVING TRANSFORMATIVE IMPACT." 
-            style="background-color: #121212;"/>
+            />
         <div class="team-container">
             <TeamList :people="people"/>
         </div>
@@ -28,7 +28,6 @@
 
 <style>
 .team-container{
-    background-color: white;
     padding: 5%;
 }
 </style>
