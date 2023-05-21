@@ -1,0 +1,55 @@
+<!--
+    Centered title with image background
+-->
+<template>
+    <container class="singleItem" :style="bgImage">
+        <div class="capsule"> innovation</div>
+    </container>
+</template>
+
+<script>
+export default {
+    props: {
+        title: String,
+        description: String,
+        img: String
+    },
+    computed: {
+        bgImage () {
+        return `background-image: url("${this.img}");`;
+  }
+}
+}
+</script>
+
+
+<style>
+.singleItem {
+    width: 100%;
+    position: relative;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content: flex-end; 
+    align-items: flex-end; 
+}
+
+
+.capsule{
+    justify-content: center;
+    text-align: center;
+    border: solid white 3px;
+    border-radius: 25px; 
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: normal;
+    align-self:flex-end;
+    margin-bottom: 1em;
+    display: inline-block;
+    margin-right: 70%; 
+    padding-left:.75em; 
+    padding-right:.75em;
+}
+</style>
