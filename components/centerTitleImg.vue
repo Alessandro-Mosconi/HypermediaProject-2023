@@ -2,8 +2,8 @@
     Centered title with image background
 -->
 <template>
-    <container>
-        <div class="texts">
+    <container class='bigTitle' :style="bgImage">
+        <div class="texts"> 
             <div class="title">
                 <h1>{{ this.title }}</h1>
             </div>
@@ -17,19 +17,23 @@ export default {
     props: {
         title: String,
         description: String,
+        img: String
     },
+    computed: {
+        bgImage () {
+        return `background-image: url("${this.img}");`;
+  }
+}
 }
 </script>
 
 
 <style>
 
-container {
+.bigTitle {
     width: 100%;
     position: relative;
-    height: 55em;
-    width: 100%;
-    background-image: url("@/assets/img/home_planet_tmp.png");
+    height: 60em;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -38,10 +42,11 @@ container {
     align-items: center;
 }
 
+
 .texts {
    position: absolute;
    color: white;
-   font-size: 2.2em; 
+   font-size: 2em; 
    font-family:bold; 
    text-align:center; 
    width :90%;  
