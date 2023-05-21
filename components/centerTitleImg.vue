@@ -2,7 +2,7 @@
     Centered title with image background
 -->
 <template>
-    <container :style="backgroundImageInlineStyle">
+    <container class='bigTitle' :style="bgImage">
         <div class="texts"> 
             <div class="title">
                 <h1>{{ this.title }}</h1>
@@ -20,7 +20,7 @@ export default {
         img: String
     },
     computed: {
-        backgroundImageInlineStyle () {
+        bgImage () {
         return `background-image: url("${this.img}");`;
   }
 }
@@ -30,11 +30,10 @@ export default {
 
 <style>
 
-container {
+.bigTitle {
     width: 100%;
     position: relative;
-    height: 55em;
-    width: 100%;
+    height: 60em;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -43,10 +42,11 @@ container {
     align-items: center;
 }
 
+
 .texts {
    position: absolute;
    color: white;
-   font-size: 2.2em; 
+   font-size: 2em; 
    font-family:bold; 
    text-align:center; 
    width :90%;  
