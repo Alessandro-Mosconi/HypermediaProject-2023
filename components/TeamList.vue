@@ -30,7 +30,7 @@
 
 <style>
     .people-container{
-        color: black;
+        color: white;
     }
 
     b{

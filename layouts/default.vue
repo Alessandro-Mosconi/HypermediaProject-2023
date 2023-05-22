@@ -17,9 +17,9 @@
 <style>
     .page {
         min-height: 100vh;
-        width:100%;
-        background-color: #121212;
-        position: relative;
+        background-color:#121212;
+        /*margin-left: 10%;
+        margin-right: 10%;*/
     }
 
     h1 {

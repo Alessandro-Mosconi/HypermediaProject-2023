@@ -69,7 +69,7 @@ export default {
     text-align: center;
     line-height: 0.9em;
     width: 95%;
-    min-height: 1200px;
+    height: 10%;
 }
 
 .centerTitle {

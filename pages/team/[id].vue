@@ -4,7 +4,7 @@
 -->
 <template>
     <main>
-        <ImageProfileCard  :img_link = "person.img_url"/>
+        <ImageProfileCard class="" :img_link = "person.img_url"/>
     </main>
 </template>
 
@@ -29,46 +29,8 @@
 </script>
 
 <style>
-    #dog-card-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px
-    }
-
-    #main-img {
-    width: 30%;
-    height: auto;
-    }
-
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info-group {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .data {
-        font-weight: bolder;
-        font-size: 20pt
-    }
-
-    .data span {
-        font-weight: 100;
-        font-size: 15pt;
-    }
-
-    #description {
-        padding: 0 20px 0 20px;
-        font-size: 15pt;
-    }
+main{
+    
+    background-color: aliceblue;
+}
 </style>

@@ -48,7 +48,7 @@
   width: 300px; 
   height: 360px; 
   object-fit: cover;
-  background-color: white;
+  background-color: #121212;
 }
 .bg-black {
   background-color: #bb86fc;
