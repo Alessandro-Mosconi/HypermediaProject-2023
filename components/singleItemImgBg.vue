@@ -3,7 +3,7 @@
 -->
 <template>
     <container class="singleItem" :style="bgImage">
-        <div class="capsule"> innovation</div>
+        <div class="capsule"> our investment areas</div>
     </container>
 </template>
 
@@ -48,7 +48,7 @@ export default {
     align-self:flex-end;
     margin-bottom: 1em;
     display: inline-block;
-    margin-right: 70%; 
+    margin-right: 60%; 
     padding-left:.75em; 
     padding-right:.75em;
 }
