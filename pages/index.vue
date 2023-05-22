@@ -12,7 +12,6 @@
     </SingleItemImgBg>
 </template>
 
-
 <style>
 main {
     width: 100%;

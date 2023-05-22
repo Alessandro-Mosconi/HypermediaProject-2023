@@ -14,6 +14,7 @@
             <ImageCard  :img_link = "p.img_url"/>
             <b>{{p.name + ' ' + p.surname}}</b>
             <div class="role">ROLE</div>
+            <NuxtLink id="about" class="pg" :to='"/team/"+p.id'><i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i></NuxtLink>
         </div>
     </div>
  
