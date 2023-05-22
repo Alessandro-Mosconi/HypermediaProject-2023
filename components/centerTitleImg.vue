@@ -33,7 +33,7 @@ export default {
 .bigTitle {
     width: 100%;
     position: relative;
-    height: 60em;
+    height: 90vh;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -49,13 +49,13 @@ export default {
    font-size: 2em; 
    font-family:bold; 
    text-align:center; 
-   width :90%;  
+   width:90%;  
 }
 
 
 .texts h3 {
-    font-size : 1.5em ;
-    line-height:.9em ;    
-    text-align:justify ;
+    font-size : 2em ;   
+    text-align: justify ;
+    text-transform: uppercase;
 }
 </style>
