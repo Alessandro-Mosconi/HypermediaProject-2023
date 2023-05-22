@@ -37,8 +37,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
     }
 
     p {
-        font-size: 1.2em;
+        padding: 3em 0 0 0;
+        font-size: 1.3em;
     }
-
-
 </style>
