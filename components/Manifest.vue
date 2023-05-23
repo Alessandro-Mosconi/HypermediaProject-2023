@@ -2,21 +2,26 @@
     Header of the page
 -->
 <template>
-        <text>NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS NUKE MARS 
+        <text>
+            {{ longtext }} 
         </text>
 </template>
 
+<script>
+export default{
+    props: {
+        longtext: String
+    }
+}
+</script>
+
 <style>
     text{
-        margin-top: 2%;
-        margin-bottom: 2%;
-        background-color: rgb(191, 0, 255);
+        font-size: 4vw;
+        display: inline-block;
         color: whitesmoke;
-        padding: 0px 4% 0px 4%;
-        text-align: justify;
-        width:92%;
+        width:100%;
         font-family: Bold;
-        font-size: xx-large;
         text-transform: uppercase;
     }
 </style>
