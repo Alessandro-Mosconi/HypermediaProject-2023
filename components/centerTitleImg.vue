@@ -3,12 +3,14 @@
 -->
 <template>
     <container class='bigTitle' :style="bgImage">
+        <container class="gradient">
         <div class="texts"> 
             <div class="title">
                 <h1>{{ this.title }}</h1>
             </div>
             <h3>{{ this.description }}</h3>
         </div>
+    </container>
     </container>
 </template>
 
@@ -30,16 +32,24 @@ export default {
 
 <style>
 
-.bigTitle {
+.gradient{
+    background-image: linear-gradient(to bottom, transparent 50%, #121212); 
     width: 100%;
     position: relative;
-    height: 90vh;
+    height: 70vh;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.bigTitle {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -49,9 +59,18 @@ export default {
    font-size: 2em; 
    font-family:bold; 
    text-align:center; 
-   width:90%;  
+   width:90%; 
 }
 
+.title h1 {
+  font-size: 250px;
+}
+
+@media (max-width: 1920px) {
+  .title h1 {
+    font-size: 10vw;
+  }
+}
 
 .texts h3 {
     font-size : 2em ;   
