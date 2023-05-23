@@ -28,12 +28,10 @@ import '@fortawesome/fontawesome-free/css/all.css';
     .page {
         min-height: 100vh;
         background-color:#121212;
-        /*margin-left: 10%;
-        margin-right: 10%;*/
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
 
     p {

@@ -36,7 +36,7 @@ header {
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 3em;
     font-family: Bold;
 }
 
@@ -55,10 +55,11 @@ nav {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    font-size: 1em;
 }
 
 a {
-    font-size: 1em;
+    font-size: 2em;
     margin: 0 40px;
     color: white;
     text-decoration: none;
