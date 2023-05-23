@@ -4,63 +4,18 @@
 -->
 <template>
     <main>
-        <h1>Locations</h1>
-        <div id="card-container">
-            <Card v-for = "location of locations" :title = "location.name" :subtitle = "location.city" :link = "'/locations/' + location.id" />
-        </div>
+        <h1>Nuke mars</h1>
     </main>
+    <CardProject 
+    projectName="ci pensa mosco"
+    img="https://th.bing.com/th/id/OIP.GNi9i_lqcmmXwNjIuEpEvgHaEK?pid=ImgDet&rs=1"
+    ></CardProject>
 </template>
 
 <script>
-    /*
-        The defineNuxtComponent gets us access to the asyncData property.
-        This is the first function that is called by nuxt when the page is called.
-        We can use this to pre-load the data to make it available to the user.
-    */
-    export default defineNuxtComponent({
-        async asyncData() {
-            // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-            const locations = await $fetch('/api/locations')
-
-            return {
-                locations
-            }
-        }
-    })
+    export default {
+    }
 </script>
 
 <style>
-    #card-container
-    {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-content: flex-start;
-        gap: 20px;
-    }
-
-    main
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: flex-start;
-        gap: 10px;
-    }
-
-    #form-container {
-        width: 90%;
-        border-radius: 10px;
-        border: 2px solid brown;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        gap: 20px;
-
-        background-color: burlywood;
-        padding: 20px;
-    }
-
 </style>

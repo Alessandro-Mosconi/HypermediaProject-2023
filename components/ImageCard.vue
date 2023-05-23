@@ -9,10 +9,10 @@
     - link: link to the page description
 -->
 <template>
-    <div class="mask1 pos-abs" >
+    <div class="mask-cornice-1 pos-abs" >
         <img class="bg-black" src="@/assets/img/transparent.png" alt="ciao" >
     </div>
-    <div class="mask1 center" >
+    <div class="mask-persona" >
         <img class="img-person" :src="img_link" alt="ciao" >
     </div>
  
@@ -28,9 +28,17 @@
 
 
 <style>
-.mask1 {
+
+.mask-persona {
   -webkit-mask-image: url(@/assets/img/image-mask.png);
   mask-image: url(@/assets/img/image-mask.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.mask-cornice-1 {
+  -webkit-mask-image: url(@/assets/img/image-mask2.png);
+  mask-image: url(@/assets/img/image-mask2.png);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-size: contain;
@@ -45,10 +53,10 @@
 }
 
 .img-person {
+  padding-top: 18px;
   width: 300px; 
-  height: 360px; 
+  height: 340px; 
   object-fit: cover;
-  background-color: white;
 }
 .bg-black {
   background-color: #bb86fc;

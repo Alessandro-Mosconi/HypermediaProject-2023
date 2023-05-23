@@ -18,18 +18,21 @@
             </tr>
         </table>
         <p>© 2023 Capital Ventures</p>
-        <h2>LOREM IPSUM DOLOR SIT AMET LOREM IPSUM</h2>
+        <h2>striving to ignite possibilities</h2>
     </footer>
 </template>
 
-<style>
+<style scoped>
 p {
     padding: 3em 0 0 0;
     font-size: 1.3em;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 5em;
+    font-weight:600;
+    text-transform: uppercase;
+    text-align:center;
 }
 
 footer {

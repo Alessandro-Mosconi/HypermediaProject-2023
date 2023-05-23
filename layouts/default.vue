@@ -14,21 +14,28 @@
     </div>
 </template>
 
+<script>
+import '@fortawesome/fontawesome-free/css/all.css';
+
+</script>
+
 <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+
     .page {
         min-height: 100vh;
-        width:100%;
-        background-color: #121212;
-        position: relative;
+        background-color:#121212;
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
 
     p {
-        font-size: 1.2em;
+        padding: 3em 0 0 0;
+        font-size: 1.3em;
     }
-
-
 </style>

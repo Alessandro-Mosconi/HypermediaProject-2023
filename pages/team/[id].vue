@@ -3,14 +3,27 @@
     As described in the SmallCard component, the same component was used for both Dog and Location since they have the same structure.
 -->
 <template>
-    <main>
-        <ImageProfileCard  :img_link = "person.img_url"/>
+    <main class="profile-page">
+        <div class="container">
+            <div class="left">
+            <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
+                <i class="fa-solid fa-arrow-left" ></i> See all
+            </NuxtLink>
+            <ImageProfileCard :img_link = "person.img_url"/>
+            </div>
+            <div class="right">
+                <div class="title-name">
+                    {{person.name}}<br>{{person.surname}} 
+                </div>
+            </div>
+        </div>
+
     </main>
 </template>
 
 <script>
     /*
-        The defineNuxtComponent gets us access to the asyncData property.
+        The defineNuxtComponent gets us acceFss to the asyncData property.
         This is the first function that is called by nuxt when the page is called.
         We can use this to pre-load the data to make it available to the user.
     */
@@ -29,46 +42,35 @@
 </script>
 
 <style>
-    #dog-card-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px
-    }
 
-    #main-img {
-    width: 30%;
-    height: auto;
-    }
+.container {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.left {
+}
 
-    .info-group {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-    }
+.right {
+  flex: 1;
+}
 
-    .data {
-        font-weight: bolder;
-        font-size: 20pt
-    }
+.profile-page {
+    margin-top: 2em;
+    margin-left: 2em;
+}
 
-    .data span {
-        font-weight: 100;
-        font-size: 15pt;
-    }
+.title-name {
+    margin-left: .2em;
+    margin-top: 3em;
+    font-size: 4em;
+    font-family: Bold;
+    line-height: 1.2em;
+}
 
-    #description {
-        padding: 0 20px 0 20px;
-        font-size: 15pt;
-    }
+.prova {
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
 </style>
