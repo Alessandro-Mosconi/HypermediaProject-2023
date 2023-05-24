@@ -3,10 +3,9 @@
 -->
 <template>
     <main>
-        <centerTitleImg title="INVESTMENT AREAS" description="" />
-        <AreaComponent id="area1" title="AREA 1" description="DISCOVER MORE" />
-        <AreaComponent id="area2" title="AREA 2" description="DISCOVER MORE" />
-        <AreaComponent id="area3" title="AREA 3" description="DISCOVER MORE" />
+        <centerTitleImg title="WHERE WE INVEST" 
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+        description="" />
     </main>
 </template>
 
