@@ -44,7 +44,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 .zoom {
 }
@@ -59,6 +59,7 @@ export default {
 }
 
 .back-img img {
+    z-index: -1;
     width: 650px;
 }
 

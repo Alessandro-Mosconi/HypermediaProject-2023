@@ -4,20 +4,39 @@
 -->
 <template>
     <main class="profile-page">
+        <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
+            <i class="fa-solid fa-arrow-left" ></i> See all
+        </NuxtLink>
         <div class="container">
             <div class="left">
-            <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
-                <i class="fa-solid fa-arrow-left" ></i> See all
-            </NuxtLink>
-            <ImageProfileCard :img_link = "person.img_url"/>
+                <div class="content">
+                    <ImageProfileCard :img_link = "person.img_url"/>
+                </div>
             </div>
             <div class="right">
-                <div class="title-name">
-                    {{person.name}}<br>{{person.surname}} 
+                <div class="content">
+                    <div class="title-name">
+                        {{person.name}}<br>{{person.surname}} 
+                    </div>
+                    <div class="role-main">
+                        {{person.role.toUpperCase()}}
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-envelope"  ></i>
+                        <i class="fa-brands fa-linkedin-in" ></i>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div class="description">
+        <div class="description-content">
+            <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
+        </div>
+        <div class="description-content">
+            <SmallTextList :smallText="'Supervised projects'" :list="projects"></SmallTextList>
+        </div>
+        </div>
     </main>
 </template>
 
@@ -32,45 +51,102 @@
             // Despite using the options API, this.$route is not available in asyncData.
             const route = useRoute()
             const person = await $fetch('/api/people/' + route.params.id)
+            const projects =  await $fetch('/api/projects/')
+            let listProject = [];
+
+            for(let p of projects){
+                listProject.push({
+                    text: p.name,
+                    link: '/projects/' + p.id,
+                })
+                console.log(listProject)
+            }
+            console.log(projects)
+            console.log(listProject)
 
             return {
-                person
+                person: person,
+                projects: listProject
             }
         }
     })
     
 </script>
 
-<style>
+<style scoped>
+main{
+    display: inline-block!important;
+}
+.content{
+}
 
-.container {
+.container{
     width: 100%;
-  display: flex;
-  justify-content: space-between;
+}
+
+.description {
+    margin-top: 4em;
+}
+
+.description-content {
+    margin-bottom: 4em;
 }
 
 .left {
+    width: fit-content;         
+    display: inline-block!important;
+}
+.role-main {
+    color: #bb86fc;
+    font-family: ABCWhyte-Regular!important;
+    letter-spacing: .05em;
+    font-size: 2em;
+    margin-top: 0.5em;
 }
 
 .right {
-  flex: 1;
+    width: auto;  
+    display: inline-block!important;
+}
+
+.right i {
+    margin-top: 0.5em;
+    font-size: 2.5em;
+    margin-right: 1em;
 }
 
 .profile-page {
     margin-top: 2em;
-    margin-left: 2em;
+    margin-left: 4em;
 }
 
 .title-name {
-    margin-left: .2em;
-    margin-top: 3em;
     font-size: 4em;
     font-family: Bold;
-    line-height: 1.2em;
 }
 
 .prova {
     margin-top: 5rem;
     margin-left: 5rem;
 }
+
+@media screen and (max-width: 55em) {
+  .title-name{
+    margin-top: 0px!important;
+  }
+  .left {
+    width: 100%;
+  }
+  .left2 {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+
+  .content{
+    width: fit-content;
+  }
+}
+
 </style>

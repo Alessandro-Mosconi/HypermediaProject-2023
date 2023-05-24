@@ -31,5 +31,6 @@ mask-size: contain;
 }
 .mask-persona-2 img {
   width: 30em;
+  height: 33em;
 }
 </style>

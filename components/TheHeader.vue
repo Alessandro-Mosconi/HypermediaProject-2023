@@ -18,7 +18,7 @@
     </header>   
 </template>
 
-<style>
+<style scope>
 header {
     height: 5vw;
     font-family: ABCWhyteLight;

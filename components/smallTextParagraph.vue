@@ -4,7 +4,7 @@
 
 <template>
     <div class="component">
-    <div class="big-text">{{ bigText }}</div>
+    <div class="small-text">{{ smallText }}</div>
     <div class="paragraph-section">
         <p>
             {{ paragraph }}
@@ -16,49 +16,47 @@
 <script>
 export default {
     props: {
-        bigText: String,
+        smallText: String,
         paragraph: String,
     }
 }
 </script>
 
-<style>
+<style scoped>
 .component {
   display: flex;
-  justify-content:center;
 }
 
-.big-text {
-  font-size: 4em; /* adjust size as needed */
-  margin-right: auto;
-  margin-left: 10%;
+.small-text {
   text-align:left;
-  width:40%;
+  width:480px;
   white-space: nowrap;
-  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.2em!important;
 }
 
 .paragraph-section {
-   width:40%;
-   margin-right:10%;
+   width:60%;
+  font-size: 1em!important;
 }
-
 .paragraph-section p{
     margin-top:0px; 
     padding-top:10px; 
 }
 
-@media only screen and (max-width :1200px) {  
+@media only screen and (max-width :40em) {  
  .component{
      flex-direction : column
  }
- .big-text{
+ .small-text{
      text-align:left
  }
  .paragraph-section{
+    margin-top: 2em;
      width :80%;
-     margin-right: 10%;
-     margin-left: 10%;
  }   
 }
 </style>
