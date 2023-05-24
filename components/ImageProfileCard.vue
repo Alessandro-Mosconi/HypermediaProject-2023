@@ -26,7 +26,7 @@
   background-image: url(@/assets/img/cornice-maschera-2.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: fit-content;
+  width: 100%;
 }
 .mask-persona-2 img {
   width: 100%;

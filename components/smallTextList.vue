@@ -29,7 +29,7 @@ export default {
 
 .small-text {
   text-align:left;
-  width: 30%;
+  width: 40%;
   white-space: nowrap;
   font-size: 1.5em;
 }

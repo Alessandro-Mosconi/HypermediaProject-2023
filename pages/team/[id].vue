@@ -80,7 +80,7 @@ main{
     display: inline-block!important;
 }
 .content{
-    width: fit-content;
+    width: 100%;
 }
 
 .container{
@@ -98,7 +98,7 @@ main{
 }
 
 .left {
-    width: 30%;         
+    width: 40%;         
     display: inline-block!important;
 }
 .role-main {
