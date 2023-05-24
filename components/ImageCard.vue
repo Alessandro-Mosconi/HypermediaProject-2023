@@ -27,7 +27,7 @@
 </script>
 
 
-<style>
+<style scoped>
 
 .mask-persona {
   -webkit-mask-image: url(@/assets/img/image-mask.png);
