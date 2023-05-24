@@ -24,6 +24,7 @@
     "express": "^4.18.2",
     "lorem-ipsum": "^2.0.8",
     "sequelize": "^6.30.0",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "tailwind": "^4.0.0"
   }
 }
