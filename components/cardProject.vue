@@ -13,7 +13,8 @@
         <div class="image-container" :style="bgImage">
             <h1>→</h1>
         </div>
-        <NuxtLink :to = "link" ><h3> {{ projectName }} </h3></NuxtLink>
+        <NuxtLink :to = "link" ><h3>{{ projectName }}</h3></NuxtLink>
+        <NuxtLink :to = "link" ><h4 :style="colorArea" >{{ area }}</h4></NuxtLink>
     </div>
 </template>
 
@@ -21,15 +22,24 @@
 export default {
     props: {
         projectName: String,
-        img: String
+        area: String,
+        img: String,
+        colorArea: String,
     },
     computed: {
         bgImage () {
         return `background-image: url("${this.img}");`;
-  }
+        },
+        colorArea(){
+            return `color: ${this.colorArea};`;  
+        }
 }
 }
 </script>
+
+<!-- 
+style not scoped so that you change also smallerCardProject.vue
+-->
 
 <style>
     .image-container
@@ -42,30 +52,37 @@ export default {
         background-size: cover;
     }
 
+    .card
+    {
+        font-size: 6vw;
+        display: flex;
+        flex-flow: column;
+        padding: 20px;
+        width: fit-content;
+        align-items: flex-start;
+    }
+
     .card h1{
         font-family:monospace;
-        font-size: 6em;
-        font-weight: lighter;
         margin-top: 0;
         margin-right: 10px;
     }
 
-    .card
-    {
-        display: flex;
-        flex-flow: column;
-        padding: 20px;
-        border: 2px solid black;
-        border-radius: 20px;
-        width: fit-content;
-    }
 
     .card h3
     {
-        font-size: 1em;
+        font-size: 2.5vw;
         font-weight: bold;
         text-transform: uppercase;
         font-weight: 500;
+        display:contents;  
+    }
+    .card h4
+    {
+        font-size: 1.6vw;
+        font-weight: lighter;
+        text-transform: uppercase;
+        font-weight: 300;
         display:contents;  
     }
 
@@ -83,5 +100,18 @@ export default {
     .card h3:hover::before {
         width: 100%;
     }
+
+    @media (min-width: 1920px) {
+    .card h1 {
+    font-size: 3vw;
+    }
+    .card h3 {
+    font-size: 2vw;
+    }
+
+    .card h4 {
+    font-size: 1vw;
+    }
+}
 
 </style>
