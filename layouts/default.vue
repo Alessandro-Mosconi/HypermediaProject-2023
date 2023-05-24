@@ -31,7 +31,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 6vw;
     }
 
     p {
