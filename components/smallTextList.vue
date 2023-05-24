@@ -43,7 +43,7 @@ export default {
   font-size: 1.2em!important;
 }
 
-@media only screen and (max-width :40em) {  
+@media only screen and (max-width :55em) {  
  .component{
      flex-direction : column
  }

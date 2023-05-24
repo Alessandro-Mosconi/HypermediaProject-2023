@@ -41,13 +41,14 @@ p {
 .paragraph-section {
    width:60%;
   font-size: 1em!important;
+  margin-right: 2em;
 }
 .paragraph-section p{
     margin-top:0px; 
     padding-top:10px; 
 }
 
-@media only screen and (max-width :40em) {  
+@media only screen and (max-width :55em) {  
  .component{
      flex-direction : column
  }

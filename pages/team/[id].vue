@@ -3,40 +3,42 @@
     As described in the SmallCard component, the same component was used for both Dog and Location since they have the same structure.
 -->
 <template>
-    <main class="profile-page">
-        <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
-            <i class="fa-solid fa-arrow-left" ></i> See all
-        </NuxtLink>
-        <div class="container">
-            <div class="left">
-                <div class="content">
-                    <ImageProfileCard :img_link = "person.img_url"/>
-                </div>
-            </div>
-            <div class="right">
-                <div class="content">
-                    <div class="title-name">
-                        {{person.name}}<br>{{person.surname}} 
-                    </div>
-                    <div class="role-main">
-                        {{person.role.toUpperCase()}}
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-envelope"  ></i>
-                        <i class="fa-brands fa-linkedin-in" ></i>
+    <main>
+        <div class="profile-page">
+            <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
+                <i class="fa-solid fa-arrow-left" ></i> See all
+            </NuxtLink>
+            <div class="container">
+                <div class="left">
+                    <div class="content">
+                        <ImageProfileCard :img_link = "person.img_url"/>
                     </div>
                 </div>
+                <div class="right">
+                    <div class="content">
+                        <div class="title-name">
+                            {{person.name}}<br>{{person.surname}} 
+                        </div>
+                        <div class="role-main">
+                            {{person.role.toUpperCase()}}
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-envelope"  ></i>
+                            <i class="fa-brands fa-linkedin-in" ></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="description">
-        <div class="description-content">
-            <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
-        </div>
-        <div class="description-content">
-            <SmallTextList :smallText="'Supervised projects'" :list="projects"></SmallTextList>
-        </div>
-        </div>
+            <div class="description">
+            <div class="description-content">
+                <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
+            </div>
+            <div class="description-content">
+                <SmallTextList :smallText="'Supervised projects'" :list="projects"></SmallTextList>
+            </div>
+            </div>
+        </div>  
     </main>
 </template>
 
@@ -78,10 +80,13 @@ main{
     display: inline-block!important;
 }
 .content{
+    height: auto;
 }
 
 .container{
-    width: 100%;
+  display: flex;
+  align-items: center;
+  height: fit-content;
 }
 
 .description {
@@ -105,6 +110,7 @@ main{
 }
 
 .right {
+    margin-top: 5em;
     width: auto;  
     display: inline-block!important;
 }
@@ -141,9 +147,14 @@ main{
     width: 100%;
   }
   .right {
+    margin-top: 3em;
     width: 100%;
+    display: block!important;
   }
 
+  .container{
+    display: block;
+  }
   .content{
     width: fit-content;
   }
