@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mask-persona-2" >
-        <img  :src="img_link" alt="ciao" >
+        <img :src="img_link" :alt="alt" >
     </div>
   </div>
 </template>
@@ -9,7 +9,8 @@
 <script>
  export default {
       props: [
-          'img_link'
+          'img_link',
+          'alt'
       ]
   }
 </script>

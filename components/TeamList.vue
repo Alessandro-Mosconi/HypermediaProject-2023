@@ -11,7 +11,7 @@
 <template>
     <div  class="people-container">
         <div v-for="p in people" class="people" >
-            <ImageCard  :img_link = "p.img_url"/>
+            <ImageCard  :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
             <b>{{p.name + ' ' + p.surname}}</b>
             <div class="role">{{ p.role }}</div>
             <NuxtLink id="about" class="pg" :to='"/team/"+p.id'><i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i></NuxtLink>

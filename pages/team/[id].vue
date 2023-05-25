@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="left">
                     <div class="content">
-                        <ImageProfileCard :img_link = "person.img_url"/>
+                        <ImageProfileCard :img_link = "person.img_url"  :alt = "person.name + ' ' + person.surname"/>
                     </div>
                 </div>
                 <div class="right">
@@ -34,7 +34,7 @@
             <div class="description-content">
                 <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
             </div>
-            <div class="description-content">
+            <div class="description-content" v-if="projects && projects.length>0">
                 <SmallTextList :smallText="'Supervised projects'" :list="projects"></SmallTextList>
             </div>
             </div>
@@ -43,17 +43,16 @@
 </template>
 
 <script>
-    /*
-        The defineNuxtComponent gets us acceFss to the asyncData property.
-        This is the first function that is called by nuxt when the page is called.
-        We can use this to pre-load the data to make it available to the user.
-    */
     export default defineNuxtComponent({
         async asyncData() {
             // Despite using the options API, this.$route is not available in asyncData.
             const route = useRoute()
             const person = await $fetch('/api/people/' + route.params.id)
-            const projects =  await $fetch('/api/projects/')
+            //const projects =  await $fetch('/api/projects/')
+            const projects =  await $fetch('/api/projects/person/' + route.params.id)
+
+                console.log('non project')
+
             let listProject = [];
 
             for(let p of projects){
@@ -61,10 +60,7 @@
                     text: p.name,
                     link: '/projects/' + p.id,
                 })
-                console.log(listProject)
             }
-            console.log(projects)
-            console.log(listProject)
 
             return {
                 person: person,
