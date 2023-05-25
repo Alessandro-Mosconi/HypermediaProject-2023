@@ -2,9 +2,11 @@
     Default layout used by all the page
 -->
 <template>
-    <head>
-        <title>Celesta Capital</title>
-    </head>
+    
+ <ClientOnly>
+    <Head>
+        <Title>Celesta Capital</Title>
+    </Head>
     <div>
         <TheHeader />
         <div class = 'page'>
@@ -12,6 +14,8 @@
         </div>
         <TheFooter />
     </div>
+    
+</ClientOnly>
 </template>
 
 <script>
