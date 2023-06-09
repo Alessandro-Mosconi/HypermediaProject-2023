@@ -2,8 +2,6 @@
     Default layout used by all the page
 -->
 <template>
-    
- <ClientOnly>
     <Head>
         <Title>Celesta Capital</Title>
     </Head>
@@ -14,8 +12,6 @@
         </div>
         <TheFooter />
     </div>
-    
-</ClientOnly>
 </template>
 
 <script>
