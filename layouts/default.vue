@@ -2,9 +2,9 @@
     Default layout used by all the page
 -->
 <template>
-    <head>
-        <title>Celesta Capital</title>
-    </head>
+    <Head>
+        <Title>Celesta Capital</Title>
+    </Head>
     <div>
         <TheHeader />
         <div class = 'page'>
@@ -31,7 +31,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 6vw;
     }
 
     p {

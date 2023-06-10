@@ -27,3 +27,7 @@ body
     font-family: 'Bold';
     src: url('@/assets/fonts/ABCWhyte/ABCWhyteInktrap-Bold-Trial.otf') format('truetype');
 }
+@font-face {
+    font-family: 'ABCWhyte-Regular';
+    src: url('@/assets/fonts/ABCWhyte/ABCWhyte-Regular-Trial.otf') format('truetype');
+}

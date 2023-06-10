@@ -6,7 +6,7 @@
         <NuxtLink to="/">
             <img class="logo" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital">
         </NuxtLink>
-        <h1>Celesta Capital</h1>
+        <name>Celesta Capital</name>
         <nav>
             <NuxtLink id="about" class="pg" to="/">HOME</NuxtLink>
             <NuxtLink id="about" class="pg" to="/about">ABOUT</NuxtLink>
@@ -15,11 +15,12 @@
             <NuxtLink id="areas" class="pg" to="/areas">INVESTMENT AREAS</NuxtLink>
             <NuxtLink id="contacts" class="pg" to="/contact">CONTACTS</NuxtLink>
         </nav>
-    </header>
+    </header>   
 </template>
 
-<style>
+<style scope>
 header {
+    height: 5vw;
     font-family: ABCWhyteLight;
     color: rgb(255, 255, 255);
     padding: 0px 4% 0px 4%;
@@ -31,12 +32,12 @@ header {
     top: 0;
     z-index: 999;
     backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.322);
     
 }
 
-h1 {
-    font-size: 3em;
+name {
+    font-size: 1.8vw;
     font-family: Bold;
 }
 
@@ -59,7 +60,7 @@ nav {
 }
 
 a {
-    font-size: 2em;
+    font-size: 1vw;
     margin: 0 40px;
     color: white;
     text-decoration: none;

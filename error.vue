@@ -6,7 +6,7 @@
     <NuxtLayout>
         <main>
             <h1>Oops, something went wrong with your request</h1>
-
+            
             <NuxtLink to = "/">RETURN TO HOME PAGE</NuxtLink>
         </main>
     </NuxtLayout>

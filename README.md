@@ -1,68 +1,93 @@
+# TUTORING
+
+* http://localhost:3000/ -> "Ops, something went wrong error"
+* come facciamo che si illumina solo la pagina attiva nel titolo? qual é il modo piú corretto?
+* quale sarebbe il modo corretto per non far "collidere" il CSS? Ci sono "best practices" ?
+* il form di invio messaggio deve funzionare per davvero?
+
 # T08 - Template (Vercel)
 
 This is the implementation of the project for Vercel + Supabase
 
 ## Preliminary steps
+
 As usual, the first things to do are:
-- moving inside the folder with the terminal (or opening the project with VSCode) and then using:
 
-      npm install
+* moving inside the folder with the terminal (or opening the project with VSCode) and then using:
 
-- To run the project you have to use:
+```
+npm install
+```
 
-      npm run dev
+* To run the project you have to use:
 
-    or
+```
+npm run dev
+```
 
-      npm run dev -- -o
-    
-    to automatically open your project in a new tab of your browser.
+or
+npm run dev -- -o
+to automatically open your project in a new tab of your browser.
 
 ## Configuration
+
 To make the project work on GH-Pages there are a few steps to do:
-- install gh-pages
 
-      npm install @nuxtjs/supabase --save-dev
+* install gh-pages
 
-- add the module to the nuxt.config.ts file:
+```
+npm install @nuxtjs/supabase --save-dev
+```
 
-      export default defineNuxtConfig({
-        modules: ['@nuxtjs/supabase'],
-      })
+* add the module to the nuxt.config.ts file:
 
-- add SUPABASE_URL and SUPABASE_KEY to the .env (for local use):
+```
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/supabase'],
+})
+```
 
-      SUPABASE_URL="<Supabase URL>"
-      SUPABASE_KEY="<Supabase API Key>"
+* add SUPABASE\_URL and SUPABASE\_KEY to the .env (for local use):
+
+```
+SUPABASE_URL="<Supabase URL>"
+SUPABASE_KEY="<Supabase API Key>"
+```
 
 ## Deployment
+
 Vercel is connected to your repository. Any time you push something on the main/master branch, Vercel will automatically retrieve the project, build it and deploy it.
 This is why it's better to have two branches:
-- one for deployment
-- one for development
+
+* one for deployment
+* one for development
 
 In general, the command to build the "ready to deploy" project is:
-   
-    npm run build
+
+```
+npm run build
+```
 
 ## Content
+
 The project contains:
-- 5 components
-  - Card
-  - SmallCard
-  - TextImage
-  - TheFooter
-  - TheHeader
-- 1 layout: default
-- 1 error page (currently it's not displayed properly when the project is generated)
-- 7 pages reachable at:
-  - /
-  - /contact
-  - /about
-  - /dogs
-  - /dogs/:id
-  - /locations
-  - /locations/:id
-- The server implemented using the serverless implementation with the Supabase functionality
+
+* 5 components
+    * Card
+    * SmallCard
+    * TextImage
+    * TheFooter
+    * TheHeader
+* 1 layout: default
+* 1 error page (currently it's not displayed properly when the project is generated)
+* 7 pages reachable at:
+    * /
+    * /contact
+    * /about
+    * /dogs
+    * /dogs/:id
+    * /locations
+    * /locations/:id
+* The server implemented using the serverless implementation with the Supabase functionality
 
 Most of the content is commented to explain how things works.

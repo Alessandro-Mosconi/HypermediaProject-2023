@@ -43,7 +43,7 @@ export default {
     border: solid white 3px;
     border-radius: 25px; 
     text-transform: uppercase;
-    font-size: 3em;
+    font-size: 2.5vw;
     font-weight: normal;
     align-self:flex-end;
     margin-bottom: 1em;

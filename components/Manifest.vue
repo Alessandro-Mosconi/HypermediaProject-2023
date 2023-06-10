@@ -17,6 +17,7 @@ export default{
 
 <style>
     text{
+        margin-top: 5vw;
         font-size: 4vw;
         display: inline-block;
         color: whitesmoke;

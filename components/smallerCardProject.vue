@@ -44,7 +44,6 @@ export default {
 
     .card h1{
         font-family:monospace;
-        font-size: 6em;
         font-weight: lighter;
         margin-top: 0;
         margin-right: 10px;
@@ -55,14 +54,11 @@ export default {
         display: flex;
         flex-flow: column;
         padding: 20px;
-        border: 2px solid black;
-        border-radius: 20px;
         width: fit-content;
     }
 
     .card h3
     {
-        font-size: 1em;
         font-weight: bold;
         text-transform: uppercase;
         font-weight: 500;

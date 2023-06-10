@@ -6,9 +6,9 @@
         <container class="gradient">
         <div class="texts"> 
             <div class="title">
-                <h1>{{ this.title }}</h1>
+                <h1>{{ title }}</h1>
             </div>
-            <h3>{{ this.description }}</h3>
+            <h3>{{ description }}</h3>
         </div>
     </container>
     </container>

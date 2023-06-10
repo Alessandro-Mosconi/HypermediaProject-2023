@@ -6,5 +6,11 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/supabase'
     ],
+    postcss: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
     ssr: true
 })
