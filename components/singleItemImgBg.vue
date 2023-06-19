@@ -2,9 +2,9 @@
     Centered title with image background
 -->
 <template>
-    <container class="singleItem" :style="bgImage">
+    <div class="singleItem" :style="bgImage">
         <div class="capsule"> our investment areas ↗</div>
-    </container>
+    </div>
 </template>
 
 <script>

@@ -3,12 +3,12 @@
 -->
 
 <template>
-  <container class="component">
-  <container class="container">
+  <div class="component">
+  <div class="div">
     <p>{{ paragraph }}</p>
     <div class="capsule">FIND OUT MORE ↗</div>
-  </container>
-</container>
+  </div>
+</div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
   display:flex;
   justify-content: flex-end;
 }
-.container{
+.div{
    width:45%;
    margin-right: 5%;
    flex-direction:row-reverse;

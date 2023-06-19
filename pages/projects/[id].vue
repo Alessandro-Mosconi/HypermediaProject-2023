@@ -6,12 +6,12 @@
     <main>
         <div class = "info-group">
             <img id = "main-img" src = "~/assets/img/home_planet_tmp.png" />
-            <div id = "data-container">
+            <div id = "data-div">
                 <p class = "data">Name: <span>{{ location.name }}</span></p>
                 <p class = "data">City: <span>{{ location.city }}</span></p>
             </div>
         </div>
-        <div id = "dog-card-container">
+        <div id = "dog-card-div">
             <SmallCard v-for = "dog of location.dogs" :link = "'/dogs/' + dog.id" :title = "dog.name" :subtitle = "dog.breed"/>
         </div>
     </main>
@@ -38,7 +38,7 @@
 </script>
 
 <style>
-    #dog-card-container {
+    #dog-card-div {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

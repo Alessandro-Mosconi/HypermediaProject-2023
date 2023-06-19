@@ -10,7 +10,7 @@
 -->
 <template>
     <div class="card">
-        <div class="image-container" :style="bgImage">
+        <div class="image-div" :style="bgImage">
             <h1>→</h1>
         </div>
         <NuxtLink :to = "link" ><h3>{{ projectName }}</h3></NuxtLink>
@@ -42,7 +42,7 @@ style not scoped so that you change also smallerCardProject.vue
 -->
 
 <style>
-    .image-container
+    .image-div
     {
         display: flex;
         justify-content:right;

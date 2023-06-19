@@ -27,7 +27,7 @@
 </script>
 
 <style>
-    .image-container
+    .image-div
     {
         display: flex;
         justify-content: center;
