@@ -19,8 +19,9 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
         longtext="satellites space mining space tourism sa"
     ></Manifest>  
     <SingleItemImgBg
-        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg">
-    </SingleItemImgBg>
+        title="INVESTMENT AREAS ↗"
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg"
+    />
     
 </template>
 
