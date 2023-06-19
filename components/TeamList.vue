@@ -9,7 +9,7 @@
     - link: link to the page description
 -->
 <template>
-    <div  class="people-container">
+    <div  class="people-div">
         <div v-for="p in people" class="people" >
             <ImageCard  :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
             <b>{{p.name + ' ' + p.surname}}</b>
@@ -30,7 +30,7 @@
 
 
 <style>
-    .people-container{
+    .people-div{
         color: white;
     }
 

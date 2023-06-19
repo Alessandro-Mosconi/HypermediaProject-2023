@@ -2,13 +2,13 @@
     Centered title with image background
 -->
 <template>
-    <container class="threeItems" :style="bgImage">
-    <container class="innerContainer">
+    <div class="threeItems" :style="bgImage">
+    <div class="innerdiv">
         <div class="capsules"> innovation</div>
         <div class="capsules"> collaboration</div>
         <div class="capsules"> impact</div>
-    </container>
-</container>
+    </div>
+</div>
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
     background-position: center;
 }
 
-.innerContainer {
+.innerdiv {
     width: 90%;  
     margin-left: 5%;
     position: relative;

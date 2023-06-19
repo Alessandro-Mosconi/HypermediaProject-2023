@@ -8,7 +8,7 @@
             <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
                 <i class="fa-solid fa-arrow-left" ></i> See all
             </NuxtLink>
-            <div class="container">
+            <div class="div">
                 <div class="left">
                     <div class="content">
                         <ImageProfileCard :img_link = "person.img_url"  :alt = "person.name + ' ' + person.surname"/>
@@ -79,7 +79,7 @@ main{
     width: 100%;
 }
 
-.container{
+.div{
   display: flex;
   align-items: center;
   height: fit-content;
@@ -148,7 +148,7 @@ main{
     display: block!important;
   }
 
-  .container{
+  .div{
     display: block;
   }
   .content{

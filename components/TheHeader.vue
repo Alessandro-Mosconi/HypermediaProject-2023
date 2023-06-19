@@ -2,101 +2,83 @@
     Header of the page
 -->
 <template>
-    <header>
-        <NuxtLink to="/">
-            <img class="logo" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital">
-        </NuxtLink>
-        <name>Celesta Capital</name>
-        <nav>
-            <NuxtLink id="about" class="pg" to="/">HOME</NuxtLink>
-            <NuxtLink id="about" class="pg" to="/about">ABOUT</NuxtLink>
-            <NuxtLink id="team" class="pg" to="/team">TEAM</NuxtLink>
-            <NuxtLink id="projects" class="pg" to="/projects">PROJECTS</NuxtLink>
-            <NuxtLink id="areas" class="pg" to="/areas">INVESTMENT AREAS</NuxtLink>
-            <NuxtLink id="contacts" class="pg" to="/contact">CONTACTS</NuxtLink>
+    <header class="sticky top-0 z-50 backdrop-blur-md backdrop-brightness-50">
+      <div class="flex content-between px-4 py-2 w-full max-lg:">
+          <div class="flex items-center px-4 py-5 w-full space-x-3">
+            <nuxt-link to="/">
+        <img class="h-8 w-auto" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital" />
+      </nuxt-link>
+            <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
+        </div>
+        <nav class="flex items-center space-x-10">
+          <nuxt-link
+            id="about"
+            active-class="text-orange-500"
+            exact
+            to="/about"
+            class="
+              text-white transition-colors duration-300
+              font-medium tracking-wide uppercase text-sm
+               relative group
+            "
+          >About</nuxt-link>
+          <nuxt-link
+            id="team"
+            active-class="text-orange-500"
+            exact
+            to="/team"
+            class="
+              text-white transition-colors duration-300
+              font-medium tracking-wide uppercase text-sm
+               relative group
+            "
+          >team</nuxt-link>
+          <nuxt-link
+            id="projects"
+            active-class="text-orange-500"
+            exact
+            to="/projects/"
+            class="
+              text-white transition-colors duration-300
+              font-medium tracking-wide uppercase text-sm
+               relative group
+            "
+          >all projects</nuxt-link>
+          <nuxt-link
+            id="AREAS"
+            active-class="text-orange-500"
+            exact
+            to="/areas"
+            class="
+              text-white hover: transition-colors duration-300
+              font-medium tracking-wide uppercase text-sm
+               relative group
+            "
+          >investment areas</nuxt-link>
+          <nuxt-link
+            id="contact"
+            active-class="text-orange-500"
+            exact
+            to="/contact"
+            class="
+              text-white transition-colors duration-300
+              font-medium tracking-wide uppercase text-sm
+               relative group
+            "
+          >contacts</nuxt-link>
         </nav>
-    </header>   
-</template>
-
-<style scope>
-header {
-    height: 5vw;
-    font-family: ABCWhyteLight;
-    color: rgb(255, 255, 255);
-    padding: 0px 4% 0px 4%;
-    display: flex;
-    align-items: center;
-    width: 92%;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    backdrop-filter: blur(20px);
-    background-color: rgba(0, 0, 0, 0.322);
-    
-}
-
-name {
-    font-size: 1.8vw;
-    font-family: Bold;
-}
-
-.logo {
-    height: 35px;
-    width: 35px;
-    margin-right: 25px;
-    display: flex;
-    align-items: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    font-size: 1em;
-}
-
-a {
-    font-size: 1vw;
-    margin: 0 40px;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
-
-a:first-of-type {
-    margin-left: 0;
-}
-
-a:last-of-type {
-    margin-right: 0;
-}
-
-/* a:active {
-    color: rgb(255, 102, 0);
-} */
-
-.pg::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #ffffff;
-  transition: width 0.3s ease-in-out;
-}
-
-.pg:hover::before {
-  width: 100%;
-}
-
-@font-face {
+      </div>
+</header>  
+ </template>
+  
+  <style scoped>
+  @font-face {
     font-family: 'ABCWhyteLight';
     src: url('@/assets/fonts/ABCWhyte/ABCWhyte-Extralight-Trial.otf') format('truetype');
-}
-</style>
+  }
+  
+  .logo {
+    height: 35px;
+    width: 35px;
+  }
+  </style> 

@@ -2,16 +2,16 @@
     Centered title with image background
 -->
 <template>
-    <container class='bigTitle' :style="bgImage">
-        <container class="gradient">
+    <div class='bigTitle' :style="bgImage">
+        <div class="gradient">
         <div class="texts"> 
             <div class="title">
                 <h1>{{ title }}</h1>
             </div>
             <h3>{{ description }}</h3>
         </div>
-    </container>
-    </container>
+    </div>
+    </div>
 </template>
 
 <script>

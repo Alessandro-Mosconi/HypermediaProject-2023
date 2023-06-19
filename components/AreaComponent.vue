@@ -4,7 +4,7 @@
 <template>
     <main>
         <div class="area-component">
-            <div class="text-container">
+            <div class="text-div">
                 <tit>{{ title }}</tit>
                 <div></div>
                 <descr id="descr">{{ description }}</descr>
@@ -40,7 +40,7 @@ export default {
     box-shadow: 0px 0px 50px #000000;
 }
 
-.text-container {
+.text-div {
     z-index: 1;
     text-align: center;
     margin: 0px;
