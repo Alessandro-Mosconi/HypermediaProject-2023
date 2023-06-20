@@ -13,47 +13,43 @@
         <nav class="flex items-center space-x-10">
           <nuxt-link
             id="about"
-            active-class="text-orange-500"
             exact
             to="/about"
+            active-class="text-orange-500"
             class="
-              text-white transition-colors duration-300
-              font-medium tracking-wide uppercase text-sm
-               relative group
-            "
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-sm
+            pb-[3px] relative group"
           >About</nuxt-link>
           <nuxt-link
             id="team"
-            active-class="text-orange-500"
             exact
             to="/team"
+            active-class="text-orange-500"
             class="
-              text-white transition-colors duration-300
-              font-medium tracking-wide uppercase text-sm
-               relative group
-            "
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-sm
+            pb-[3px] relative group"
           >team</nuxt-link>
           <nuxt-link
             id="projects"
-            active-class="text-orange-500"
             exact
             to="/projects/"
+            active-class="text-orange-500"
             class="
-              text-white transition-colors duration-300
-              font-medium tracking-wide uppercase text-sm
-               relative group
-            "
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-sm
+            pb-[3px] relative group"
           >all projects</nuxt-link>
           <nuxt-link
             id="AREAS"
-            active-class="text-orange-500"
             exact
             to="/areas"
+            active-class="text-orange-500"
             class="
-              text-white hover: transition-colors duration-300
-              font-medium tracking-wide uppercase text-sm
-               relative group
-            "
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-sm
+            pb-[3px] relative group"
           >investment areas</nuxt-link>
           <nuxt-link
             id="contact"
