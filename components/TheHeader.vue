@@ -10,7 +10,8 @@
       </nuxt-link>
             <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
         </div>
-        <nav class="flex items-center space-x-10">
+        <!-- Standard menu button -->
+        <nav class="flex items-center space-x-10 md:flex hidden">
           <nuxt-link
             id="about"
             exact
@@ -62,10 +63,101 @@
             pb-[3px] relative group"
           >contacts</nuxt-link>
         </nav>
-      </div>
-</header>  
- </template>
+        <!-- Mobile menu button -->
+        <nav class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button" @click="toggleVariable">
+            <svg
+              class="w-10 h-9 text-white-500"
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+                <path d="M4 6 h20 M4 12 h20 M4 18 h20"></path>
+            </svg>
+           </button>
+        </nav>
+</div>
+</header>
+<!-- Mobile menu -->
+<div v-if="myVariable" class="fixed inset-0 bg-black backdrop-brightness-10 z-20 flex flex-col items-center justify-center">
+          <nuxt-link
+            @click="toggleVariable"
+            id="about"
+            exact
+            to="/about"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-lm
+            pb-[3px] relative group"
+          >About</nuxt-link>
+          <nuxt-link
+            @click="toggleVariable"
+            id="team"
+            exact
+            to="/team"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-lm
+            pb-[3px] relative group"
+          >team</nuxt-link>
+          <nuxt-link
+            @click="toggleVariable"
+            id="projects"
+            exact
+            to="/projects/"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-lm
+            pb-[3px] relative group"
+          >all projects</nuxt-link>
+          <nuxt-link
+            @click="toggleVariable"
+            id="AREAS"
+            exact
+            to="/areas"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-lm
+            pb-[3px] relative group"
+          >investment areas</nuxt-link>
+            <nuxt-link
+            @click="toggleVariable"
+            id="contact"
+            exact
+            to="/contact"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-lm
+            pb-[3px] relative group"
+          >contacts</nuxt-link>
+        </div>  
+</template>
   
+
+<script>
+export default {
+  data() {
+    return {
+      myVariable: false
+    }
+  },
+  
+  methods: {
+    toggleVariable() {
+      this.myVariable = !this.myVariable;
+    }
+  }
+}
+</script>
+
   <style scoped>
   @font-face {
     font-family: 'ABCWhyteLight';
