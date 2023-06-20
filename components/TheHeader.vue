@@ -14,6 +14,7 @@
           <nuxt-link
             id="about"
             active-class="text-orange-500"
+            exact
             to="/about"
             class="
               text-white transition-colors duration-300
@@ -24,6 +25,7 @@
           <nuxt-link
             id="team"
             active-class="text-orange-500"
+            exact
             to="/team"
             class="
               text-white transition-colors duration-300
@@ -34,6 +36,7 @@
           <nuxt-link
             id="projects"
             active-class="text-orange-500"
+            exact
             to="/projects/"
             class="
               text-white transition-colors duration-300
@@ -44,6 +47,7 @@
           <nuxt-link
             id="AREAS"
             active-class="text-orange-500"
+            exact
             to="/areas"
             class="
               text-white hover: transition-colors duration-300
@@ -53,13 +57,13 @@
           >investment areas</nuxt-link>
           <nuxt-link
             id="contact"
-            active-class="text-orange-500"
+            exact
             to="/contact"
+            active-class="text-orange-500"
             class="
-              text-white transition-colors duration-300
-              font-medium tracking-wide uppercase text-sm
-               relative group
-            "
+            text-orange hover:text-orange-500 transition-colors duration-300
+            font-medium tracking-wide uppercase text-sm
+            pb-[3px] relative group"
           >contacts</nuxt-link>
         </nav>
       </div>
