@@ -10,15 +10,14 @@
       </nuxt-link>
             <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
         </div>
-        <!-- Standard menu button -->
+        <!-- Standard menu -->
         <nav class="flex items-center space-x-10 md:flex hidden">
           <nuxt-link
             id="about"
             exact
             to="/about"
             active-class="text-orange-500"
-            class="
-            text-orange hover:text-orange-500 transition-colors duration-300
+            class="text-orange hover:text-orange-500 transition-colors duration-300
             font-medium tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >About</nuxt-link>
@@ -82,7 +81,7 @@
 </div>
 </header>
 <!-- Mobile menu -->
-<div v-if="myVariable" class="fixed inset-0 bg-black backdrop-brightness-10 z-20 flex flex-col items-center justify-center">
+<div v-if="toggle" class="fixed inset-0 bg-black backdrop-brightness-10 z-20 flex flex-col items-center justify-center">
           <nuxt-link
             @click="toggleVariable"
             id="about"
@@ -146,13 +145,13 @@
 export default {
   data() {
     return {
-      myVariable: false
+      toggle: false
     }
   },
   
   methods: {
     toggleVariable() {
-      this.myVariable = !this.myVariable;
+      this.toggle = !this.toggle;
     }
   }
 }
