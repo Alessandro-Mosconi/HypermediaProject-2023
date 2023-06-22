@@ -8,7 +8,7 @@
             title="MEET OUR TEAM"
             description="A FUSION OF VISIONARY STRATEGISTS, SEASONED INVESTORS, AND INDUSTRY PIONEERS, UNITED BY A PASSION FOR FUELLING SPACE INNOVATION AND DRIVING TRANSFORMATIVE IMPACT." 
             />
-        <div class="team-div">
+        <div class="p-[5%]">
             <TeamList :people="people"/>
         </div>
         
@@ -25,9 +25,3 @@
         }
     })
 </script>
-
-<style>
-.team-div{
-    padding: 5%;
-}
-</style>
