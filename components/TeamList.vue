@@ -9,20 +9,45 @@
     - link: link to the page description
 -->
 <template>
-    <div class="text-[white]">
-        <div v-for="p in people" class="inline-table ml-5 mt-5">
-            <ImageCard :img_link="p.img_url" :alt="p.name + ' ' + p.surname" :color="bb86fc"/>
-            <p class="mt-0 pt-0">{{ p.name + ' ' + p.surname }}</p>
-            <div>{{ p.role }}</div>
-            <NuxtLink id="about" class="pg" :to='"/team/" + p.id'><i class="fa-solid fa-arrow-right text-3xl;"></i></NuxtLink>
+    <div  class="flex flex-wrap  ">
+        <div v-for="p in people" class="basis-72 relative group-last:ml-10 justify-center ml-auto mr-auto" >
+            <ImageCard :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
+            <div class="mt-5"><b >{{p.name + ' ' + p.surname}}</b></div>
+            <div class="role">{{ p.role }}</div>
+            <div class="mb-5">
+                <NuxtLink id="about" class="pg" :to='"/team/"+p.id'><i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i></NuxtLink>
+            </div>
         </div>
     </div>
+ 
 </template>
 
 <script>
-export default {
-    props: [
-        'people'
-    ]
-}
+   export default {
+        props: [
+            'people'
+        ]
+    }
 </script>
+
+
+<style>
+    .people-div{
+        color: white;
+    }
+
+    b{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .role{
+    font-family: ABCWhyteLight;
+    }
+
+    .people{
+        display: inline-table;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+</style>
