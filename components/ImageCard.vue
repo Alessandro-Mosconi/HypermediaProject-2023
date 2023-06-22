@@ -10,7 +10,8 @@
 -->
 <template>
     <div class="mask-cornice-1 pos-abs" >
-        <img class="bg-black" src="@/assets/img/transparent.png" alt="ciao" >
+      <!-- TODO: inserire color come attributo in bg -->
+        <img class="bg-[green] w-[302px] h-[360px]" src="@/assets/img/transparent.png" alt="ciao" > 
     </div>
     <div class="mask-persona" >
         <img class="img-person" :src="img_link" :alt="alt" >
@@ -22,7 +23,8 @@
    export default {
         props: [
             'img_link',
-            'alt'
+            'alt',
+            'color'
         ]
     }
 </script>
@@ -58,10 +60,5 @@
   width: 300px; 
   height: 340px; 
   object-fit: cover;
-}
-.bg-black {
-  background-color: #bb86fc;
-  width: 302px; 
-  height: 360px; 
 }
 </style>

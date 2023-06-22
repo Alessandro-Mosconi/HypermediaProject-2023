@@ -11,11 +11,10 @@
 <template>
     <div class="text-[white]">
         <div v-for="p in people" class="inline-table ml-5 mt-5">
-            <ImageCard :img_link="p.img_url" :alt="p.name + ' ' + p.surname" />
+            <ImageCard :img_link="p.img_url" :alt="p.name + ' ' + p.surname" :color="bb86fc"/>
             <p class="mt-0 pt-0">{{ p.name + ' ' + p.surname }}</p>
             <div>{{ p.role }}</div>
-            <NuxtLink id="about" class="pg" :to='"/team/" + p.id'><i class="fa-solid fa-arrow-right"
-                    style="font-size: 30px;"></i></NuxtLink>
+            <NuxtLink id="about" class="pg" :to='"/team/" + p.id'><i class="fa-solid fa-arrow-right text-3xl;"></i></NuxtLink>
         </div>
     </div>
 </template>

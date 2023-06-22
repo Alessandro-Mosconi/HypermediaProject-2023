@@ -6,23 +6,17 @@
         <centerTitleImg title="WHERE WE INVEST" 
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         description="" />
+        <AreaList :areas="areas"/>
     </main>
 </template>
 
-<style>
-main {
-    width: 100%;
-    position: relative;
-}
-
-#area2 {
-    position: relative;
-    bottom: 4em;
-}
-
-#area3 {    
-    position: relative;
-    bottom: 8em;
-}
-
-</style>
+<script>
+    export default defineNuxtComponent({
+        async asyncData() {
+            const areas = await $fetch('/api/areas')
+            return {
+                areas
+            }
+        }
+    })
+</script>

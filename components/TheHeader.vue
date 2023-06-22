@@ -43,7 +43,7 @@
             pb-[3px] relative group"
           >all projects</nuxt-link>
           <nuxt-link
-            id="AREAS"
+            id="areas"
             exact
             to="/areas"
             active-class="text-orange-500"
