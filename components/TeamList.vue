@@ -9,8 +9,8 @@
     - link: link to the page description
 -->
 <template>
-    <div  class="flex flex-wrap  ">
-        <div v-for="p in people" class="basis-72 relative group-last:ml-10 justify-center ml-auto mr-auto" >
+    <div  class="flex flex-wrap">
+        <div v-for="p in people" class="basis-72 group-last:ml-10 justify-center ml-auto mr-auto" >
             <ImageCard :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
             <div class="mt-5"><b >{{p.name + ' ' + p.surname}}</b></div>
             <div class="role">{{ p.role }}</div>

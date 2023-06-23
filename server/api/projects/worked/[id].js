@@ -5,15 +5,20 @@ export default defineEventHandler(async (event) => {
 
     const client = serverSupabaseClient(event)
 
-    const { data, error } = await client
-    .from('project')
-    .select('*')
-    .eq('supervisor', id)
+    let { data, error } = await client
+        .from('team')
+        .select(`
+            id_person,
+            project (
+                id,
+                *
+            )`)
+        .eq('id_person', id)
 
     if (error) {
         throw createError({ statusCode: 400, statusMessage: error.message })
     }
 
 
-    return data
+    return data.map(element => element.project)
 })

@@ -1,11 +1,13 @@
 <template>
   
-  <div class="mask-cornice absolute h-full z-10" >
-      <img class="bg-light-blue h-full" src="@/assets/img/transparent.png" alt="ciao" >
+  <div class="relative">
+    <div class="mask-cornice absolute h-full z-10" >
+        <img class="bg-light-blue h-full" src="@/assets/img/transparent.png" alt="ciao" >
+    </div>
+    <div class="mask-persona" >
+      <img class="img-person" :src="img_link" :alt="alt" >
+    </div>
   </div>
-<div class="mask-persona" >
-  <img class="img-person" :src="img_link" :alt="alt" >
-</div>
 
 </template>
 
@@ -17,7 +19,6 @@
       ]
   }
 </script>
-
 
 <style scoped>
 
