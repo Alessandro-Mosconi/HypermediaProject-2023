@@ -27,20 +27,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <table>
-            <tr>
-                <td>venture.agency@mail.com</td>
-                <td>Cookies</td>
-            </tr>
-            <tr>
-                <td>+39 333 12345678</td>
-                <td>Privacy</td>
-            </tr>
-            <tr>
-                <td>+39 333 12345678</td>
-            </tr>
-        </table>-->
         <p>© 2023 Capital Ventures</p>
     </div>
     <h2 class="text-4xl ml-auto mr-auto mt-20 mb-10 md:text-5xl lg:text-7xl">striving to ignite possibilities</h2>

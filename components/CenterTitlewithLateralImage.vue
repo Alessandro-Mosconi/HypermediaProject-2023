@@ -3,7 +3,7 @@
 -->
 <template>
     <main>
-        <div class="back-img zoom">
+        <div class="back-img">
             <img src="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>   
         </div>
                  
@@ -27,7 +27,7 @@ export default {
     mounted() {
         const zoomElement = document.querySelector(".zoom");
         let zoom = 1;
-        const ZOOM_SPEED = 0.01;
+        const ZOOM_SPEED = 0.00;
 
         document.addEventListener("wheel", function (e) {
         if (e.deltaY > 0) {
@@ -45,15 +45,10 @@ export default {
 
 
 <style scoped>
-
-.zoom {
-}
-
 .back-img {
     position: absolute;
     top: 10%;
     margin-right: 50%;
-    margin-left: 5%;
     margin-left: 5%;
     filter: brightness(50%);
 }

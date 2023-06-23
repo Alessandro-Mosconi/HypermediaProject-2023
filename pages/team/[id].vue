@@ -23,8 +23,8 @@
                             {{person.role.toUpperCase()}}
                         </div>
                         <div>
-                            <i class="fa-regular fa-envelope"  ></i>
                             <i class="fa-brands fa-linkedin-in" ></i>
+                            <i class="fa-regular fa-envelope"  ></i>
                         </div>
                     </div>
                 </div>
@@ -135,6 +135,7 @@ main{
 .title {
     font-size: 4em;
     font-family: Bold;
+    text-transform: uppercase;
 }
 
 .prova {
