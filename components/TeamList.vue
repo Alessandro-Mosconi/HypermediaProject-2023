@@ -9,12 +9,18 @@
     - link: link to the page description
 -->
 <template>
-    <div  class="people-div">
-        <div v-for="p in people" class="people" >
-            <ImageCard  :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
-            <b>{{p.name + ' ' + p.surname}}</b>
-            <div class="role">{{ p.role }}</div>
-            <NuxtLink id="about" class="pg" :to='"/team/"+p.id'><i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i></NuxtLink>
+    <div  class="flex flex-wrap">
+        <div v-for="p in people" class="md:basis-72 basis-44 justify-center ml-auto mr-auto" >
+            <div>
+                <ImageCard :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
+                <div class="mt-5"><b >{{p.name + ' ' + p.surname}}</b></div>
+                <div class="role">{{ p.role }}</div>
+            </div>
+            <div class="">
+                <NuxtLink id="about" class="pg" :to='"/team/"+p.id'>
+                    <i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i>
+                </NuxtLink>
+            </div>
         </div>
     </div>
  

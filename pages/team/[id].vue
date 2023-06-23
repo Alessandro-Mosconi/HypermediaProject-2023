@@ -10,21 +10,21 @@
             </NuxtLink>
             <div class="div">
                 <div class="left">
-                    <div class="content">
+                    <div class="content mr-10 ">
                         <ImageProfileCard :img_link = "person.img_url"  :alt = "person.name + ' ' + person.surname"/>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="content">
-                        <div class="title-name">
+                    <div class="content md:ml-5">
+                        <div class="title">
                             {{person.name}}<br>{{person.surname}} 
                         </div>
-                        <div class="role-main">
+                        <div class="role">
                             {{person.role.toUpperCase()}}
                         </div>
                         <div>
-                            <i class="fa-regular fa-envelope"  ></i>
                             <i class="fa-brands fa-linkedin-in" ></i>
+                            <i class="fa-regular fa-envelope"  ></i>
                         </div>
                     </div>
                 </div>
@@ -34,8 +34,11 @@
             <div class="description-content">
                 <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
             </div>
-            <div class="description-content" v-if="projects && projects.length>0">
-                <SmallTextList :smallText="'Supervised projects'" :list="projects"></SmallTextList>
+            <div class="description-content" v-if="supervisedProjects && supervisedProjects.length>0">
+                <SmallTextList :smallText="'Supervised projects'" :list="supervisedProjects"></SmallTextList>
+            </div>
+            <div class="description-content" v-if="listWorkingProject && listWorkingProject.length>0">
+                <SmallTextList :smallText="'Worked at'" :list="listWorkingProject"></SmallTextList>
             </div>
             </div>
         </div>  
@@ -45,18 +48,23 @@
 <script>
     export default defineNuxtComponent({
         async asyncData() {
-            // Despite using the options API, this.$route is not available in asyncData.
+            
             const route = useRoute()
             const person = await $fetch('/api/people/' + route.params.id)
-            //const projects =  await $fetch('/api/projects/')
-            const projects =  await $fetch('/api/projects/person/' + route.params.id)
 
-                console.log('non project')
+            const worker =  await $fetch('/api/projects/worked/' + route.params.id)
+            let listWorkingProject = [];
+            for(let p of worker){
+                listWorkingProject.push({
+                    text: p.name,
+                    link: '/projects/' + p.id,
+                })
+            }
 
-            let listProject = [];
-
-            for(let p of projects){
-                listProject.push({
+            const supervisor = await $fetch('/api/projects/supervised/' + route.params.id)            
+            let listSupervisedProject = [];
+            for(let p of supervisor){
+                listSupervisedProject.push({
                     text: p.name,
                     link: '/projects/' + p.id,
                 })
@@ -64,7 +72,8 @@
 
             return {
                 person: person,
-                projects: listProject
+                supervisedProjects: listWorkingProject,
+                workingProjects: listWorkingProject,
             }
         }
     })
@@ -77,6 +86,7 @@ main{
 }
 .content{
     width: 100%;
+
 }
 
 .div{
@@ -97,7 +107,7 @@ main{
     width: 40%;         
     display: inline-block!important;
 }
-.role-main {
+.role {
     color: #bb86fc;
     font-family: ABCWhyte-Regular!important;
     letter-spacing: .05em;
@@ -119,12 +129,13 @@ main{
 
 .profile-page {
     margin-top: 2em;
-    margin-left: 4em;
+    margin-left: 3em;
 }
 
-.title-name {
+.title {
     font-size: 4em;
     font-family: Bold;
+    text-transform: uppercase;
 }
 
 .prova {
@@ -133,7 +144,7 @@ main{
 }
 
 @media screen and (max-width: 55em) {
-  .title-name{
+  .title{
     margin-top: 0px!important;
   }
   .left {

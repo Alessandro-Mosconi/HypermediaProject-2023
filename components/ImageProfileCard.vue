@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <div class="mask-persona-2" >
-        <img :src="img_link" :alt="alt" >
+  <div class="relative">
+    <div class="mask-cornice absolute h-full" >
+      <img class="bg-light-blue h-full ml-auto mr-auto" src="@/assets/img/transparent.png" alt="ciao" >
+    </div>
+    <div class="mask-persona z-10" >
+      <img class="img-person ml-auto mr-auto" :src="img_link" :alt="alt" >
     </div>
   </div>
 </template>
@@ -17,21 +20,25 @@
 
 
 <style scoped>
-.mask-persona-2 {
-  -webkit-mask-image: url(@/assets/img/image-mask.png);
-  mask-image: url(@/assets/img/image-mask.png);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  
-  background-image: url(@/assets/img/cornice-maschera-2.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
+
+.mask-persona {
+-webkit-mask-image: url(@/assets/img/image-mask.png);
+mask-image: url(@/assets/img/image-mask.png);
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+mask-size: contain;
 }
-.mask-persona-2 img {
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
+.mask-cornice {
+top:.4em;
+position:absolute;
+-webkit-mask-image: url(@/assets/img/cornice-maschera-2.png);
+mask-image: url(@/assets/img/cornice-maschera-2.png);
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+mask-size: contain;
+}
+
+.bg-light-blue {
+background-color: #bb86fc;
 }
 </style>
