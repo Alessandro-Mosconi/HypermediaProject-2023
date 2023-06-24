@@ -2,13 +2,25 @@
     Centered title with image background
 -->
 <template>
-    <div class="threeItems" :style="bgImage">
-    <div class="innerdiv">
-        <div class="capsules"> innovation</div>
-        <div class="capsules"> collaboration</div>
-        <div class="capsules"> impact</div>
+    <div class="threeItems relative" :style="bgImage">
+        <div class="flex md:flex-row flex-col uppercase md:text-3xl text-lg absolute inset-x-0 md:bottom-5 bottom-32">
+            <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
+                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
+                    <div class="leading-none max-w-full flex-initial">innovation</div>
+                </div>
+            </div>
+            <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
+                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
+                    <div class="leading-none max-w-full flex-initial">collaboration</div>
+                </div>
+            </div>
+            <div class="mr-auto ml-auto md:basis-1/3 basis-full">
+                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
+                    <div class="leading-none max-w-full flex-initial">impact</div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -20,7 +32,7 @@ export default {
     },
     computed: {
         bgImage () {
-        return `background-image: url("${this.img}");`;
+        return `background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("${this.img}");`;
   }
 }
 }
@@ -30,34 +42,9 @@ export default {
 <style>
 .threeItems {
     width: 100%;
-    height: 60vh;
+    height: 85vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
-
-.innerdiv {
-    width: 90%;  
-    margin-left: 5%;
-    position: relative;
-    height: 100%;
-    display:flex; 
-    justify-content: space-between; 
-}
-
-.capsules{
-    justify-content: center;
-    text-align: center;
-    border: solid white 3px;
-    border-radius: 25px;
-    width: auto;
-    text-transform: uppercase;
-    font-size: 2em;
-    font-weight: normal;
-    align-self:flex-end;
-    margin-bottom: 1em;
-    display: inline-block;
-    padding-left:0.75em; 
-    padding-right:0.75em;
 }
 </style>

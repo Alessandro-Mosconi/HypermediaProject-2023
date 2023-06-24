@@ -2,13 +2,13 @@
     Centered title with image background
 -->
 <template>
-    <div class='bigTitle ml-auto mr-auto w-[95%] bg-top md:bg-center-down' :style="bgImage">
-        <div class="gradient md:min-h-[100vh]">
-        <div class="testo w-[95%]"> 
-            <div class="mb-[15%] md:mt-[5%] text-4xl md:text-8xl lg:text-9xl mt-[25%] text-center">
+    <div class='bigTitle ml-auto mr-auto w-[95%]' :style="bgImage">
+        <div class="gradient ">
+        <div class="testo"> 
+            <div class="mb-[15%] text-6xl md:text-8xl lg:text-9xl  text-center">
                 <div>{{ title }}</div>
             </div>
-            <div class=" text-lg md:text-4xl lg:text-5xl text-justify leading-relaxed uppercase">
+            <div class=" text-2xl md:text-4xl text-center lg:text-5xl md:text-justify leading-relaxed uppercase">
                 {{ description }}
             </div>
         </div>
@@ -35,9 +35,10 @@ export default {
 <style scoped>
 
 .gradient{
-    background-image: linear-gradient(transparent, #121212); 
+    background-image: linear-gradient(to bottom, transparent 50%, #121212); 
     width: 100%;
     position: relative;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -49,6 +50,7 @@ export default {
 .bigTitle {
     background-repeat: no-repeat;
     background-size: 75%;
+    background-position: center -.1%;
 }
 
 .testo{    

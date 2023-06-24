@@ -15,8 +15,12 @@ module.exports = {
       },
       fontSize: {        
         '2xs' : '0.65rem',
+        },
+      backgroundPosition: {
+        'center-down': 'center -.5%'
         }
       }
+      
   },
   plugins: [],
 }

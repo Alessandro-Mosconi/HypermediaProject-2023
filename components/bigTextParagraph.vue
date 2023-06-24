@@ -3,12 +3,12 @@
 -->
 
 <template>
-    <div class="component">
-    <div class="big-text">{{ bigText }}</div>
+    <div class="component mt-10">
+    <div class="big-text md:text-6xl text-xl md:uppercase">{{ bigText }}</div>
     <div class="paragraph-section">
-        <p>
+        <div class="md:text-xl text-sm md:mt-0 mt-3">
             {{ paragraph }}
-        </p>
+        </div>
     </div>
     </div>
 </template>
@@ -29,13 +29,11 @@ export default {
 }
 
 .big-text {
-  font-size: 4em; /* adjust size as needed */
   margin-right: auto;
   margin-left: 10%;
   text-align:left;
   width:40%;
   white-space: nowrap;
-  text-transform: uppercase;
 }
 
 .paragraph-section {
