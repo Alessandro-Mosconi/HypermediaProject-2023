@@ -38,9 +38,5 @@ import '@fortawesome/fontawesome-free/css/all.css';
         padding: 3em 0 0 0;
         font-size: 1.3em;
     }
-
-    div{
-        overflow-x: hidden;
-    }
     
 </style>

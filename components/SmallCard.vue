@@ -26,7 +26,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .image-div
     {
         display: flex;

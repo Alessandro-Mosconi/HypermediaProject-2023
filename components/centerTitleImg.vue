@@ -30,7 +30,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 .gradient{
     background-image: linear-gradient(to bottom, transparent 50%, #121212); 

@@ -3,16 +3,16 @@
 -->
 <template>
     <main>
-        <div class="back-img">
-            <img src="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>   
+        <div class="brightness-50 absolute filter lg:top-[10%] md:mr-[50%] ">
+            <img class="w-[50em]" src="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>   
         </div>
                  
-        <div class="centerText">
-            <div class="centerTitle">
-                <h1>{{ title }}</h1>
+        <div class="centerText z-20 mr-3 ml-3 w-[85%] md:w-[90%] lg:w-[95%]">
+            <div class="centerTitle w-4/5 md:w-1/2 text-4xl md:text-7xl text-center lg:text-8xl">
+                <div>{{ title }}</div>
             </div>
-            <div class="centerDescription">
-                <h3>{{ description }}</h3>
+            <div class="centerDescription text-lg md:text-4xl text-center lg:text-5xl">
+                <div>{{ description }}</div>
             </div>
         </div>
     </main>
@@ -45,18 +45,6 @@ export default {
 
 
 <style scoped>
-.back-img {
-    position: absolute;
-    top: 10%;
-    margin-right: 50%;
-    margin-left: 5%;
-    filter: brightness(50%);
-}
-
-.back-img img {
-    z-index: -1;
-    width: 650px;
-}
 
 .centerText {
     z-index: 1;
@@ -64,31 +52,23 @@ export default {
     font-family: bold;
     text-align: center;
     line-height: 0.9em;
-    width: 95%;
-    height: 10%;
 }
 
 .centerTitle {
     margin-top: 15%;
     margin-bottom: 10%;
-    font-size: 4em;
-    width: 65%;
     margin-left: auto;
     margin-right: auto;
-    line-height: 2em;
+    line-height: 1.2em;
 }
 
 .centerDescription {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    line-height: 2em;
-    font-size: 2.6em;
+    line-height: 1.2;
+    justify-content: center;
+    text-align: justify ;
 }
 
-h3 {
-    line-height: 0.9em;
-    text-align: justify;
-
-}
 </style>

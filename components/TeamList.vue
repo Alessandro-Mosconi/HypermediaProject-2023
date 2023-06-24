@@ -10,15 +10,15 @@
 -->
 <template>
     <div  class="flex flex-wrap">
-        <div v-for="p in people" class="md:basis-72 basis-44 justify-center ml-auto mr-auto" >
+        <div v-for="p in people" class="lg:basis-72 sm:basis-52 basis-32 justify-center ml-auto mr-auto mb-5" >
             <div>
                 <ImageCard :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname"/>
-                <div class="mt-5"><b >{{p.name + ' ' + p.surname}}</b></div>
-                <div class="role">{{ p.role }}</div>
+                <div class="mt-2 lg:text-lg text-xs sm:text-sm mb-0.5"><b >{{p.name + ' ' + p.surname}}</b></div>
+                <div class="role lg:text-lg text-2xs sm:text-sm mb-0.5">{{ p.role }}</div>
             </div>
             <div class="">
                 <NuxtLink id="about" class="pg" :to='"/team/"+p.id'>
-                    <i class="fa-solid fa-arrow-right" style="font-size: 30px;"></i>
+                    <i class="fa-solid fa-arrow-right text-sm sm:text-2xl "></i>
                 </NuxtLink>
             </div>
         </div>
@@ -35,23 +35,11 @@
 </script>
 
 
-<style>
-    .people-div{
-        color: white;
+<style scoped>
+    .arrow-icon{
+        font-size: large!important;
     }
-
-    b{
-        margin-top: 0px;
-        padding-top: 0px;
-    }
-
     .role{
     font-family: ABCWhyteLight;
-    }
-
-    .people{
-        display: inline-table;
-        margin-left: 20px;
-        margin-top: 20px;
     }
 </style>

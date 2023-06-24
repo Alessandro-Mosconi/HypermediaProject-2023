@@ -4,12 +4,14 @@
 
 <template>
     <div class="component">
-    <div class="small-text">{{ smallText }}</div>
-    <div class="paragraph-section">
-        <p>
-            {{ paragraph }}
-        </p>
-    </div>
+        <div class="small-text 2-full lg:w-2/5 md:text-2xl text-lg">
+            {{ smallText }}
+        </div>
+        <div class="mt-3 md:mt-0 w-full lg:w-3/5">
+            <p class=" md:text-lg text-sm leading-snug">
+                {{ paragraph }}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -26,26 +28,15 @@ export default {
 .component {
   display: flex;
 }
-
+p {
+    padding: 0;
+}
 .small-text {
   text-align:left;
-  width: 40%;  
   white-space: nowrap;
-  font-size: 1.5em;
-}
-
-p {
-  font-size: 1.2em!important;
 }
 
 .paragraph-section {
-   width:60%;
-  font-size: 1em!important;
-  margin-right: 2em;
-}
-.paragraph-section p{
-    margin-top:0px; 
-    padding-top:10px; 
 }
 
 @media only screen and (max-width :55em) {  
@@ -56,7 +47,6 @@ p {
      text-align:left
  }
  .paragraph-section{
-    margin-top: 2em;
      width :80%;
  }   
 }
