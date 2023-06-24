@@ -1,5 +1,8 @@
 <template>
     <main>
+        <AreaBanner :area="area.name" :image-url="area.banner_url">
+
+        </AreaBanner>
         <h1>
             eskere
         </h1>
@@ -7,7 +10,7 @@
     </main>
 </template>
 
-<script scoped>
+<script>
 export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
