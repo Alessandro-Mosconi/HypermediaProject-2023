@@ -8,6 +8,8 @@
             <div class="mb-[15%] md:mt-[5%] text-4xl md:text-8xl lg:text-9xl mt-[25%] text-center">
                 <div>{{ title }}</div>
             </div>
+            <v-divider :thickness="4"></v-divider>
+            
             <div class=" text-lg md:text-4xl lg:text-5xl text-justify leading-relaxed uppercase">
                 {{ description }}
             </div>

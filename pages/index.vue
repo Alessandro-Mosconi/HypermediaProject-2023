@@ -2,12 +2,10 @@
     Homepage
 -->
 <template>
-    <main>
         <centerTitleImg 
             title="SHAPING THE FUTURE OF SPACE" 
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
             />
-    </main>
     <leftTitle
         paragraph="We are Visionaries aiming for a boundless universe."   
         ></leftTitle>
