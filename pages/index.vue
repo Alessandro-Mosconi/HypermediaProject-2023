@@ -20,10 +20,12 @@
 We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology." 
     ></RightParagraph>  
     <Manifest
+    class="mb-10"
         longtext="satellites space mining space tourism sa"
-    ></Manifest>  
+    ></Manifest>
     <SingleItemImgBg
         title="INVESTMENT AREAS ↗"
+        link="/area"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg"
     />
     

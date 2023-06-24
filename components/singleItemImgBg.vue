@@ -7,7 +7,8 @@
           <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
               <Chip
               :autoWidth="true"
-              :text="title">
+              :text="title"
+              :link="link">
               </Chip>
           </div>
           <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
@@ -32,7 +33,8 @@ export default {
   props: {
       title: String,
       description: String,
-      img: String
+      img: String,
+      link: String
   },
   computed: {
       bgImage () {
