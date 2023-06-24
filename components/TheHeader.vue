@@ -6,12 +6,12 @@
       <div class="flex content-between px-4 py-2 w-full max-lg:">
           <div class="flex items-center px-4 py-5 w-full space-x-3">
             <nuxt-link to="/">
-        <img class="h-8 w-auto" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital" />
+        <img class="h-8 w-8 object-contain" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital" />
       </nuxt-link>
             <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
         </div>
         <!-- Standard menu -->
-        <nav class="flex items-center space-x-10 md:flex hidden">
+        <nav class="flex items-center space-x-10 lg:flex hidden">
           <nuxt-link
             id="about"
             exact
@@ -73,7 +73,7 @@
           >contacts</nuxt-link>
         </nav>
         <!-- Mobile menu button -->
-        <nav v-if="!toggle" class="md:hidden flex items-center">
+        <nav v-if="!toggle" class="lg:hidden flex items-center">
           <button class="outline-none mobile-menu-button" @click="toggleVariable">
             <svg
               class="w-10 h-9 text-white-500"
@@ -88,7 +88,7 @@
             </svg>
            </button>
         </nav>
-        <nav v-if="toggle" class="md:hidden flex items-center">
+        <nav v-if="toggle" class="lg:hidden flex items-center">
           <button class="outline-none mobile-menu-button" @click="toggleVariable">
             <svg
               class="w-10 h-9 text-white-500"
@@ -106,7 +106,7 @@
 </div>
 </header>
 <!-- Mobile menu -->
-<div v-if="toggle" class="fixed inset-0 bg-black backdrop-brightness-10 z-20 flex flex-col items-center justify-center">
+<div v-if="toggle" class="lg:hidden fixed inset-0 bg-black backdrop-brightness-10 z-20 flex flex-col items-center justify-center">
           <nuxt-link
             @click="toggleVariable"
             id="about"
