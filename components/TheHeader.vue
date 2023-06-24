@@ -18,7 +18,7 @@
             to="/about"
             active-class="text-orange-500"
             class="text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-sm
+             tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >About</nuxt-link>
           <nuxt-link
@@ -28,17 +28,27 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-sm
+             tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >team</nuxt-link>
           <nuxt-link
-            id="projects"
+          id="best-projects"
+            exact
+            to="/projects/best-projects"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+             tracking-wide uppercase text-sm
+            pb-[3px] relative group"
+          >best projects</nuxt-link>
+          <nuxt-link
+            id="all projects"
             exact
             to="/projects/"
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-sm
+             tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >all projects</nuxt-link>
           <nuxt-link
@@ -48,7 +58,7 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-sm
+             tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >investment areas</nuxt-link>
           <nuxt-link
@@ -58,12 +68,12 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-sm
+             tracking-wide uppercase text-sm
             pb-[3px] relative group"
           >contacts</nuxt-link>
         </nav>
         <!-- Mobile menu button -->
-        <nav class="md:hidden flex items-center">
+        <nav v-if="!toggle" class="md:hidden flex items-center">
           <button class="outline-none mobile-menu-button" @click="toggleVariable">
             <svg
               class="w-10 h-9 text-white-500"
@@ -75,6 +85,21 @@
               viewBox="0 0 24 24"
               stroke="currentColor">
                 <path d="M4 6 h20 M4 12 h20 M4 18 h20"></path>
+            </svg>
+           </button>
+        </nav>
+        <nav v-if="toggle" class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button" @click="toggleVariable">
+            <svg
+              class="w-10 h-9 text-white-500"
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path d="M6 18L18 6M6 6l12 12"></path>
             </svg>
            </button>
         </nav>
@@ -90,7 +115,7 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-lm
+             tracking-wide uppercase text-lg
             pb-[3px] relative group"
           >About</nuxt-link>
           <nuxt-link
@@ -101,9 +126,20 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-lm
+             tracking-wide uppercase text-lg
             pb-[3px] relative group"
           >team</nuxt-link>
+          <nuxt-link
+            @click="toggleVariable"
+            id="best-projects"
+            exact
+            to="/projects/best-projects"
+            active-class="text-orange-500"
+            class="
+            text-orange hover:text-orange-500 transition-colors duration-300
+             tracking-wide uppercase text-lg
+            pb-[3px] relative group"
+          >best projects</nuxt-link>
           <nuxt-link
             @click="toggleVariable"
             id="projects"
@@ -112,7 +148,7 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-lm
+             tracking-wide uppercase text-lg
             pb-[3px] relative group"
           >all projects</nuxt-link>
           <nuxt-link
@@ -123,7 +159,7 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-lm
+             tracking-wide uppercase text-lg
             pb-[3px] relative group"
           >investment areas</nuxt-link>
             <nuxt-link
@@ -134,7 +170,7 @@
             active-class="text-orange-500"
             class="
             text-orange hover:text-orange-500 transition-colors duration-300
-            font-medium tracking-wide uppercase text-lm
+             tracking-wide uppercase text-lg
             pb-[3px] relative group"
           >contacts</nuxt-link>
         </div>  
