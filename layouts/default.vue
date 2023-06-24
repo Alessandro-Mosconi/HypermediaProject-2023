@@ -24,7 +24,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
     @tailwind components;
     @tailwind utilities;
 
-
     .page {
         min-height: 100vh;
         background-color:#121212;
