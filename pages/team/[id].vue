@@ -32,7 +32,7 @@
 
             <div class="mt-10 md:mt-20">
             <div class="mb-10 md:mb-20">
-                <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="'Sophia obtained a Bachelor\'s degree in Electrical Engineering from the Massachusetts Institute of Technology (MIT). She later got a Ph.D. in Electrical Engineering from Stanford University. She has conducted extensive research in satellite communication systems, focusing on next-generation technologies and advancements. Sophia has previously worked as a Technology Analyst at SpaceTech Innovations, where she evaluated emerging technologies and identified strategic opportunities for collaboration. Her technical expertise and keen eye for innovative solutions play a crucial role in scouting cutting-edge technologies and identifying disruptive advancements for our portfolio companies.'"></SmallTextParagraph>
+                <SmallTextParagraph :smallText="'About ' + person.name + ' ' + person.surname" :paragraph="person.description"></SmallTextParagraph>
             </div>
             <div class="mb-10 md:mb-20" v-if="supervisedProjects && supervisedProjects.length>0">
                 <SmallTextList :smallText="'Supervised projects'" :list="supervisedProjects"></SmallTextList>

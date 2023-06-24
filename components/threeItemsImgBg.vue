@@ -5,19 +5,22 @@
     <div class="threeItems relative" :style="bgImage">
         <div class="flex md:flex-row flex-col uppercase md:text-3xl text-lg absolute inset-x-0 md:bottom-5 bottom-32">
             <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
-                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
-                    <div class="leading-none max-w-full flex-initial">innovation</div>
-                </div>
+                <Chip
+                :autoWidth="true"
+                :text="'innovation'">
+                </Chip>
             </div>
             <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
-                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
-                    <div class="leading-none max-w-full flex-initial">collaboration</div>
-                </div>
+                <Chip
+                :autoWidth="true"
+                :text="'collaboration'">
+                </Chip>
             </div>
             <div class="mr-auto ml-auto md:basis-1/3 basis-full">
-                <div class="mx-5 w-fit md:w-auto md:flex justify-center items-center p-4 rounded-full md:border-4 border-2 border-white ">
-                    <div class="leading-none max-w-full flex-initial">impact</div>
-                </div>
+                <Chip
+                :autoWidth="true"
+                :text="'impact'">
+                </Chip>
             </div>
         </div>
     </div>
