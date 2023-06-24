@@ -1,12 +1,8 @@
 <template>
-
+  
   <div class="relative">
     <div class="mask-cornice absolute h-full z-10" >
-<<<<<<< HEAD
         <img class="h-full" :style="bgColor" src="@/assets/img/transparent.png" alt="ciao" >
-=======
-        <img class="bg-light-blue h-full" src="@/assets/img/transparent.png" alt="ciao" >
->>>>>>> 8e3aa175676adf9f17d66a630d0e16bc6ba7d1c3
     </div>
     <div class="mask-persona" >
       <img class="img-person" :src="img_link" :alt="alt" >
@@ -17,10 +13,16 @@
 
 <script>
  export default {
-      props: [
-          'img_link',
-          'alt'
-      ]
+      props: {
+          img_link: String,
+          alt: String,
+          color: String
+      },
+    computed: {
+        bgColor () {
+        return `background-color: ${this.color? this.color : '#bb86fc'};`;
+        }
+      }
   }
 </script>
 
