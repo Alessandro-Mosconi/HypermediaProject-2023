@@ -25,7 +25,7 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
     ></Manifest>
     <SingleItemImgBg
         title="INVESTMENT AREAS ↗"
-        link="/area"
+        link="/areas"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg"
     />
     
