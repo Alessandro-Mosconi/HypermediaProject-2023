@@ -18,34 +18,7 @@
     </main>
 </template>
 
-<script>
-export default {
-    props: {
-        title: String,
-        description: String,
-    },
-    mounted() {
-        const zoomElement = document.querySelector(".zoom");
-        let zoom = 1;
-        const ZOOM_SPEED = 0.00;
-
-        document.addEventListener("wheel", function (e) {
-        if (e.deltaY > 0) {
-            if(zoom <1.5){
-            zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`; }
-        } else {
-            if(zoom>1){
-                zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
-            }
-        }
-        });
-    },
-}
-</script>
-
-
 <style scoped>
-
 .centerText {
     z-index: 1;
     color: white;

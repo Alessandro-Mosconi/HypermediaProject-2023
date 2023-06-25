@@ -1,15 +1,16 @@
 <!--
     Investments area
 -->
+
 <template>
     <main>
         <centerTitleImg title="WHERE WE INVEST"
-                        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
-                        description=""/>
+                            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+                            description=""/>
         <div class="p-[5%] mt-20">
-            <AreaList :areas="areas"/>
+            <AreaList2 :areas="areas"/>
         </div>
-
+        
     </main>
 </template>
 

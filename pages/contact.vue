@@ -3,6 +3,28 @@
 -->
 <template>
     <centerTitleImg title="CONTACT US"/>
+    <div class="flex flex-row  ml-[5%] mr-[5%]">
+        <div class="basis-1/2">
+            <div class="flex flex-col space-y-4">
+                <div>
+                    <div class="text-3xl font-light">EMAIL</div>
+                    <div>{{contacts.email}}</div>
+                </div>
+                <div>02</div>
+                <div>03</div>
+            </div>
+        </div>
+        <div class="basis-1/2">
+            <div class="flex flex-col space-y-4">
+                <div>01</div>
+                <div>02</div>
+                <div>03</div>
+            </div>
+        </div>
+    </div>
+
+
+
     <main>
         <main>
             <p>
@@ -30,6 +52,10 @@
         </main>
     </main>
 </template>
+
+<script setup>
+    const contacts = useContact()
+</script>
 
 <style>
     main {
