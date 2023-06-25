@@ -18,6 +18,17 @@
     </main>
 </template>
 
+<script>
+export default {
+    props: {
+        title: String,
+        description: String,
+    },
+}
+</script>
+
+
+
 <style scoped>
 .centerText {
     z-index: 1;
