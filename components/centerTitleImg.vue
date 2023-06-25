@@ -3,7 +3,7 @@
 -->
 <template>
     <div class='bigTitle ml-auto mr-auto w-[95%] bg-top md:bg-center-down' :style="bgImage">
-        <div class="gradient md:min-h-[100vh]">
+        <div class="gradient md:min-h-[50vh]">
         <div class="testo w-[95%]"> 
             <div class="mb-[15%] md:mt-[5%] text-4xl md:text-8xl lg:text-9xl mt-[25%] text-center">
                 <div>{{ title }}</div>
