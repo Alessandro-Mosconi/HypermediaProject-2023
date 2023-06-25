@@ -8,7 +8,7 @@
                             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
                             description=""/>
         <div class="p-[5%] mt-20">
-            <AreaList2 :areas="areas"/>
+            <AreaList :areas="areas"/>
         </div>
         
     </main>
