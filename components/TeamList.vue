@@ -13,7 +13,7 @@
         <div v-for="p in people" class="lg:basis-72 sm:basis-52 basis-32 justify-center ml-auto mr-auto mb-5" >
             <div>
                 <NuxtLink id="about" class="pg" :to='"/team/"+p.id'>
-                    <ImageCard :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname" />
+                    <ImageCard class="bg-[green]" :img_link = "p.img_url" :alt = "p.name + ' ' + p.surname" />
                 </NuxtLink>
                 <div class="mt-2 lg:text-lg text-xs sm:text-sm mb-0.5"><b >{{p.name + ' ' + p.surname}}</b></div>
                 <div class="role lg:text-lg text-2xs sm:text-sm mb-0.5">{{ p.role }}</div>

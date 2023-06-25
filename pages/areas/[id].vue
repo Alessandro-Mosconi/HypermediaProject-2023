@@ -1,6 +1,6 @@
 <template>
     <main>
-        <AreaBanner :area="area.name" :image-url="area.banner_url"></AreaBanner>
+        <AreaBanner :area="area.name" :areaCode="area.code" :image-url="area.banner_url"></AreaBanner>
         <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
             <div class="mt-10 md:mt-20">
                 <div class="mb-10 md:mb-20">
