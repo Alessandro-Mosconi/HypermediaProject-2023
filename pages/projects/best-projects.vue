@@ -1,9 +1,9 @@
 <!--
-    Page with the list of all the projects.
+    Page with the list of BEST projects.
 -->
 <template>
     <centerTitleImg 
-            title="OUR PORTFOLIO" 
+    title="OUR BEST PROJECTS" 
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
             />
     <ProjectList :projects= "projects"/>
@@ -12,11 +12,10 @@
 <script>
     export default defineNuxtComponent({
         async asyncData() {
-            const projects = await $fetch('/api/projects')
+            const projects = await $fetch('/api/projects/best-projects')
             return {
                 projects
             }
         }
     })
 </script>
-

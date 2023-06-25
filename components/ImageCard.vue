@@ -1,14 +1,12 @@
 <template>
-  
   <div class="relative">
     <div class="mask-cornice absolute h-full z-10" >
         <img class="h-full" :style="bgColor" src="@/assets/img/transparent.png" alt="ciao" >
     </div>
-    <div class="mask-persona" >
-      <img class="img-person" :src="img_link" :alt="alt" >
+    <div class="mask-persona h-full " >
+      <img class="img-person h-full w-full" :src="img_link" :alt="alt" >
     </div>
   </div>
-
 </template>
 
 <script>

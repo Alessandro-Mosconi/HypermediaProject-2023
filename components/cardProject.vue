@@ -1,117 +1,24 @@
-<!--
-    Card to display information in the list page.
-    This component could be achieved with the SmallCard component by using a <slot> to insert the div with the image. The solution used here allows for better control of the layout.
-    Since the information shown can be categorized into title and subtitle, it was preferred to use only one component for both dogs and location.
-
-    PROPS:
-    - title: main information to display
-    - subtitle: second information to display
-    - link: link to the page description
--->
 <template>
-    <div class="card">
-        <div class="image-div" :style="bgImage">
-            <h1>→</h1>
-        </div>
-        <NuxtLink :to = "link" ><h3>{{ projectName }}</h3></NuxtLink>
-        <NuxtLink :to = "link" ><h4 :style="colorArea" >{{ area }}</h4></NuxtLink>
+  <div class="lg:h-72 sm:h-44 h-32" style="height: 250px; width: 300px;">
+    <div class="relative">
+      <div class="absolute h-full w-full z-10">
+        <img :src="img" alt="" class="h-full w-full object-cover"/>
+      </div>
+      <button class="h-full w-full bg-transparent hover:bg-gray-100 transition duration-300 ease-in-out focus:outline-none focus:ring focus:border-blue-300">
+        <h1 class="mt-auto mr-2">→</h1>
+      </button>
     </div>
+    <NuxtLink :to="/projects/"><h1 class="text-3xl uppercase" >{{ projectName  }}</h1></NuxtLink>
+      <NuxtLink :to="/projects/"><h2>{{ area }}</h2></NuxtLink>
+  </div>
 </template>
 
-<script>
-export default {
+  <script>
+  export default {
     props: {
-        projectName: String,
-        area: String,
-        img: String,
-        colorArea: String,
-    },
-    computed: {
-        bgImage () {
-        return `background-image: url("${this.img}");`;
-        },
-        colorArea(){
-            return `color: ${this.colorArea};`;  
-        }
-}
-}
-</script>
-
-<!-- 
-style not scoped so that you change also smallerCardProject.vue
--->
-
-<style>
-    .image-div
-    {
-        display: flex;
-        justify-content:right;
-        width: 400px;
-        height: 250px;
-        background-repeat: no-repeat;
-        background-size: cover;
+      projectName: String,
+      area: String,
+      img: String,
     }
-
-    .card
-    {
-        font-size: 6vw;
-        display: flex;
-        flex-flow: column;
-        padding: 20px;
-        width: fit-content;
-        align-items: flex-start;
-    }
-
-    .card h1{
-        font-family:monospace;
-        margin-top: 0;
-        margin-right: 10px;
-    }
-
-
-    .card h3
-    {
-        font-size: 2.5vw;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-weight: 500;
-        display:contents;  
-    }
-    .card h4
-    {
-        font-size: 1.6vw;
-        font-weight: lighter;
-        text-transform: uppercase;
-        font-weight: 300;
-        display:contents;  
-    }
-
-    .card h3::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transition: width 0.3s ease-in-out;
-}
-
-    .card h3:hover::before {
-        width: 100%;
-    }
-
-    @media (min-width: 1920px) {
-    .card h1 {
-    font-size: 3vw;
-    }
-    .card h3 {
-    font-size: 2vw;
-    }
-
-    .card h4 {
-    font-size: 1vw;
-    }
-}
-
-</style>
+  }
+  </script>
