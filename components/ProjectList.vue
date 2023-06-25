@@ -6,8 +6,7 @@
                     <cardProject 
                     :projectName="p.name"
                     :img="p.img_url"
-                    :area="p.area"
-                    :colorArea="green"/>
+                    :area="p.area"/>
                 </NuxtLink>
             </div>
     </div>
