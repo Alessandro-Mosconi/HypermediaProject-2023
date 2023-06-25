@@ -10,6 +10,8 @@ export const useContact = defineStore('contact', {
     ] as string[],
   }),
 
+
+
   getters: {
     /*
     getEmail: (state) => state.email,
