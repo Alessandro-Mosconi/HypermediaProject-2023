@@ -11,9 +11,10 @@ export const useContact = defineStore('contact', {
   }),
 
   getters: {
+    /*
     getEmail: (state) => state.email,
     getAddress: (state) => state.address,
-    getPhoneNumbers: (state) => state.phoneNumbers,
+    getPhoneNumbers: (state) => state.phoneNumbers,*/
   },
 
   actions: {
