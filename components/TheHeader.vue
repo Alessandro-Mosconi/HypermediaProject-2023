@@ -3,7 +3,7 @@
 -->
 <template>
     <header
-        class="text-white flex items-center w-[100%] justify-between sticky z-[999] backdrop-blur-[10px] text-center backdrop-brightness-50 px-[6%] py-0 top-0">
+        class="text-white flex items-center w-[100%] justify-between sticky z-[999] backdrop-blur-[10px] text-center backdrop-brightness-30 px-[6%] py-0 top-0">
         <div class="flex content-between px-4 py-2 w-full max-lg:">
             <div class="flex items-center px-4 py-5 w-full space-x-3">
                 <NuxtLink to="/">
