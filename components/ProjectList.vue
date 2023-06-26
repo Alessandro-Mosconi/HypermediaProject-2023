@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 grid-cols-2 max-w-screen-lg mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 max-w-screen-lg mx-auto">
         <div v-for="p in projects" class="justify-center ml-auto mr-auto" >
         <div>
                 <NuxtLink id="about" class="pg" :to='"/projects/"+p.id'>
