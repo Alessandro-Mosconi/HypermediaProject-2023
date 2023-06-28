@@ -14,7 +14,7 @@
                         <div class="font-extralight leading-none mb-2">
                             {{ subtitleLeft }}
                         </div>
-                        <div class="leading-none">
+                        <div class="font-semibold leading-none">
                             {{ titleLeft }}
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                         <div class="font-extralight leading-none mb-2">
                             {{ subtitleRight }}
                         </div>
-                        <div class="leading-none">
+                        <div class="font-semibold leading-none">
                             {{ titleRight }}
                         </div>
                     </div>
