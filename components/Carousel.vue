@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col items-start">
-                        <div class="font-extralight leading-none mb-2.5">
+                        <div class="font-extralight leading-none mb-2">
                             {{ subtitleLeft }}
                         </div>
                         <div class="leading-none">
@@ -24,7 +24,7 @@
             <NuxtLink :to="linkRight">
                 <div class="flex items-center text-right hover:scale-110 transition-transform duration-300 mr-8">
                     <div class="flex flex-col items-end">
-                        <div class="font-extralight leading-none mb-2.5">
+                        <div class="font-extralight leading-none mb-2">
                             {{ subtitleRight }}
                         </div>
                         <div class="leading-none">
