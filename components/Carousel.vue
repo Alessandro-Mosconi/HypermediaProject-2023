@@ -21,7 +21,7 @@
                 </div>
             </NuxtLink>
 
-            <NuxtLink :to="linkLeft">
+            <NuxtLink :to="linkRight">
                 <div class="flex items-center hover:scale-110 transition-transform duration-300">
                     <div class="flex flex-col items-end">
                         <div class="font-extralight">
