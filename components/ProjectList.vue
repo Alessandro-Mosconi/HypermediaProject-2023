@@ -7,18 +7,29 @@
             </button>
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 max-w-screen-lg mx-auto">
-        <div v-for="(p, index) in projects" :key="index" class="justify-center ml-auto mr-auto">
-            <div>
-                <NuxtLink id="about" class="pg" :to="'/projects/' + p.id">
-                    <cardProject 
-                    :projectName="p.name"
-                    :img="p.img_url"
-                    :area="p.area"/>
-                </NuxtLink>
-            </div>
-        </div>
+    
+    <!-- Flexbox with two columns -->
+  <div class="max-w-screen-lg mx-auto">
+    <div class="flex flex-wrap justify-center">
+        
+      <div v-for="(p, index) in projects" :key="index" class="w-full sm:w-1/2 p-4">
+
+        <!-- empty space -->
+        <div v-if="index % 2 ===1" class="sm:flex hidden" style="
+          width: 300px;
+          height: 160px;
+          background-color: rgba(255, 0, 0, 255);
+        "></div>
+
+        <NuxtLink id="about" :to="'/projects/' + p.id">
+          <cardProject 
+            :projectName="p.name"
+            :img="p.img_url"
+            :area= "p.area"/>
+         </NuxtLink>
     </div>
+     </div>
+   </div>
 </template>
 
 <script>
