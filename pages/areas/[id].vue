@@ -15,11 +15,11 @@
         <div class="flex text-start font-semibold text-5xl">RELATED PROJECTS</div>
         <Carousel
             :imageLeft="area1.thumb_url"
-            :subtitleLeft="'investment areas'"
+            :subtitleLeft="'investment area'"
             :titleLeft="area1.name"
             :linkLeft="'/areas/' + area1.code"
             :imageRight="area2.thumb_url"
-            :subtitleRight="'investment areas'"
+            :subtitleRight="'investment area'"
             :titleRight="area2.name"
             :linkRight="'/areas/' + area2.code" >
 
