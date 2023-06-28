@@ -13,6 +13,10 @@
             </div>
         </div>
         <div class="flex text-start font-semibold text-5xl">RELATED PROJECTS</div>
+        <BigCarousel>
+
+        </BigCarousel>
+
         <LittleCarousel
             :imageLeft="area1.thumb_url"
             :subtitleLeft="'investment area'"
@@ -21,7 +25,7 @@
             :imageRight="area2.thumb_url"
             :subtitleRight="'investment area'"
             :titleRight="area2.name"
-            :linkRight="'/areas/' + area2.code" >
+            :linkRight="'/areas/' + area2.code">
 
         </LittleCarousel>
     </main>
