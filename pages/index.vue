@@ -3,7 +3,7 @@
 -->
 <template>
     <centerTitleImg 
-        title="SHAPING THE FUTURE OF SPACE" 
+        title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         />
     <TitlePos

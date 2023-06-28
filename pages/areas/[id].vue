@@ -12,6 +12,18 @@
                 </div>
             </div>
         </div>
+        <div class="flex text-start font-semibold text-5xl">RELATED PROJECTS</div>
+        <Carousel
+            :imageLeft="area1.thumb_url"
+            :subtitleLeft="'investment areas'"
+            :titleLeft="area1.name"
+            :linkLeft="'/areas/' + area1.code"
+            :imageRight="area2.thumb_url"
+            :subtitleRight="'investment areas'"
+            :titleRight="area2.name"
+            :linkRight="'/areas/' + area2.code" >
+
+        </Carousel>
     </main>
 </template>
 
@@ -20,9 +32,14 @@ export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
         const area = await $fetch('/api/areas/' + route.params.id)
-
+        let otherAreas = await $fetch('/api/areas')
+        otherAreas = otherAreas.filter((area) => area.code !== route.params.id)
+        const area1 = otherAreas[0];
+        const area2 = otherAreas[1];
         return {
-            area
+            area,
+            area1,
+            area2
         }
     }
 })
@@ -31,3 +48,5 @@ export default defineNuxtComponent({
 <style scoped>
 
 </style>
+<script setup lang="ts">
+</script>
