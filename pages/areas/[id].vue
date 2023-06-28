@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="flex text-start font-semibold text-5xl">RELATED PROJECTS</div>
-        <Carousel
+        <LittleCarousel
             :imageLeft="area1.thumb_url"
             :subtitleLeft="'investment area'"
             :titleLeft="area1.name"
@@ -23,7 +23,7 @@
             :titleRight="area2.name"
             :linkRight="'/areas/' + area2.code" >
 
-        </Carousel>
+        </LittleCarousel>
     </main>
 </template>
 
@@ -48,5 +48,3 @@ export default defineNuxtComponent({
 <style scoped>
 
 </style>
-<script setup lang="ts">
-</script>
