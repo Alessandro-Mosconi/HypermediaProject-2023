@@ -23,11 +23,9 @@ export default {
     },
     methods: {        
         mouseIn(){
-            console.log("dentro")
             document.getElementById(this.alt).style.backgroundColor = this.color ? this.color : '#bb86fc';
         },
         mouseOut(){
-            console.log("fuori")
             document.getElementById(this.alt).style.backgroundColor = 'transparent';
         }
     }

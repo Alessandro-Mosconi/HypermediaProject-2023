@@ -27,7 +27,6 @@ export default {
     },
     computed: {
         customWidth () {
-            console.log(this.widthImage)
         return `width: ${this.widthImage?this.widthImage:'50em'};`;
         }
   }
