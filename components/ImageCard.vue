@@ -1,5 +1,5 @@
 <template>
-    <div class="relative m-0">
+    <div class="external-frame relative m-0">
         <div class="mask-cornice absolute h-full z-10">
             <img class="h-full" :style="bgColor" src="@/assets/img/transparent.png" alt="ciao">
         </div>
@@ -37,7 +37,7 @@ export default {
     transition: background 0.3s ease;
 }
 
-.mask-persona:hover {
+.external-frame:hover .mask-persona {
     background: linear-gradient(to bottom, transparent, green);
 }
 
