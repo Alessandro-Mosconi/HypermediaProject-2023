@@ -11,7 +11,6 @@
         <div class="p-[5%] mt-20">
             <TeamList :people="people"/>
         </div>
-        
     </main>
 </template>
 

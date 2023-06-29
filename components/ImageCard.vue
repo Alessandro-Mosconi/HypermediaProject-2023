@@ -1,10 +1,10 @@
 <template>
-    <div class="external-frame relative m-0">
+    <div class="external-frame relative m-0" @mouseover="mouseIn" @mouseleave="mouseOut">
         <div class="mask-cornice absolute h-full z-10">
             <img class="h-full" :style="bgColor" src="@/assets/img/transparent.png" alt="ciao">
         </div>
-        <div class="mask-persona h-full">
-            <img class="img-person h-full w-full" :src="img_link" :alt="alt">
+        <div class="mask-persona h-full" :id="alt">
+            <img class="img-person h-full w-full"  :src="img_link" :alt="alt">
         </div>
     </div>
 </template>
@@ -20,25 +20,33 @@ export default {
         bgColor() {
             return `background-color: ${this.color ? this.color : '#bb86fc'};`;
         }
+    },
+    methods: {        
+        mouseIn(){
+            console.log("dentro")
+            document.getElementById(this.alt).style.backgroundColor = this.color ? this.color : '#bb86fc';
+        },
+        mouseOut(){
+            console.log("fuori")
+            document.getElementById(this.alt).style.backgroundColor = 'transparent';
+        }
     }
 }
 </script>
 
 <style scoped>
-
-
 .mask-persona {
     -webkit-mask-image: url(@/assets/img/image-mask.png);
     mask-image: url(@/assets/img/image-mask.png);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     mask-size: contain;
-    background: linear-gradient(to bottom, transparent, transparent) rgba(187, 134, 252, 0);
-    transition: background 1s ease;
+    transition: .3s ease-in-out;
+    background: linear-gradient(to top, #121212, transparent);
 }
 
 .external-frame:hover .mask-persona {
-    background: linear-gradient(to bottom, rgba(187, 134, 252, 255), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, #121212, transparent);
 }
 
 
