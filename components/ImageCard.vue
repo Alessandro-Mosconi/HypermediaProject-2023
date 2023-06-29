@@ -33,12 +33,12 @@ export default {
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     mask-size: contain;
-    background: linear-gradient(to bottom, transparent, transparent) #2196f3;
+    background: linear-gradient(to bottom, transparent, transparent) rgba(187, 134, 252, 0);
     transition: background 1s ease;
 }
 
 .external-frame:hover .mask-persona {
-    background: linear-gradient(to bottom, green, transparent);
+    background: linear-gradient(to bottom, rgba(187, 134, 252, 255), rgba(0, 0, 0, 0));
 }
 
 
