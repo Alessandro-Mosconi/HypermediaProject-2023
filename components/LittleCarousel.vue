@@ -3,7 +3,7 @@
         <div class="flex justify-between w-full">
 
             <NuxtLink :to="linkLeft">
-                <div class="flex items-center hover:scale-110 transition-transform duration-300 ml-4 md:ml-8">
+                <div class="flex items-center hover:scale-110 transition-transform duration-300 ml-4 md:ml-12">
                     <i class="fa-solid fa-arrow-left text-2xl"></i>
                     <div class="relative h-12 m-3 md:h-24">
                         <div class="h-full w-full">
@@ -22,7 +22,7 @@
             </NuxtLink>
 
             <NuxtLink :to="linkRight">
-                <div class="flex items-center text-right hover:scale-110 transition-transform duration-300 mr-8">
+                <div class="flex items-center text-right hover:scale-110 transition-transform duration-300 mr-4 md:mr-12">
                     <div class="flex flex-col items-end">
                         <div class="font-extralight leading-none mb-2">
                             {{ subtitleRight }}

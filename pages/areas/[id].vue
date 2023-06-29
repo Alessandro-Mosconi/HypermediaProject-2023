@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex text-start font-semibold text-5xl">RELATED PROJECTS</div>
+        <div class="flex w-full p-10 justify-start text-start font-semibold text-5xl">RELATED PROJECTS</div>
         <BigCarousel>
 
         </BigCarousel>
