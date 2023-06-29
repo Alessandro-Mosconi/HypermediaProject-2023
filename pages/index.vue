@@ -26,7 +26,7 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
     <SingleItemImgBg
         title="INVESTMENT AREAS ↗"
         link="/areas"
-        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg"
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/areas/Satellites%20-%20Descriptive%20Picture.jpg?t=2023-06-29T07%3A35%3A12.540Z"
     />
     
 </template>
