@@ -38,7 +38,7 @@ export default {
 }
 
 .external-frame:hover .mask-persona {
-    background: linear-gradient(to bottom, transparent, green);
+    background: linear-gradient(to bottom, green, transparent);
 }
 
 
