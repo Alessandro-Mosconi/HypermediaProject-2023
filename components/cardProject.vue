@@ -1,7 +1,7 @@
 <template>
     <NuxtLink id="about" :to="'/projects/' + projectId">
         <div class="project-card">
-            <div class="relative h-48">
+            <div class="relative h-60">
                 <div class="h-full w-full">
                     <button class="absolute top-2 right-2 bg-transparent">
                         <i class="fa-solid fa-arrow-right text-xl"></i>
@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
 .project-card {
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
 }
 </style>
