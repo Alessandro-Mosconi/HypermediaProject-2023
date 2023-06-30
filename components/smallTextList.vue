@@ -6,9 +6,14 @@
     <div class="component">
     <div class="small-text">{{ smallText }}</div>
     <div class="paragraph-section">
-        <li v-for="item in list">
-            <NuxtLink class="pg" :to='item.link'>{{ item.text }}</NuxtLink>
-        </li>
+        <ul>
+            <li v-for="item in list">
+                <NuxtLink class="pg" :to='item.link'>
+                    <span v-if="item.text && !hideTitle">{{ item.text }}</span>
+                    <img :src="item.img"  v-if="item.img" class="max-h-16 max-w-[85vw] mb-10">
+                </NuxtLink>
+            </li>
+        </ul>
     </div>
     </div>
 </template>
@@ -18,6 +23,7 @@ export default {
     props: [
         'smallText',
         'list',
+        'hideTitle',
     ]
 }
 </script>

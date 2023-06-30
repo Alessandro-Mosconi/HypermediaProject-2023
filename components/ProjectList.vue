@@ -1,6 +1,5 @@
-
 <template>
-    <div class="relative">
+    <div class="relative ">
         <div class="flex md:flex-row flex-col uppercase text-sm absolute inset-x-0 md:bottom-5 bottom-32">
             <button class="uppercase itemButton mr-auto ml-auto md:basis-1/3 basis-full mb-14" v-for="(item, index) in items" :key="index" @click="filterItems(item)">
                 {{ item }}
@@ -8,26 +7,45 @@
         </div>
     </div>
     
-    <!-- Flexbox with two columns -->
-  <div class="max-w-screen-lg mx-auto">
-    <div class="flex flex-wrap justify-center">
-        
-      <div v-for="(p, index) in projects" :key="index" class="w-full sm:w-1/2 p-4">
+  <div>
+    <div class="flex flex-col sm:flex-row justify-center">
+        <div class="flex flex-col"> 
+      <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
 
-        <!-- empty space -->
-        <div v-if="index % 2 ===1" class="sm:flex hidden" style="
-          width: 300px;
-          height: 160px;
-          background-color: rgba(255, 0, 0, 255);
-        "></div>
-
+      <div v-if="index % 2 ===0">
         <NuxtLink id="about" :to="'/projects/' + p.id">
           <cardProject 
             :projectName="p.name"
             :img="p.img_url"
             :area= "p.area"/>
          </NuxtLink>
+         </div>
+
     </div>
+    </div>
+    <!-- second column --> 
+    <div class="flex flex-col justify-center"> 
+      <div v-for="(p, index) in projects" :key="index" class="p-4">
+        <div v-if="index % 2 ===1">
+        <!-- empty space -->
+        <div class="sm:flex hidden" style="
+          width: 300px;
+          height: 160px;
+          background-color: rgba(255, 0, 0, 255);
+        "></div>
+
+      <div>
+        <NuxtLink id="about" :to="'/projects/' + p.id">
+          <cardProject 
+            :projectName="p.name"
+            :img="p.img_url"
+            :area= "p.area"/>
+         </NuxtLink>
+         </div>
+    </div>
+    </div>
+    </div>
+
      </div>
    </div>
 </template>

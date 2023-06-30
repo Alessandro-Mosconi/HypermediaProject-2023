@@ -8,17 +8,17 @@
             <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
                 <i class="fa-solid fa-arrow-left"></i> See all
             </NuxtLink>
-            <div class="flex items-center h-fit">
-                <div class="w-2/5 inline-block">
+            <div class="flex flex-col md:flex-row items-center h-fit">
+                <div class="basis-auto md:basis-2/5 inline-block">
                     <div>
                         <ImageProfileCard class="w-auto md:mr-[5%]" :img_link="person.img_url"
                                           :alt="person.name + ' ' + person.surname"/>
                     </div>
                 </div>
-                <div class="w-auto inline-block">
-                    <div class="content md:mt-[25%]">
+                <div class="basis-auto inline-block">
+                    <div class="content mt-[25%]">
                         <div
-                            class="title md:text-left text-center text-3xl md:text-6xl uppercase  leading-snug md:leading-snug">
+                            class="title md:text-left text-center text-4xl md:text-6xl uppercase  leading-snug md:leading-snug">
                             {{ person.name }}<br>{{ person.surname }}
                         </div>
                         <div
@@ -26,8 +26,8 @@
                             {{ person.role.toUpperCase() }}
                         </div>
                         <div class="md:text-left text-center text-2xl md:text-4xl">
-                            <i class="fa-brands fa-linkedin-in ml-1 mr-8"></i>
-                            <i class="fa-regular fa-envelope"></i>
+                            <a v-if="person.linkedin_url" :href="person.linkedin_url"  target="_blank"><i class="fa-brands fa-linkedin-in ml-1 mr-8 "></i></a>
+                            <a v-if="person.email" :href = "'mailto: '+person.email"><i class="fa-regular fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                                         :paragraph="person.description"></SmallTextParagraph>
                 </div>
                 <div class="mb-10 md:mb-20" v-if="supervisedProjects && supervisedProjects.length>0">
-                    <SmallTextList :smallText="'Supervised projects'" :list="supervisedProjects"></SmallTextList>
+                    <SmallTextList :hideTitle="true" :smallText="'Supervised projects'" :list="supervisedProjects"></SmallTextList>
                 </div>
                 <div class="mb-10 md:mb-20" v-if="listWorkingProject && listWorkingProject.length>0">
-                    <SmallTextList :smallText="'Worked at'" :list="listWorkingProject"></SmallTextList>
+                    <SmallTextList :hideTitle="true"  :smallText="'Worked at'" :list="listWorkingProject"></SmallTextList>
                 </div>
             </div>
         </div>
@@ -61,6 +61,7 @@ export default defineNuxtComponent({
             listWorkingProject.push({
                 text: p.name,
                 link: '/projects/' + p.id,
+                img: p.logo_url,
             })
         }
 
@@ -70,6 +71,7 @@ export default defineNuxtComponent({
             listSupervisedProject.push({
                 text: p.name,
                 link: '/projects/' + p.id,
+                img: p.logo_url,
             })
         }
 
@@ -93,20 +95,5 @@ export default defineNuxtComponent({
     font-family: Bold;
 }
 
-@media screen and (max-width: 55em) {
-    .left {
-        width: 100%;
-    }
-
-    .right {
-        margin-top: 3em;
-        width: 100%;
-        display: block !important;
-    }
-
-    .div {
-        display: block;
-    }
-}
 
 </style>
