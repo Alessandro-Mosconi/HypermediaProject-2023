@@ -18,7 +18,7 @@
         </div>
     </div>
     
-    <ProjectList :projects= "filteredProject"/>
+    <ProjectList2 :projects= "filteredProject"/>
 </template>
 
 <script>
