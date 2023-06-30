@@ -13,7 +13,8 @@
             </div>
         </div>
         <div class="flex w-full p-10 justify-start text-start font-semibold text-5xl">RELATED PROJECTS</div>
-        <BigCarousel>
+        <BigCarousel
+            :projects="listProjects">
 
         </BigCarousel>
 
@@ -36,6 +37,15 @@ export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
         const area = await $fetch('/api/areas/' + route.params.id)
+        let projects = await $fetch('/api/projects')
+        projects = projects.filter((project) => project.area === route.params.id)
+        let listProjects = [];
+        for (let i = 0, j = 0; i < projects.length; i++) {
+            if (i >= 3 && i % 3 === 0)
+                j++;
+            listProjects[j] = listProjects[j] || [];
+            listProjects[j].push(projects[i])
+        }
         let otherAreas = await $fetch('/api/areas')
         otherAreas = otherAreas.filter((area) => area.code !== route.params.id)
         const area1 = otherAreas[0];
@@ -43,7 +53,8 @@ export default defineNuxtComponent({
         return {
             area,
             area1,
-            area2
+            area2,
+            listProjects
         }
     }
 })
