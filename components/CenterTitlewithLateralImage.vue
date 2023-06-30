@@ -3,7 +3,7 @@
 -->
 <template>
     <main>
-        <div class="brightness-50 absolute filter lg:top-[10%] md:mr-[50%] ">
+        <div class="brightness-50 absolute filter lg:top-[10%] md:mr-[35%]  xl:mr-[50%] ">
             <img :style="customWidth" src="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>   
         </div>
                  
