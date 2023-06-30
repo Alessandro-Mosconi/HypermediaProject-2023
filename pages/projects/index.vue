@@ -2,28 +2,24 @@
     Page with the list of all the projects.
 -->
 <template>
+    <div class="flex flex-col items-center">
     <centerTitleImg 
-            title="OUR PORTFOLIO" 
-            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
-            />
-    <button class="text-white h-40 w-40" @click="setFilter()"></button>
-    <div class="relative ">
-        <div class="flex md:flex-row flex-col uppercase text-sm absolute inset-x-0 md:bottom-5 bottom-32">
-            <button class="uppercase itemButton mr-auto ml-auto md:basis-1/3 basis-full mb-14" @click="filterItems('')">
-                All
-            </button>
-            <button class="uppercase itemButton mr-auto ml-auto md:basis-1/3 basis-full mb-14" v-for="(area, index) in areas" :key="index" @click="filterItems(area.code)">
-                {{ area.name }}
-            </button>
-        </div>
-    </div>
-    
+      title="OUR PORTFOLIO" 
+      img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+    />
+    <div class="flex flex-wrap items-center justify-center">
+        <button :style="{ backgroundColor: currentArea==='' ? '#F65933' : '' }" class="uppercase itemButton mb-14" @click="filterItems('')">
+        All
+    </button>
+    <button :style="{ backgroundColor: currentArea===area.code ? '#F65933' : '' }" v-for="(area, index) in areas" :key="index" @click="filterItems(area.code)" class="uppercase itemButton mb-14">
+      {{ area.name }}
+    </button>
+</div>
     <ProjectList2 :projects= "filteredProject"/>
-</template>
+</div>
+  </template>
 
 <script>
-import { stringify } from 'postcss'
-
     export default defineNuxtComponent({
         async asyncData() {
             const projects = await $fetch('/api/projects')
@@ -32,15 +28,31 @@ import { stringify } from 'postcss'
             return {
                 projects,
                 filteredProject,
+                currentArea: "",
                 areas
             }
         }, 
         methods: {
             filterItems(filter){
                 this.filteredProject = this.projects.filter(r => r.area.toLowerCase().includes(filter?.toLowerCase()))
+                this.currentArea = filter;
             }
 
         }
     })
 </script>
 
+<style scoped>
+.itemButton {
+    /* Add your button styles here */
+    background-color: #f2f2f200;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+</style>
