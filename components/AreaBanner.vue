@@ -13,7 +13,6 @@
 
 <script>
 export default {
-    name: 'BannerComponent',
     props: {
         imageUrl: String,
         area: String,

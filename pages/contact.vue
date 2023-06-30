@@ -113,7 +113,6 @@ export default {
   },
   methods: {
     sendEmail() {
-        console.log('la')
       try {/*
         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target,
         'YOUR_USER_ID', {
@@ -121,7 +120,6 @@ export default {
           email: this.email,
           message: this.message
         })*/
-        console.log('qua')
         console.log(this.name + this.mail + this.message + this.termAndCondition)
 
       } catch(error) {

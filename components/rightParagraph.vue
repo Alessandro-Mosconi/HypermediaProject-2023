@@ -40,7 +40,6 @@ export default {
         return this.chipLink;
     },
     isChip () {
-      console.log(this.chipText)
       if(!!this.chipText) {
           return true;
         }
