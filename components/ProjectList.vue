@@ -1,11 +1,4 @@
 <template>
-    <div class="relative ">
-        <div class="flex md:flex-row flex-col uppercase text-sm absolute inset-x-0 md:bottom-5 bottom-32">
-            <button class="uppercase itemButton mr-auto ml-auto md:basis-1/3 basis-full mb-14" v-for="(item, index) in items" :key="index" @click="filterItems(item)">
-                {{ item }}
-            </button>
-        </div>
-    </div>
     
   <div>
     <div class="flex flex-col sm:flex-row justify-center">
@@ -54,17 +47,7 @@
 export default {
     props: [
         'projects'
-    ],
-    data() {
-        return {
-            items: ['All', 'Satellites', 'Space Mining', 'Space Tourism'],
-        };
-    },
-    methods: {
-        filterItems(filter) {
-            alert(`Filtering items by: ${filter}`);
-        },
-    },
+    ]
 }
 </script>
 
