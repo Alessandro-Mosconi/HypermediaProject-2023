@@ -1,38 +1,17 @@
 <template>
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-            <div v-for="project in projects" data-carousel-item>
-                <div v-if="project.length > 0">
+        <div class="flex relative h-56 overflow-hidden md:h-96 ">
+            <div v-for="projectChunk in projects" class="flex justify-center" data-carousel-item>
+                <div v-for="project in projectChunk" class="m-6">
                     <CardProject
-                        :projectName="project[0].name"
-                        :img="project[0].img_url"
-                        :area="project[0].area"
-                    />
-                </div>
-                <div v-if="project.length > 1">
-                    <CardProject
-                        :projectName="project[1].name"
-                        :img="project[1].img_url"
-                        :area="project[1].area"
-                    />
-                </div>
-                <div v-if="project.length > 2">
-                    <CardProject
-                        :projectName="project[2].name"
-                        :img="project[2].img_url"
-                        :area="project[2].area"
+                        :projectName="project.name"
+                        :projectId="project.id"
+                        :img="project.img_url"
+                        :area="project.area"
                     />
                 </div>
             </div>
-            <!--            &lt;!&ndash; Item 1 &ndash;&gt;-->
-            <!--            <div class="duration-700 ease-in-out" data-carousel-item>-->
-            <!--                <img src="https://shorturl.at/owKU6" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">-->
-            <!--            </div>-->
-            <!--            &lt;!&ndash; Item 2 &ndash;&gt;-->
-            <!--            <div class="hidden duration-700 ease-in-out" data-carousel-item>-->
-            <!--                <img src="https://shorturl.at/fQV38" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">-->
-            <!--            </div>-->
         </div>
         <!-- Slider controls -->
         <button type="button"
@@ -63,10 +42,6 @@
 <script>
 
 export default {
-    data: () => ({
-        colors: [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']],
-    }),
-
     props: {
         'projects': Array,
     },
