@@ -1,7 +1,13 @@
 <template>
-    <div id="carousel" class="relative w-full">
+    <div id="carousel"
+         class="relative w-full"
+         @mousedown="startScroll"
+         @mouseup="stopScroll"
+         @mouseleave="stopScroll">
         <!-- Carousel wrapper -->
-        <div class="flex relative h-56 overflow-y-hidden md:h-96">
+        <div class="flex relative h-56 overflow-y-hidden md:h-96"
+             ref="carouselWrapper"
+             :style="{ cursor: isScrolling ? 'grabbing' : 'grab' }">
             <div class="flex">
                 <CardProject
                     :id = "'card-' + project.id"
@@ -78,15 +84,38 @@ export default {
     props: {
         projects: Array,
     },
+    data() {
+        return {
+            isScrolling: false,
+            startX: 0,
+            scrollLeft: 0,
+        };
+    },
     methods: {
         prevSlide() {
-
+            // Handle previous slide
         },
         nextSlide() {
-
+            // Handle next slide
+        },
+        startScroll(event) {
+            this.isScrolling = true;
+            this.startX = event.clientX - this.$refs.carouselWrapper.offsetLeft;
+            this.scrollLeft = this.$refs.carouselWrapper.scrollLeft;
+            window.addEventListener("mousemove", this.scrollCarousel);
+        },
+        stopScroll() {
+            this.isScrolling = false;
+            window.removeEventListener("mousemove", this.scrollCarousel);
+        },
+        scrollCarousel(event) {
+            if (!this.isScrolling) return;
+            event.preventDefault();
+            const x = event.clientX - this.$refs.carouselWrapper.offsetLeft;
+            const scrollOffset = x - this.startX;
+            this.$refs.carouselWrapper.scrollLeft = this.scrollLeft - scrollOffset;
         },
     },
-    mounted() {}
 };
 </script>
 
