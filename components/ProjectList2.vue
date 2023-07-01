@@ -11,7 +11,7 @@
             <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
                     <div v-if="index % 2 === 0">
-                        <CardProject :projectName="p.name" :img="p.img_url" :area="p.area"/>
+                        <cardProject :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
                     </div>
 
                 </div>
@@ -22,13 +22,12 @@
                     <div v-if="index % 2 === 1">
                         <!-- empty space -->
                         <div class="sm:flex hidden" style="
-          width: 400px;
-          height: 100px;
-          background-color: rgba(255, 0, 0,0);
-        "></div>
-
+                            width: 400px;
+                            height: 100px;
+                            background-color: rgba(255, 0, 0,0);
+                        "></div>
                         <div>
-                                <cardProject :projectName="p.name" :img="p.img_url" :area="p.area"/>
+                                <cardProject :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
                         </div>
                     </div>
                 </div>
