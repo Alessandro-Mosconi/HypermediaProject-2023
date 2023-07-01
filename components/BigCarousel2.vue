@@ -108,7 +108,11 @@ export default {
         scrollToSlide() {
             const slideWidth = this.$refs.carouselWrapper.children[0].offsetWidth;
             const scrollOffset = this.currentIndex * slideWidth;
-            this.$refs.carouselWrapper.scrollLeft = scrollOffset;
+
+            this.$refs.carouselWrapper.scrollTo({
+                left: scrollOffset,
+                behavior: 'smooth',
+            });
         },
         startScroll(event) {
             this.isScrolling = true;
