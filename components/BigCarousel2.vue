@@ -1,6 +1,6 @@
 <template>
     <div id="carousel"
-         class="relative w-full"
+         class="relative w-full mb-20"
          @mousedown="startScroll"
          @mouseup="stopScroll"
          @mouseleave="stopScroll">
@@ -89,20 +89,42 @@ export default {
             isScrolling: false,
             startX: 0,
             scrollLeft: 0,
+            currentIndex: 0,
         };
     },
     methods: {
         prevSlide() {
-            // Handle previous slide
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.scrollToSlide();
+            }
         },
         nextSlide() {
-            // Handle next slide
+            if (this.currentIndex < this.projects.length - 1) {
+                this.currentIndex++;
+                this.scrollToSlide();
+            }
+        },
+        scrollToSlide() {
+            const slideWidth = this.$refs.carouselWrapper.children[0].offsetWidth;
+            const scrollOffset = this.currentIndex * slideWidth;
+            this.$refs.carouselWrapper.scrollLeft = scrollOffset;
         },
         startScroll(event) {
             this.isScrolling = true;
             this.startX = event.clientX - this.$refs.carouselWrapper.offsetLeft;
             this.scrollLeft = this.$refs.carouselWrapper.scrollLeft;
             window.addEventListener("mousemove", this.scrollCarousel);
+
+            // Disable scrolling if already at the beginning or end
+            if (
+                (this.currentIndex === 0 && this.startX < 0) ||
+                (this.currentIndex === this.projects.length - 1 &&
+                    this.startX > this.$refs.carouselWrapper.offsetWidth)
+            ) {
+                this.isScrolling = false;
+                window.removeEventListener("mousemove", this.scrollCarousel);
+            }
         },
         stopScroll() {
             this.isScrolling = false;
@@ -122,27 +144,18 @@ export default {
 <style scoped>
 /* width */
 ::-webkit-scrollbar {
-    height: 2vh;
-}
-
-::-webkit-scrollbar-track-piece {
-    height: 50px;
+    height: 1vh;
 }
 
 ::-webkit-scrollbar-track {
     background: black;
-    margin: 200px;
+    margin: 80vh;
 }
-
-/* Track */
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgba(230, 230, 230, 1);
     border-radius: 40px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(230, 230, 230, 0.8);
 }
