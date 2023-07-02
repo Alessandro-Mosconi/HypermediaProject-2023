@@ -10,7 +10,7 @@
              :style="{ cursor: isScrolling ? 'grabbing' : 'grab' }">
             <div class="flex">
                 <CardProject
-                    :id = "'card-' + project.id"
+                    :id="'card-' + project.id"
                     v-for="project in projects"
                     :key="project.id"
                     :projectName="project.name"
@@ -155,12 +155,13 @@ export default {
     background: black;
     margin: 80vh;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: rgba(230, 230, 230, 1);
+    background: rgba(220, 220, 220, 1);
     border-radius: 40px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(230, 230, 230, 0.8);
+    background: rgba(230, 230, 230, 0.85);
 }
 </style>
