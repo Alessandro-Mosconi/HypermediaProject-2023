@@ -11,7 +11,7 @@
                         :areaCode="project.area"/>
                 </div>
                 <div class="mb-10 ">
-                    <SmallTextList :smallText="'Supervised by'" :list="supervisor"/>
+                    <SmallTextList :smallText="'Supervised by'" :list="supervisors"/>
                 </div>
                 <div class="mb-10 ">
                     <SmallTextList :smallText="'Team'" :list="team"/>
@@ -22,6 +22,16 @@
                 </div>
             </div>
         </div>
+        <LittleCarousel
+            :imageLeft="prevProject.img_url"
+            :subtitleLeft="'previous project'"
+            :titleLeft="prevProject.name"
+            :linkLeft="'/projects/' + prevProject.id"
+            :imageRight="nextProject.img_url"
+            :subtitleRight="'next project'"
+            :titleRight="nextProject.name"
+            :linkRight="'/projects/' + nextProject.id">
+        </LittleCarousel>
     </main>
 </template>
 
@@ -47,11 +57,16 @@ export default defineNuxtComponent({
             link: '/team/' + supervisor.id,
         })
 
+        const prevProject = await $fetch('/api/projects/' + ((project.id - 1)%16)); //todo
+        const nextProject = await $fetch('/api/projects/' + ((project.id + 1)%16)); //todo
+
         project.capital_mln = project.capital_mln + ' mln';
         return {
-            project: project,
-            supervisor: listSupervisor,
+            project,
+            supervisors: listSupervisor,
             team: listWorkersProject,
+            prevProject,
+            nextProject,
         }
     }
 })

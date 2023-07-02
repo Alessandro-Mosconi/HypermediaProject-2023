@@ -4,15 +4,15 @@
 
 <template>
     <div class="flex">
-        <div class="field 2-full lg:w-2/5 md:text-lg" :style="{color: getColorByArea(areaCode)}">
-            CLIENT
+        <div class="2-full lg:w-2/5 md:text-lg">
+            <div class="field" :style="{color: getColorByArea(areaCode)}">CLIENT</div>
             <img :src="img" v-if="img" class="max-h-16 max-w-[85vw] mb-10">
         </div>
-        <div class="flex-grow mt-3 md:mt-0 w-full lg:w-3/5">
+        <div class="mt-3 md:mt-0 w-full lg:w-3/5">
              <div class="field" :style="{color: getColorByArea(areaCode)}">INVESTMENT</div>
             <p>{{ investment }}</p>
         </div>
-        <div class="flex-shrink">
+        <div class="">
             <div class="field" :style="{color: getColorByArea(areaCode)}">DATES</div>
             <p>{{ dates }}</p>
         </div>
