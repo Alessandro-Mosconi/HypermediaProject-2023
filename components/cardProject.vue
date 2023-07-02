@@ -24,7 +24,7 @@
 export default {
     props: {
         projectName: String,
-        projectId: String,
+        projectId: Number,
         area: String,
         img: String,
     }

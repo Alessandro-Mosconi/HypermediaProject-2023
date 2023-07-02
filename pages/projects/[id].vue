@@ -2,7 +2,7 @@
 
 <template>
     <main>
-        <ProjectBanner area="pro.name" areaCode="pro.area" img="pro.img_url" ></ProjectBanner>
+        <ProjectBanner :name="pro.name" :areaCode="pro.area" :img="pro.img_url" ></ProjectBanner>
         <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
             <div class="mt-10 md:mt-20">
                 <div class="mb-10 md:mb-20">

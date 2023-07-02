@@ -12,11 +12,17 @@
 </template>
 
 <script>
+import { useColor } from '~/stores/color';
+
     export default defineNuxtComponent({
-        async asyncData() {
+        async asyncData({ $pinia }) {
+            const areaColors = useColor($pinia).areaColors
+            
             const projects = await $fetch('/api/projects/best-projects')
+
             return {
-                projects
+                projects,
+                areaColors
             }
         }
     })

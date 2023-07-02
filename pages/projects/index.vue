@@ -8,11 +8,11 @@
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         />
         <div class="flex flex-wrap items-center justify-center">
-            <button :style="{ backgroundColor: currentArea === '' ? '#F65933' : '' }" class="uppercase itemButton mb-14"
+            <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
                     @click="filterItems('')">
                 All
             </button>
-            <button :style="{ backgroundColor: currentArea === area.code ? '#F65933' : '' }"
+            <button :style="{ backgroundColor: currentArea === area.code ? getColorByArea(currentArea) : '' }"
                     v-for="(area, index) in areas" :key="index" @click="filterItems(area.code)"
                     class="uppercase itemButton mb-14">
                 {{ area.name }}
@@ -23,8 +23,12 @@
 </template>
 
 <script>
+import { useColor } from '~/stores/color';
+
 export default defineNuxtComponent({
-    async asyncData() {
+    async asyncData({ $pinia }) {
+        const areaColors = useColor($pinia).areaColors;
+
         const projects = await $fetch('/api/projects')
         const areas = await $fetch('/api/areas')
         const filteredProject = projects;
@@ -32,13 +36,18 @@ export default defineNuxtComponent({
             projects,
             filteredProject,
             currentArea: "",
-            areas
+            areas,
+            areaColors
         }
     },
     methods: {
         filterItems(filter) {
             this.filteredProject = this.projects.filter(r => r.area.toLowerCase().includes(filter?.toLowerCase()))
             this.currentArea = filter;
+        },
+        getColorByArea(areaCode) {
+            const color = this.areaColors.find( row => row.code === areaCode ).color;
+            return color? color : '#FFFFFF' ;
         }
 
     }
