@@ -8,7 +8,8 @@
                         :img="project.logo_url"
                         :investment="project.capital_mln"
                         :dates="project.starting_date + ' - ' + ending_date"
-                        :areaCode="project.area"/>
+                        :areaCode="project.area"
+                        :area="area"/>
                 </div>
                 <div class="mb-10 ">
                     <SmallTextList :smallText="'Supervised by'" :list="supervisors"/>
@@ -42,6 +43,8 @@ export default defineNuxtComponent({
         const project = await $fetch('/api/projects/' + route.params.id)
         const supervisor = await $fetch('/api/people/' + project.id_supervisor)
         const team = await $fetch('/api/people/team/' + project.id)
+        let area = await $fetch('/api/areas/')
+        area = area.filter(a => a.code === project.area)[0]
 
         let listWorkersProject = [];
         for (let p of team) {
@@ -67,6 +70,7 @@ export default defineNuxtComponent({
             team: listWorkersProject,
             prevProject,
             nextProject,
+            area
         }
     }
 })
