@@ -40,8 +40,8 @@
                 <div class="mb-10 md:mb-20" v-if="supervisedProjects && supervisedProjects.length>0">
                     <SmallTextList :hideTitle="true" :smallText="'Supervised projects'" :list="supervisedProjects"></SmallTextList>
                 </div>
-                <div class="mb-10 md:mb-20" v-if="listWorkingProject && listWorkingProject.length>0">
-                    <SmallTextList :hideTitle="true"  :smallText="'Worked at'" :list="listWorkingProject"></SmallTextList>
+                <div class="mb-10 md:mb-20" v-if="workingProjects && workingProjects.length>0">
+                    <SmallTextList :hideTitle="true"  :smallText="'Worked at'" :list="workingProjects"></SmallTextList>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@ export default defineNuxtComponent({
 
         return {
             person: person,
-            supervisedProjects: listWorkingProject,
+            supervisedProjects: listSupervisedProject,
             workingProjects: listWorkingProject,
         }
     }

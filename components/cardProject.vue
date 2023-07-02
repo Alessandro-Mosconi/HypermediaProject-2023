@@ -12,9 +12,9 @@
             <NuxtLink :to="'/projects/' + projectId"><h1 class="text-xl font-bold mt-4">{{ projectName }}</h1>
             </NuxtLink>
             <NuxtLink :to="'/areas/' + area">
-            <h3 v-if="area === 'SPACE_MINING'" class="text-sm text-[#F65933]">SPACE MINING</h3>
-            <h3 v-if="area === 'SPACE_TOURISM'" class="text-sm text-[#7DD2F4]">SPACE TOURISM </h3>
-            <h3 v-if="area === 'SATELLITES'" class="text-sm text-[#BB86FC]">SATELLITES</h3>
+                <h3 v-if="area === 'SPACE_MINING'" class="text-sm text-[#F65933]">SPACE MINING</h3>
+                <h3 v-if="area === 'SPACE_TOURISM'" class="text-sm text-[#7DD2F4]">SPACE TOURISM </h3>
+                <h3 v-if="area === 'SATELLITES'" class="text-sm text-[#BB86FC]">SATELLITES</h3>
             </NuxtLink>
         </div>
     </NuxtLink>
@@ -24,7 +24,7 @@
 export default {
     props: {
         projectName: String,
-        projectId: String,
+        projectId: Number,
         area: String,
         img: String,
     }

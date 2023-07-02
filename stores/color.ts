@@ -1,20 +1,23 @@
 import { acceptHMRUpdate } from "pinia";
 
-export const useContact = defineStore('color', {
+export const useColor = defineStore('color', {
     state: () => ({
         lilac: '#BB86FC',
         lightBlue: '#7DD2F4',
         orange: '#F65933',
+        areaColors : [
+            { code: 'SPACE_MINING', color: '#F65933'},
+            { code: 'SPACE_TOURISM', color: '#7DD2F4'},
+            { code: 'SATELLITES', color: '#BB86FC'},
+            { code: '', color: '#FFFFFF30'},
+        ]
     }),
 
-
-
     getters: {
-        /*
-        getEmail: (state) => state.email,
-        getAddress: (state) => state.address,
-        getPhoneNumbers: (state) => state.phoneNumbers,*/
-    },
+        getColorByAreaCode(state) {
+          return (areaCode: string) => state.areaColors.find((r: any) => r.code === areaCode)?.color;
+        },
+      },
 
     actions: {
 
@@ -22,5 +25,5 @@ export const useContact = defineStore('color', {
 })
 
 if (import.meta.hot) {
-    import.meta.hot.accept(acceptHMRUpdate(useContact, import.meta.hot))
+    import.meta.hot.accept(acceptHMRUpdate(useColor, import.meta.hot))
 }
