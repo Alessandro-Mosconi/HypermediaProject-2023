@@ -36,7 +36,6 @@ export default defineNuxtComponent({
         img: String,
         investment: String,
         dates: String,
-        paragraph: String,
         areaCode: String,
     },
     methods: {

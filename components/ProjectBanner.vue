@@ -3,10 +3,11 @@
         <img class="w-full h-[40vh] object-cover md:h-[70vh]" :src="img" alt="Banner Image"/>
         <div
             class="absolute font-[500] uppercase leading-[4vh] text-4xl left-[5vh] bottom-[3vh] md:mt-[5%] md:text-5xl lg:text-7xl mt-[25%]">
+            <div v-if="top !== '0'" class="text-4xl font-light mb-8">#0{{ top }} BEST PROJECT</div>
             {{ name }}<br/>
             <NuxtLink :to="'/areas/' + areaCode">
                 <button class="text-xl font-normal uppercase itemButton"
-                        :style="`border: 2px solid ${getColorByArea(areaCode)};`">
+                        :style="`border-color: ${getColorByArea(areaCode)};`">
                     {{ area.name + ' ↗' }}
                 </button>
             </NuxtLink>
@@ -21,10 +22,7 @@ export default defineNuxtComponent({
     async asyncData({$pinia}) {
         const areaColors = useColor($pinia).areaColors;
 
-        const area = await $fetch('/api/areas/SPACE_TOURISM')
-
         return {
-            genericArea: area,
             areaColors
         }
     },
@@ -33,6 +31,7 @@ export default defineNuxtComponent({
         name: String,
         areaCode: String,
         area: String,
+        top: String,
     },
     methods: {
         getColorByArea(areaCode) {
@@ -46,11 +45,9 @@ export default defineNuxtComponent({
 <style scoped>
 .itemButton {
     background-color: #121212;
-    border: 2px solid white;
+    border: 2px solid;
     border-radius: 40px;
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 15px 25px;
     margin-bottom: 14px;
     margin-right: 5px;
     margin-left: 5px;

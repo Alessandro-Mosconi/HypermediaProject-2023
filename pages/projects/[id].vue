@@ -1,6 +1,10 @@
 <template>
     <main>
-        <ProjectBanner :name="project.name" :areaCode="project.area" :img="project.img_url"></ProjectBanner>
+        <ProjectBanner
+            :name="project.name"
+            :areaCode="project.area"
+            :img="project.img_url"
+            :top="project.top" />
         <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
             <div class="mt-10 md:mt-20">
                 <div class="mb-10 ">
@@ -9,7 +13,8 @@
                         :investment="project.capital_mln"
                         :dates="project.starting_date + ' - ' + ending_date"
                         :areaCode="project.area"
-                        :area="area"/>
+                        :area="area"
+                        />
                 </div>
                 <div class="mb-10 ">
                     <SmallTextList :smallText="'Supervised by'" :list="supervisors"/>
@@ -45,7 +50,7 @@ export default defineNuxtComponent({
         const team = await $fetch('/api/people/team/' + project.id)
         let area = await $fetch('/api/areas/')
         area = area.filter(a => a.code === project.area)[0]
-
+        project.top = project.top.toString()
         let listWorkersProject = [];
         for (let p of team) {
             listWorkersProject.push({
@@ -60,9 +65,10 @@ export default defineNuxtComponent({
             link: '/team/' + supervisor.id,
         })
 
-        const prevProject = await $fetch('/api/projects/' + ((project.id - 1)%16)); //todo
-        const nextProject = await $fetch('/api/projects/' + ((project.id + 1)%16)); //todo
+        const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todo
+        const nextProject = await $fetch('/api/projects/' + ((project.id + 1) % 16)); //todo
 
+        console.log(project.top)
         project.capital_mln = project.capital_mln + ' mln';
         return {
             project,
