@@ -17,6 +17,16 @@
                 </div>
             </div>
         </div>
+        <LittleCarousel
+            :imageLeft="pre_pro.img_url"
+            :subtitleLeft="'previous project'"
+            :titleLeft="pre_pro.name"
+            :linkLeft="'/projects/' + pre_pro.id"
+            :imageRight="next_pro.img_url"
+            :subtitleRight="'next project'"
+            :titleRight="next_pro.name"
+            :linkRight="'/projects/' + next_pro.id">
+        </LittleCarousel>
     </main>
 </template>
 
@@ -25,6 +35,8 @@ export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
         const pro = await $fetch('/api/projects/' + route.params.id)
+        const pre_pro = await $fetch('/api/projects/' + ((pro.id - 1)%16)); //todo
+        const next_pro = await $fetch('/api/projects/' + ((pro.id + 1)%16)); //todo
         const supervisor = await $fetch('/api/people/' + pro.id_supervisor)
         const team = await $fetch('/api/people/team/' + pro.id)
         
@@ -44,6 +56,8 @@ export default defineNuxtComponent({
 
         return {
             pro,
+            pre_pro,
+            next_pro,
             supervisor: listSupervisor,
             team: listWorkersProject,
         }
