@@ -18,7 +18,11 @@ module.exports = {
         },
       backgroundPosition: {
         'center-down': 'center -.5%'
-        }
+        },
+      fontFamily: {
+        'ABC': 'normal',
+        'ABCbold': 'bold'
+      }
       }
       
   },

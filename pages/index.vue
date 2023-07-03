@@ -3,8 +3,11 @@
 -->
 <template>
     <centerTitleImg 
-        title="SHAPING THE FUTURE OF SPACE" 
+        title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+        class="md:!h-[100vh] !h-[50vh]"
+            :widthImage="'110%'"
+            :posImage="'top'"
         />
     <TitlePos
         paragraph="We are Visionaries aiming for a boundless universe." 
@@ -25,11 +28,23 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
     ></Manifest>
     <SingleItemImgBg
         title="INVESTMENT AREAS ↗"
-        link="/area"
-        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/satellite_homepage.jpg"
+        link="/areas"
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/areas/Satellites%20-%20Descriptive%20Picture.jpg?t=2023-06-29T07%3A35%3A12.540Z"
     />
     
 </template>
+
+<script>
+
+export default {
+    methods: {
+        bgImage () {
+            console.log(screen.width)
+            return '';
+        },
+}
+}
+</script>
 
 <style>
 main {

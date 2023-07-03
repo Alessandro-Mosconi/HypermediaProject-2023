@@ -1,82 +1,84 @@
-<!--
-    Page description for a single location.
-    As described in the SmallCard component, the same component was used for both Dog and Location since they have the same structure.
--->
 <template>
     <main>
-        <div class = "info-group">
-            <div id = "data-div">
-                <p class = "data">Name: <span>{{ location.name }}</span></p>
-                <p class = "data">City: <span>{{ location.city }}</span></p>
+        <ProjectBanner
+            :name="project.name"
+            :areaCode="project.area"
+            :img="project.img_url"
+            :top="project.top" />
+        <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
+            <div class="mt-10 md:mt-20">
+                <div class="mb-10 ">
+                    <ProjectDetails
+                        :img="project.logo_url"
+                        :investment="project.capital_mln"
+                        :dates="project.starting_date + ' - ' + ending_date"
+                        :areaCode="project.area"
+                        :area="area"
+                        />
+                </div>
+                <div class="mb-10 ">
+                    <SmallTextList :smallText="'Supervised by'" :list="supervisors"/>
+                </div>
+                <div class="mb-10 ">
+                    <SmallTextList :smallText="'Team'" :list="team"/>
+                </div>
+                <div class="mb-10 md:mb-20">
+                    <SmallTextParagraph :smallText="'Project Description'"
+                                        :paragraph="project.description"></SmallTextParagraph>
+                </div>
             </div>
         </div>
-        <div id = "dog-card-div">
-            <SmallCard v-for = "dog of location.dogs" :link = "'/dogs/' + dog.id" :title = "dog.name" :subtitle = "dog.breed"/>
-        </div>
+        <LittleCarousel
+            :imageLeft="prevProject.img_url"
+            :subtitleLeft="'previous project'"
+            :titleLeft="prevProject.name"
+            :linkLeft="'/projects/' + prevProject.id"
+            :imageRight="nextProject.img_url"
+            :subtitleRight="'next project'"
+            :titleRight="nextProject.name"
+            :linkRight="'/projects/' + nextProject.id">
+        </LittleCarousel>
     </main>
 </template>
 
 <script>
-    /*
-        The defineNuxtComponent gets us access to the asyncData property.
-        This is the first function that is called by nuxt when the page is called.
-        We can use this to pre-load the data to make it available to the user.
-    */
-    export default defineNuxtComponent({
-        async asyncData() {
-            // Despite using the options API, this.$route is not available in asyncData.
-            const route = useRoute()
-            const location = await $fetch('/api/locations/' + route.params.id)
-
-            return {
-                location
-            }
+export default defineNuxtComponent({
+    async asyncData() {
+        const route = useRoute()
+        const project = await $fetch('/api/projects/' + route.params.id)
+        const supervisor = await $fetch('/api/people/' + project.id_supervisor)
+        const team = await $fetch('/api/people/team/' + project.id)
+        let area = await $fetch('/api/areas/')
+        area = area.filter(a => a.code === project.area)[0]
+        project.top = project.top.toString()
+        let listWorkersProject = [];
+        for (let p of team) {
+            listWorkersProject.push({
+                text: p.name + ' ' + p.surname,
+                link: '/team/' + p.id,
+            })
         }
-    })
-    
+
+        let listSupervisor = [];
+        listSupervisor.push({
+            text: supervisor.name + ' ' + supervisor.surname,
+            link: '/team/' + supervisor.id,
+        })
+
+        const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todo
+        const nextProject = await $fetch('/api/projects/' + ((project.id + 1) % 16)); //todo
+
+        console.log(project.top)
+        project.capital_mln = project.capital_mln + ' mln';
+        return {
+            project,
+            supervisors: listSupervisor,
+            team: listWorkersProject,
+            prevProject,
+            nextProject,
+            area
+        }
+    }
+})
 </script>
 
-<style>
-    #dog-card-div {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px
-    }
-
-    #main-img {
-    width: 30%;
-    height: auto;
-    }
-
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info-group {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .data {
-        font-weight: bolder;
-        font-size: 20pt
-    }
-
-    .data span {
-        font-weight: 100;
-        font-size: 15pt;
-    }
-
-    #description {
-        padding: 0 20px 0 20px;
-        font-size: 15pt;
-    }
-</style>

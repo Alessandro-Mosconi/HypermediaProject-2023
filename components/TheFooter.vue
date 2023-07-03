@@ -9,13 +9,10 @@
         <div class="md:grid md:grid-cols-2 md:gap-10flex flex-col  space-y-4">
             <div class="flex flex-col  space-y-4">
                 <div>
-                    venture.agency@mail.com 
+                    {{contacts.email}}
                 </div>
-                <div>
-                    +39 333 12345678
-                </div>
-                <div>
-                    +39 333 12345678 
+                <div v-for="phoneNumber in contacts.phoneNumbers">
+                    {{ phoneNumber }}
                 </div>
             </div>
             <div class="flex flex-col  space-y-4">
@@ -32,23 +29,9 @@
     <h2 class="text-2xl ml-auto mr-auto mt-20 mb-10 md:text-5xl lg:text-7xl">striving to ignite possibilities</h2>
 </template>
 
-
-<script>
-export default {
-  data() {
-    return {
-      myVariable: false
-    }
-  },
-  
-  methods: {
-    toggleVariable() {
-      this.myVariable = !this.myVariable;
-    }
-  }
-}
+<script setup>
+    const contacts = useContact()
 </script>
-
 
 <style scoped>
 

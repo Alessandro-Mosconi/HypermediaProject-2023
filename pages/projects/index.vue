@@ -2,26 +2,71 @@
     Page with the list of all the projects.
 -->
 <template>
-    <centerTitleImg 
-            title="OUR PORTFOLIO" 
+    <div class="flex flex-col items-center">
+        <centerTitleImg
+            title="OUR PORTFOLIO"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
-            />
-    <CardProject 
-    projectName="Project Name"
-    img="https://media.npr.org/assets/img/2016/04/05/ackbar_wide-f0a673c875361830e84eaa3b98f7f886a750b0e5.jpg"
-    area="Space Mining"
-    colorArea="#7dd2f4"
-    ></CardProject>
-    <SmallerCardProject
-    projectName="Becoming multiplanetary"
-    img="https://media.npr.org/assets/img/2016/04/05/ackbar_wide-f0a673c875361830e84eaa3b98f7f886a750b0e5.jpg"
-    ></SmallerCardProject>
+            :widthImage="'contain'"
+            class="md:!h-[75vh] h-[40vh]"
+        />
+        <div class="flex flex-wrap items-center justify-center !h-[10vh] mb-10 text-sm md:text-2xl ">
+            <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
+                    @click="filterItems('')">
+                All
+            </button>
+            <button :style="{ backgroundColor: currentArea === area.code ? getColorByArea(currentArea) : '' }"
+                    v-for="(area, index) in areas" :key="index" @click="filterItems(area.code)"
+                    class="uppercase itemButton mb-14">
+                {{ area.name }}
+            </button>
+        </div>
+        <ProjectList2 class="w-full" :projects="filteredProject"/>
+    </div>
 </template>
 
 <script>
-    export default {
+import { useColor } from '~/stores/color';
+
+export default defineNuxtComponent({
+    async asyncData({ $pinia }) {
+        const areaColors = useColor($pinia).areaColors;
+
+        const projects = await $fetch('/api/projects')
+        const areas = await $fetch('/api/areas')
+        const filteredProject = projects;
+        return {
+            projects,
+            filteredProject,
+            currentArea: "",
+            areas,
+            areaColors
+        }
+    },
+    methods: {
+        filterItems(filter) {
+            this.filteredProject = this.projects.filter(r => r.area.toLowerCase().includes(filter?.toLowerCase()))
+            this.currentArea = filter;
+        },
+        getColorByArea(areaCode) {
+            const color = this.areaColors.find( row => row.code === areaCode ).color;
+            return color? color : '#FFFFFF' ;
+        }
+
     }
+})
 </script>
 
-<style>
+<style scoped>
+.itemButton {
+    /* Add your button styles here */
+    background-color: #f2f2f200;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
 </style>

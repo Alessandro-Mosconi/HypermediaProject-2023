@@ -1,117 +1,90 @@
-<!--
-    Card to display information in the list page.
-    This component could be achieved with the SmallCard component by using a <slot> to insert the div with the image. The solution used here allows for better control of the layout.
-    Since the information shown can be categorized into title and subtitle, it was preferred to use only one component for both dogs and location.
-
-    PROPS:
-    - title: main information to display
-    - subtitle: second information to display
-    - link: link to the page description
--->
 <template>
-    <div class="card">
-        <div class="image-div" :style="bgImage">
-            <h1>→</h1>
+    <NuxtLink class="selection" id="about" :to="'/projects/' + projectId">
+        <div>
+            <div class="relative h-72">
+                <div class="h-full w-full">
+                    <button class="absolute top-2 right-2 bg-transparent z-10">
+                        <i class="fa-solid fa-arrow-right text-xl"></i>
+                    </button>
+                    <div class="over-card top-4 left-4 uppercase absolute z-10">
+                        {{ topElement }}
+                    </div>
+                    <div class="over-card bottom-4 left-4 uppercase absolute z-10">
+                        investment
+                    </div>
+                    <div class="image-card absolute w-full h-full bg-black">
+                    </div>
+                    <img :src="img" alt="" class=" h-full w-full object-cover"/>
+                </div>
+            </div>
+            <NuxtLink :to="'/projects/' + projectId"><h1 class="text-3xl font-bold mt-4 mb-4 uppercase">{{ projectName }}</h1>
+            </NuxtLink>
+            <NuxtLink :to="'/areas/' + area">
+                <h3 class="text-lg uppercase" :style="{color: getColorByArea(area)} " >{{areaName}}</h3>
+            </NuxtLink>
         </div>
-        <NuxtLink :to = "link" ><h3>{{ projectName }}</h3></NuxtLink>
-        <NuxtLink :to = "link" ><h4 :style="colorArea" >{{ area }}</h4></NuxtLink>
-    </div>
+    </NuxtLink>
 </template>
 
 <script>
-export default {
+
+import {useColor} from '~/stores/color';
+
+export default defineNuxtComponent({
+    async asyncData({$pinia}) {
+        const areaColors = useColor($pinia).areaColors;
+
+        return {
+            areaColors
+        }
+    },
     props: {
         projectName: String,
+        projectId: Number,
         area: String,
+        areaName: String,
         img: String,
-        colorArea: String,
+        topElement: String
     },
-    computed: {
-        bgImage () {
-        return `background-image: url("${this.img}");`;
+    methods: {
+        getColorByArea(areaCode) {
+            const color = this.areaColors.find(row => row.code === areaCode).color;
+            return color ? color : '#FFFFFF';
         },
-        colorArea(){
-            return `color: ${this.colorArea};`;  
+        
+        getAreaByCode(areaCode) {
+            const name = this.areas.find(row => row.code === areaCode).name;
+            return name ? name : '';
         }
-}
-}
+    }
+})
 </script>
 
-<!-- 
-style not scoped so that you change also smallerCardProject.vue
--->
 
-<style>
-    .image-div
-    {
-        display: flex;
-        justify-content:right;
-        width: 400px;
-        height: 250px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+<style scoped>
 
-    .card
-    {
-        font-size: 6vw;
-        display: flex;
-        flex-flow: column;
-        padding: 20px;
-        width: fit-content;
-        align-items: flex-start;
-    }
-
-    .card h1{
-        font-family:monospace;
-        margin-top: 0;
-        margin-right: 10px;
-    }
-
-
-    .card h3
-    {
-        font-size: 2.5vw;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-weight: 500;
-        display:contents;  
-    }
-    .card h4
-    {
-        font-size: 1.6vw;
-        font-weight: lighter;
-        text-transform: uppercase;
-        font-weight: 300;
-        display:contents;  
-    }
-
-    .card h3::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    transition: width 0.3s ease-in-out;
+.selection .image-card {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.selection:hover .image-card {
+  opacity: 0.5;
 }
 
-    .card h3:hover::before {
-        width: 100%;
-    }
-
-    @media (min-width: 1920px) {
-    .card h1 {
-    font-size: 3vw;
-    }
-    .card h3 {
-    font-size: 2vw;
-    }
-
-    .card h4 {
-    font-size: 1vw;
-    }
+.selection:hover i{
+    transform: rotate(-45deg);
+}
+.over-card {
+    transition: all ease 0.5s;
+    opacity: 0;
 }
 
+.selection:hover .over-card{
+    opacity: 1;
+}
+
+i { 
+    transition: transform ease 0.5s;
+}
 </style>
