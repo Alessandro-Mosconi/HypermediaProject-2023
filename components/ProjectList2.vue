@@ -3,7 +3,7 @@
         <div class="flex flex-col sm:flex-row justify-center w-full">
             <!-- single column -->
             <div class="md:hidden flex flex-col justify-center">
-                <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
+                <div v-for="(p, index) in projects" :key="index" class="p-4 mt-10">
                     <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
                 </div>
             </div>
