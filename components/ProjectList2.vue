@@ -2,16 +2,16 @@
     <div>
         <div class="flex flex-col sm:flex-row justify-center w-full">
             <!-- single column -->
-            <div class="md:hidden  flex flex-col justify-center">
+            <div class="md:hidden flex flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
-                    <CardProject :projectName="p.name" :img="p.img_url" :area="p.area"/>
+                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area"/>
                 </div>
             </div>
             <!-- first column -->
             <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col">
-                <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
-                    <div v-if="index % 2 === 0">
-                        <cardProject :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
+                <div v-for="(p, index) in projects" :key="index" class="p-4 ">
+                    <div v-if="index % 2 === 0" class="mt-10 mb-10">
+                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
                     </div>
 
                 </div>
@@ -19,15 +19,9 @@
             <!-- second column -->
             <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4">
-                    <div v-if="index % 2 === 1">
-                        <!-- empty space -->
-                        <div class="sm:flex hidden" style="
-                            width: 400px;
-                            height: 100px;
-                            background-color: rgba(255, 0, 0,0);
-                        "></div>
+                    <div v-if="index % 2 === 1"  class="mt-10 mb-10">
                         <div>
-                                <cardProject :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
+                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
                         </div>
                     </div>
                 </div>
@@ -38,21 +32,26 @@
 </template>
 
 <script>
-export default {
-    props: [
-        'projects'
-    ],
+
+export default defineNuxtComponent({
+    async asyncData() {
+        const areas = await $fetch('/api/areas')
+
+        return {
+            areas
+        }
+    },
+    props: {
+        projects: Array
+    },
     methods: {
-        isCol1(index) {
-            console.log(index % 2 === 0 || window.innerWidth < 500)
-            return index % 2 === 0 || window.innerWidth < 500
-        },
-        isCol2(index) {
-            console.log(index % 2 === 1 && window.innerWidth >= 500)
-            return index % 2 === 1 && window.innerWidth >= 500
+        getAreaByCode(areaCode) {
+            const name = this.areas.find(row => row.code === areaCode).name;
+            return name ? name : '';
         }
     }
-}
+})
+
 </script>
 
 <style scoped>

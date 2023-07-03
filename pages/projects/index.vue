@@ -6,8 +6,10 @@
         <centerTitleImg
             title="OUR PORTFOLIO"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+            :widthImage="'contain'"
+            class="md:!h-[75vh] h-[40vh]"
         />
-        <div class="flex flex-wrap items-center justify-center">
+        <div class="flex flex-wrap items-center justify-center !h-[10vh] mb-10 text-sm md:text-2xl ">
             <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
                     @click="filterItems('')">
                 All
@@ -18,7 +20,7 @@
                 {{ area.name }}
             </button>
         </div>
-        <ProjectList2 :projects="filteredProject"/>
+        <ProjectList2 class="w-full" :projects="filteredProject"/>
     </div>
 </template>
 

@@ -5,6 +5,9 @@
     <centerTitleImg 
         title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+        class="md:!h-[100vh] !h-[50vh]"
+            :widthImage="'110%'"
+            :posImage="'top'"
         />
     <TitlePos
         paragraph="We are Visionaries aiming for a boundless universe." 
@@ -30,6 +33,18 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
     />
     
 </template>
+
+<script>
+
+export default {
+    methods: {
+        bgImage () {
+            console.log(screen.width)
+            return '';
+        },
+}
+}
+</script>
 
 <style>
 main {

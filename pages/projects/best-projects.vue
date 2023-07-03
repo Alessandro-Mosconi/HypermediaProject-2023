@@ -6,6 +6,7 @@
     <centerTitleImg 
             title="OUR BEST PROJECTS" 
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+            class="!h-[100vh]"
             />
     <ProjectList2 :projects= "projects"/>
 </div>
