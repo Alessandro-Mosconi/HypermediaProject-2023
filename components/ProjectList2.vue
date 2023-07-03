@@ -4,14 +4,14 @@
             <!-- single column -->
             <div class="md:hidden flex flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mb-[-30px]">
-                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area"/>
+                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
                 </div>
             </div>
             <!-- first column -->
             <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 ">
                     <div v-if="index % 2 === 0" class="mt-10 mb-10">
-                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
+                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
                     </div>
 
                 </div>
@@ -21,7 +21,7 @@
                 <div v-for="(p, index) in projects" :key="index" class="p-4">
                     <div v-if="index % 2 === 1"  class="mt-10 mb-10">
                         <div>
-                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area"/>
+                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
                         </div>
                     </div>
                 </div>
