@@ -7,9 +7,9 @@
             title="OUR PORTFOLIO"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
             :widthImage="'contain'"
-            class="md:!h-[75vh] h-[40vh]"
+            class="md:!h-[85vh] h-[40vh]"
         />
-        <div class="flex flex-wrap items-center justify-center !h-[10vh] mb-10 text-sm md:text-2xl ">
+        <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-sm md:text-2xl ">
             <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
                     @click="filterItems('')">
                 All

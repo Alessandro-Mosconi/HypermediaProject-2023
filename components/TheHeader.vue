@@ -3,8 +3,8 @@
 -->
 <template>
     <header
-        class="text-white flex items-center w-[100%] justify-between sticky z-[999] backdrop-blur-[10px] text-center backdrop-brightness-30 px-[6%] py-0 top-0">
-        <div class="flex content-between px-4 py-2 w-full max-lg:">
+        class="text-white flex items-center w-[100%] justify-between sticky md:absolute z-[999] backdrop-blur-[10px] text-center backdrop-brightness-30 px-[6%] py-0 top-0">
+        <div class="flex sticky content-between px-4 py-2 w-full max-lg:">
             <div class="flex items-center px-4 py-5 w-full space-x-3">
                 <NuxtLink v-if="toggle" @click="toggleVariable" to="/">
                     <img class="h-8 w-8 object-contain" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital"/>
