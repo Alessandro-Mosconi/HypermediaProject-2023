@@ -2,28 +2,28 @@
     Homepage
 -->
 <template>
-    <centerTitleImg 
+    <centerTitleImg
         title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         class="md:!h-[100vh] !h-[50vh]"
-            :widthImage="'110%'"
-            :posImage="'top'"
-        />
+        :widthImage="'110%'"
+        :posImage="'top'"
+    />
     <TitlePos
-        paragraph="We are Visionaries aiming for a boundless universe." 
+        paragraph="We are Visionaries aiming for a boundless universe."
         :position="'left'"
         class="mb-10">
     </TitlePos>
     <RightParagraph
-    class="mb-10"
+        class="mb-10"
         :chipText="'FIND OUT MORE ↗'"
         :chipLink="'/about'"
         :position="'right'"
-    paragraph="We are a dynamic venture capital firm driving the acceleration of space innovation. 
-We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology." 
-    ></RightParagraph>  
+        paragraph="We are a dynamic venture capital firm driving the acceleration of space innovation.
+We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology."
+    ></RightParagraph>
     <Manifest
-    class="mb-10"
+        class="mb-10"
         longtext="satellites space mining space tourism sa"
     ></Manifest>
     <SingleItemImgBg
@@ -31,19 +31,31 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
         link="/areas"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/areas/Satellites%20-%20Descriptive%20Picture.jpg?t=2023-06-29T07%3A35%3A12.540Z"
     />
-    
+    <div class="flex w-full p-6 mt-10 justify-start text-start font-semibold text-3xl md:text-5xl md:p-10">FROM OUR PORTFOLIO</div>
+    <BigCarousel2
+        :projects="projects">
+    </BigCarousel2>
+
 </template>
 
 <script>
 
-export default {
+import {useColor} from "~/stores/color";
+
+export default defineNuxtComponent({
+    async asyncData() {
+        const projects = await $fetch('/api/projects')
+        return {
+            projects
+        }
+    },
     methods: {
-        bgImage () {
+        bgImage() {
             console.log(screen.width)
             return '';
         },
-}
-}
+    }
+})
 </script>
 
 <style>
