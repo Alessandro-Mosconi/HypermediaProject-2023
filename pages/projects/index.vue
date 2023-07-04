@@ -20,7 +20,7 @@
                 {{ area.name }}
             </button>
         </div>
-        <ProjectList2 class="w-full" :projects="filteredProject"/>
+        <projectList class="w-full" :projects="filteredProject"/>
     </div>
 </template>
 

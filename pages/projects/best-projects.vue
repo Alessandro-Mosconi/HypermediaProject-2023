@@ -9,7 +9,7 @@
             :widthImage="'contain'"
             class="md:!h-[75vh] h-[40vh]"
             />
-    <ProjectList2 :projects= "projects"/>
+    <projectList :projects= "projects"/>
 </div>
 </template>
 
