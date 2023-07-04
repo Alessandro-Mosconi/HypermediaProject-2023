@@ -1,27 +1,28 @@
-<!--
-    Header of the page
--->
 <template>
-        <div class="ml-[5%] mr-[5%] md:text-[4rem] md:leading-snug text-2xl"><text>
-            {{ longtext }} 
-        </text></div>
+    <div class="scrolling-text">
+        <h2 v-for="n in 10" class="uppercase ml-5 mt-5 mb-10 font-[500] text-5xl md:text-7xl md:mt-20">
+            <span>SATELLITES SPACE MINING SPACE TOURISM</span>
+        </h2>
+    </div>
 </template>
 
-<script>
-export default{
-    props: {
-        longtext: String
+<style scoped>
+.scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scrolling-text h2 {
+    display: inline-block;
+    animation: scrollText 30s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
-</script>
-
-<style>
-    text{
-        margin-top: 5vw;
-        display: inline-block;
-        color: whitesmoke;
-        width:100%;
-        font-family: Bold;
-        text-transform: uppercase;
-    }
 </style>
