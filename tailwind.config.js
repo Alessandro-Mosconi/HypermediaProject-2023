@@ -21,7 +21,8 @@ module.exports = {
         },
       fontFamily: {
         'ABC': 'normal',
-        'ABCbold': 'bold'
+        'ABCbold': 'bold',
+        'ABClight': 'thin'
       }
       }
       

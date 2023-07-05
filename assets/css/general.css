@@ -24,6 +24,10 @@ body
     font-family: 'normal';
     src: url('@/assets/fonts/ABCWhyte/ABCWhytePlusVariable-Trial.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'thin';
+    src: url('@/assets/fonts/ABCWhyte/ABCWhyte-Light-Trial.otf') format('truetype');
+}
 
 @font-face {
     font-family: 'Bold';

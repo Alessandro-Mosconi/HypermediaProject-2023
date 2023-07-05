@@ -7,6 +7,7 @@
             title="OUR PORTFOLIO"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
             :widthImage="'contain'"
+            :subtitle="filteredProject?.length + ' projects, ' + areas?.length + ' investment areas'"
             class="md:!h-[85vh] h-[40vh]"
         />
         <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-sm md:text-2xl ">
