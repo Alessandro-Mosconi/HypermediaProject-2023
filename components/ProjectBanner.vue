@@ -1,8 +1,8 @@
 <template>
     <div class="relative w-full">
-        <img class="w-full h-[40vh] object-cover md:h-[70vh]" :src="img" alt="Banner Image"/>
+        <img class="w-full h-[60vh] object-cover md:h-[75vh]" :src="img" alt="Banner Image"/>
         <NuxtLink :to="'/projects/' + areaCode">
-            <div class="absolute top-0 font-light mt-[5%] leading-[4vh] text-xs left-[5vh] bottom-[3vh] md:text-base">
+            <div class="absolute top-0 font-light md:mt-28 mt-4 leading-[4vh] text-xs left-[5vh] bottom-[3vh] md:text-base">
                 <p class="p-0 hover:underline cursor-pointer">← see all</p>
             </div>
         </NuxtLink>

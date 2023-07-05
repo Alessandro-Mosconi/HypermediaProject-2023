@@ -4,14 +4,14 @@
             <!-- single column (small display)-->
             <div class="md:hidden mx-[10px] flex flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mt-10">
-                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :topElement="p.starting_date" :bottomElement="p.capital_mln + ' mln dollars'"/>
                 </div>
             </div>
             <!-- first column -->
             <div class="xl:mx-[90px] lg:mx-[30px] mx-[5px] xl:basis-1/3 lg:basis-1/2 md:flex hidden flex-col ">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 ">
                     <div v-if="index % 2 === 0" class="mt-10 mb-10">
-                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date" :bottomElement="p.capital_mln + ' mln dollars'"/>
                     </div>
 
                 </div>
@@ -21,7 +21,7 @@
                 <div v-for="(p, index) in projects" :key="index" class="p-4">
                     <div v-if="index % 2 === 1"  class="mt-10 mb-10">
                         <div>
-                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date" :bottomElement="p.capital_mln + ' mln dollars'"/>
                         </div>
                     </div>
                 </div>

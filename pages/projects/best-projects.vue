@@ -5,9 +5,9 @@
     <div class="flex flex-col items-center">
     <centerTitleImg 
             title="OUR BEST PROJECTS" 
-            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+            img=""
             :widthImage="'contain'"
-            class="md:!h-[75vh] h-[40vh]"
+            class="md:mt-20 h-[40vh]"
             />
     <projectList :projects= "projects"/>
 </div>
