@@ -12,7 +12,7 @@
                     <div class="over-card bottom-4 left-4 lowercase absolute z-10">
                         {{ hiddenBottomElement }}
                     </div>
-                    <div class="bottom-4 left-4 uppercase absolute z-10">
+                    <div class="anti-over-card bottom-4 left-4 uppercase absolute z-10">
                         {{ bottomElement }}
                     </div>
                     <div class="image-card absolute w-full h-full bg-black">
@@ -88,7 +88,14 @@ i {
     transition: all ease 0.5s;
     opacity: 0;
 }
+.anti-over-card {
+    transition: all ease 0.5s;
+    opacity: 1;
+}
 
+.selection:hover .anti-over-card{
+    opacity: 0;
+}
 .selection:hover .over-card{
     opacity: 1;
 }

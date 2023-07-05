@@ -11,7 +11,7 @@
             <div class="xl:mx-[90px] lg:mx-[30px] mx-[5px] xl:basis-1/3 lg:basis-1/2 md:flex hidden flex-col ">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 ">
                     <div v-if="index % 2 === 0" class="mt-10 mb-10">
-                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenTottomElement="p.capital_mln + ' mln dollars'"/>
+                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                     </div>
 
                 </div>
