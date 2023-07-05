@@ -2,7 +2,7 @@
     Page with the list of all the projects.
 -->
 <template>
-    <div class="flex flex-col items-center">
+<div class="flex flex-col items-center">
     <centerTitleImg 
             title="OUR BEST PROJECTS" 
             img=""
@@ -10,6 +10,9 @@
             class="md:mt-20 h-[40vh]"
             />
     <projectList :projects= "projects"/>
+
+    <div class="uppercase text-6xl font-ABCbold">want to see more?</div>
+    <Chip class="my-8 text-2xl" text="VISIT OUR PORTFOLIO ↗" link="/projects" />
 </div>
 </template>
 

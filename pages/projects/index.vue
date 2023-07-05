@@ -5,12 +5,13 @@
     <div class="flex flex-col items-center">
         <centerTitleImg
             title="OUR PORTFOLIO"
-            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
+            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/home_planet_tmp.png"
             :widthImage="'contain'"
             :subtitle="filteredProject?.length + ' projects, ' + areas?.length + ' investment areas'"
-            class="md:!h-[85vh] h-[40vh]"
+            :posImage="'center 100px'"
+            class="md:!h-[85vh] h-[60vh]"
         />
-        <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-sm md:text-2xl ">
+        <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-xs md:text-2xl">
             <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
                     @click="filterItems('')">
                 All

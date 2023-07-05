@@ -7,9 +7,12 @@
                         <i class="fa-solid fa-arrow-right text-xl"></i>
                     </button>
                     <div class="over-card top-4 left-4 uppercase absolute z-10">
-                        {{ topElement }}
+                        {{ hiddenTopElement }}
                     </div>
                     <div class="over-card bottom-4 left-4 lowercase absolute z-10">
+                        {{ hiddenBottomElement }}
+                    </div>
+                    <div class="bottom-4 left-4 uppercase absolute z-10">
                         {{ bottomElement }}
                     </div>
                     <div class="image-card absolute w-full h-full bg-black">
@@ -44,7 +47,8 @@ export default defineNuxtComponent({
         area: String,
         areaName: String,
         img: String,
-        topElement: String,
+        hiddenTopElement: String,
+        hiddenBottomElement: String,
         bottomElement: String
     },
     methods: {

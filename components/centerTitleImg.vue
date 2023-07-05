@@ -5,13 +5,13 @@
     <div class='bigTitle ml-auto mr-auto w-[95%] bg-top md:bg-center-down md:h-full bg-contain md:bg-auto' :style="bgImage + ' ' + customWidth + ' ' + customPos">
         <div class="gradient flex flex-col md:min-h-[50vh] h-full">
             <div class="testo w-[95%] flex flex-col h-full ml-auto mr-auto"> 
-                <div class="text-5xl mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
+                <div class="text-[2.5rem] leading-tight mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
                     
-                <div v-if="subtitle" class="mt-20">
+                <div v-if="subtitle" class="hidden md:visible mt-20">
                 
                 </div> 
                     {{ title }}   
-                <div v-if="subtitle" class="text-3xl uppercase md:text-[3.2rem] lg:text-[3.35rem] md:leading-tight lg:leading-tight  text-center mt-8 font-ABClight">
+                <div v-if="subtitle" class="text-2xl uppercase md:text-[3.2rem] lg:text-[3.35rem] md:leading-tight lg:leading-tight  text-center mt-4 md:mt-8 font-ABClight">
                     {{ subtitle }}
                 </div> 
                 </div>            
