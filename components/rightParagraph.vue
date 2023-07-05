@@ -4,7 +4,7 @@
         <div class="md:mb-10 mb-5">
           {{ paragraph }}
         </div>
-        <Chip v-if="isChip" :link="getLink" :text="chipText"/>
+        <Chip v-if="isChip" :link="getLink" :isButton="true" :text="chipText"/>
       </div>
   </div>
 </template>

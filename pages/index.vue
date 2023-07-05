@@ -18,6 +18,7 @@
         class="mb-10"
         :chipText="'FIND OUT MORE'"
         :chipLink="'/about'"
+        :isButton="true" 
         :position="'right'"
         paragraph="We are a dynamic venture capital firm driving the acceleration of space innovation.
 We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology."

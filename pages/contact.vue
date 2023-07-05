@@ -6,7 +6,7 @@
         title="CONTACT US"
         :widthImage="'30em'"
         class="z-0 mt-20 md:mt-0" />
-<div class="flex flex-col md:flex-row mt-44 md:mt-20 ml-[5%] mr-[5%] z-10">
+<div class="flex flex-col md:flex-row ml-[5%] mr-[5%] z-10">
     <div class="basis-1/2">
         <div class="flex flex-col space-y-4">
             <div class="pb-10">
@@ -54,13 +54,14 @@
                         <span>
                         </span>
                     </label>
-                    <span class="lg:text-lg md:text:sm text:xs ml-5">
+                    <div class="lg:text-lg md:text:sm text:xs ml-5 text-center align-middle">
                         I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*
-                    </span> 
+                    </div> 
                 </div>
-                <button class="mt-10" @click="sendEmail()">
+                <button class="mt-10 ml-auto text-xs md:text-2xl" @click="sendEmail()">
                     <Chip
-                        :text="'SEND'">
+                        :text="'SEND'"
+                        :isButton="true" >
                     </Chip>
                 </button>
 
@@ -70,34 +71,6 @@
     </div>
 </div>
 
-
-<!--
-<main>
-    <main>
-        <p>
-            This are our contacts:
-            <ul>
-                <li>E-mail: mail@shelter.it</li>
-                <li>Tel: 053684864351</li>
-            </ul>
-        </p>
-        <form>
-            <div>
-                <label for = "name">Name & Surname</label>
-                <input type = "text" id = "name" placeholder = "Name & Surname">
-            </div>
-            <div>
-                <label for = "mail">E-mail</label>
-                <input type = "email" id = "mail" placeholder = "E-mail">
-            </div>
-            <div id = "message-div">
-                <label for = "message">Message</label>
-                <textarea id = "message" placeholder = "Write your message here"></textarea>  
-            </div>
-            <button>Send Message</button>
-        </form>
-    </main>
-</main>-->
 </template>
 
 <script>
@@ -207,7 +180,7 @@ input {
     background-color: transparent;
     height: 3.5em;
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 12px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;

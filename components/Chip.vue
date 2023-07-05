@@ -1,8 +1,8 @@
 <template>
     <NuxtLink id="about" class="selection pg" :to='link?link:""'>
-        <div :class="{'md:w-auto mx-5': isAuto, 'border-0': isEmpty, 'md:border-4 border-2': !isEmpty}" class="w-fit md:flex justify-center items-center py-2 px-4 rounded-full  border-white ">
-            <div class="leading-none max-w-full flex-initial">{{ text }}</div>
-            <i v-if="link" class="ml-2 fa-solid fa-arrow-right"></i>
+        <div :class="{'md:w-auto mx-5': isAuto, 'border-0': isEmpty, 'md:border-2 border-2': !isEmpty}" class="w-fit flex flex-row justify-center items-center py-2 px-4 rounded-full  border-white ">
+            <div class="md:pl-2 py-1 leading-none max-w-full flex-initial">{{ text }}</div>
+            <i v-if="isButton" class="md:pr-2 ml-2 fa-solid fa-arrow-right"></i>
         </div>
     </NuxtLink>
 </template>
@@ -12,7 +12,8 @@ export default {
     props: {
         text: String,
         autoWidth: Boolean,
-        link: String
+        link: String,
+        isButton: Boolean
     },
     computed: {
         isAuto () {
