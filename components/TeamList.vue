@@ -1,5 +1,5 @@
 <template>
-    <div  class="flex flex-wrap">
+    <div  class="selection flex flex-wrap">
         <div v-for="p in people" class="lg:basis-72 sm:basis-52 basis-32 justify-center ml-auto mr-auto mb-5" >
             <div>
                 <NuxtLink id="about" class="pg" :to='"/team/"+p.id'>
@@ -28,6 +28,15 @@
 
 
 <style scoped>
+.selection :hover i {
+    transform: translateX(25%);
+}
+
+i{
+    transition: all 0.5s ease;
+    transform: translateX(0%);
+}
+
     .arrow-icon{
         font-size: large!important;
     }

@@ -5,10 +5,17 @@
     <div class='bigTitle ml-auto mr-auto w-[95%] bg-top md:bg-center-down md:h-full bg-contain md:bg-auto' :style="bgImage + ' ' + customWidth + ' ' + customPos">
         <div class="gradient flex flex-col md:min-h-[50vh] h-full">
             <div class="testo w-[95%] flex flex-col h-full ml-auto mr-auto"> 
-                <div class="text-5xl mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
-                    {{ title }}
+                <div class="text-[2.5rem] leading-tight mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
+                    
+                <div v-if="subtitle" class="hidden md:visible mt-20">
+                
+                </div> 
+                    {{ title }}   
+                <div v-if="subtitle" class="text-2xl uppercase md:text-[3.2rem] lg:text-[3.35rem] md:leading-tight lg:leading-tight  text-center mt-4 md:mt-8 font-ABClight">
+                    {{ subtitle }}
+                </div> 
                 </div>            
-                <div v-if="description" class="text-lg md:text-4xl lg:text-5xl text-justify leading-relaxed uppercase inline-block align-baseline">
+                <div v-if="description" class="text-lg md:text-4xl lg:text-5xl  text-justify !leading-snug uppercase inline-block align-baseline">
                     {{ description }}
                 </div>
             </div>
@@ -20,6 +27,7 @@
 export default {
     props: {
         title: String,
+        subtitle: String,
         description: String,
         img: String,
         widthImage: String,

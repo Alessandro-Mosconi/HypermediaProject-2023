@@ -1,25 +1,10 @@
-<!--
-    Big text with paragraph on the right
-
-<template>
-  <div class="component">
-  <div class="div">
-    <p>{{ paragraph }}</p>
-    <div class="capsule">FIND OUT MORE ↗</div>
-  </div>
-</div>
-</template>-->
-
-<!--
-    Big text with paragraph on the right
--->
 <template>
   <div :class="{ 'md:mr-[5%] md:flex md:flex-row-reverse ml-[5%] flex flex-row text-left': isRight, 'ml-[5%] flex flex-row text-left': isLeft}" >
       <div :class="{'ml-auto mr-auto text-center': isCenter}" class="w-[90%] md:w-[45%] text-xs md:text-3xl font-light">
         <div class="md:mb-10 mb-5">
           {{ paragraph }}
         </div>
-        <Chip v-if="isChip" :link="getLink" :text="chipText"/>
+        <Chip v-if="isChip" :link="getLink" :isButton="true" :text="chipText"/>
       </div>
   </div>
 </template>

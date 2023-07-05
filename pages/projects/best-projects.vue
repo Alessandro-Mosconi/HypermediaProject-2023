@@ -2,13 +2,17 @@
     Page with the list of all the projects.
 -->
 <template>
-    <div class="flex flex-col items-center">
+<div class="flex flex-col items-center">
     <centerTitleImg 
             title="OUR BEST PROJECTS" 
-            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
-            class="!h-[100vh]"
+            img=""
+            :widthImage="'contain'"
+            class="md:mt-20 h-[40vh]"
             />
-    <ProjectList2 :projects= "projects"/>
+    <projectList :projects= "projects"/>
+
+    <div class="uppercase text-6xl font-ABCbold">want to see more?</div>
+    <Chip class="my-8 text-2xl" text="VISIT OUR PORTFOLIO" link="/projects" :isButton="true"  />
 </div>
 </template>
 

@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
         .from('project')
         .select('*')
         .not('top', 'is', null)
-        .order('id', { ascending: true })
+        .order('top', { ascending: true })
     if (error) {
         throw createError({ statusCode: 400, statusMessage: error.message })
     }

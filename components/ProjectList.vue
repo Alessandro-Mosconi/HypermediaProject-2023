@@ -1,27 +1,27 @@
 <template>
     <div>
         <div class="flex flex-col sm:flex-row justify-center w-full">
-            <!-- single column -->
-            <div class="md:hidden flex flex-col justify-center">
+            <!-- single column (small display)-->
+            <div class="md:hidden mx-[10px] flex flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mt-10">
-                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddentopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                 </div>
             </div>
             <!-- first column -->
-            <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col">
+            <div class="xl:mx-[90px] lg:mx-[30px] mx-[5px] xl:basis-1/3 lg:basis-1/2 md:flex hidden flex-col ">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 ">
                     <div v-if="index % 2 === 0" class="mt-10 mb-10">
-                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenTottomElement="p.capital_mln + ' mln dollars'"/>
                     </div>
 
                 </div>
             </div>
             <!-- second column -->
-            <div class="lg:mx-[50px] md:flex hidden basis-1/2  flex-col justify-center">
+            <div class="xl:mx-[90px] lg:mx-[30px] mx-[5px] xl:basis-1/3 lg:basis-1/2 md:flex hidden flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4">
                     <div v-if="index % 2 === 1"  class="mt-10 mb-10">
                         <div>
-                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :topElement="p.starting_date"/>
+                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                         </div>
                     </div>
                 </div>

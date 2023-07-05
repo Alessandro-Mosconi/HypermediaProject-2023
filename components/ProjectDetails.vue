@@ -3,10 +3,10 @@
 -->
 
 <template>
-    <div class="flex">
-        <div class="2-full lg:w-2/5 md:text-lg">
+    <div class="component flex">
+        <div class="2-full lg:w-2/5">
             <div class="field" :style="{color: getColorByArea(areaCode)}">CLIENT</div>
-            <img :src="img" v-if="img" class="max-h-16 max-w-[85vw] mb-10">
+            <img :src="img" v-if="img" class="max-h-12 max-w-[85vw] mb-10">
         </div>
         <div class="mt-3 md:mt-0 w-full lg:w-3/5">
              <div class="field" :style="{color: getColorByArea(areaCode)}">INVESTMENT</div>
@@ -54,20 +54,13 @@ p {
 
 .field {
     font-weight: 200;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 @media only screen and (max-width: 55em) {
     .component {
-        flex-direction: column
-    }
-
-    .small-text {
-        text-align: left
-    }
-
-    .paragraph-section {
-        width: 80%;
+        flex-direction: column;
+        text-align: center;
     }
 }
 </style>

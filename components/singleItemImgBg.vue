@@ -8,7 +8,8 @@
               <Chip
               :autoWidth="true"
               :text="title"
-              :link="link">
+              :link="link"
+              :isButton="true" >
               </Chip>
           </div>
           <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">

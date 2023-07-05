@@ -3,9 +3,9 @@
 -->
 <template>
     <header
-        class="text-white flex items-center w-[100%] justify-between sticky z-[999] backdrop-blur-[10px] text-center backdrop-brightness-30 px-[6%] py-0 top-0">
-        <div class="flex content-between px-4 py-2 w-full max-lg:">
-            <div class="flex items-center px-4 py-5 w-full space-x-3">
+        class="text-white w-full flex sticky md:fixed items-center justify-between z-[999] backdrop-blur-[10px] text-center backdrop-brightness-30 px-[6%] py-0 top-0">
+        <div class="flex content-between py-2 w-full ">
+            <div class="flex items-center pr-8 py-5 w-auto min-w-max space-x-3">
                 <NuxtLink v-if="toggle" @click="toggleVariable" to="/">
                     <img class="h-8 w-8 object-contain" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital"/>
                 </NuxtLink>
@@ -15,7 +15,7 @@
                 <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
             </div>
             <!-- Standard menu -->
-            <nav class="flex items-center space-x-10 lg:flex hidden">
+            <nav class="lg:ml-auto lg:mr-auto min-w-max w-auto flex items-center lg:space-x-8 xl:space-x-12 lg:flex hidden">
                 <NuxtLink
                     id="about"
                     exact
@@ -83,7 +83,7 @@
                 </NuxtLink>
             </nav>
             <!-- Mobile menu button -->
-            <nav v-if="!toggle" class="lg:hidden flex items-center">
+            <nav v-if="!toggle" class="lg:hidden ml-auto flex items-center">
                 <button class="outline-none mobile-menu-button" @click="toggleVariable">
                     <svg
                         class="w-10 h-9 text-white-500"
@@ -98,7 +98,7 @@
                     </svg>
                 </button>
             </nav>
-            <nav v-if="toggle" class="lg:hidden flex items-center">
+            <nav v-if="toggle" class="lg:hidden ml-auto flex items-center">
                 <button class="outline-none mobile-menu-button" @click="toggleVariable">
                     <svg
                         class="w-10 h-9 text-white-500"
