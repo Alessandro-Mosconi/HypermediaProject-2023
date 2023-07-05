@@ -15,7 +15,7 @@
                     {{ subtitle }}
                 </div> 
                 </div>            
-                <div v-if="description" class="text-lg md:text-4xl lg:text-5xl text-justify leading-relaxed uppercase inline-block align-baseline">
+                <div v-if="description" class="text-lg md:text-4xl lg:text-5xl  text-justify !leading-snug uppercase inline-block align-baseline">
                     {{ description }}
                 </div>
             </div>

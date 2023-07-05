@@ -12,7 +12,7 @@
     <projectList :projects= "projects"/>
 
     <div class="uppercase text-6xl font-ABCbold">want to see more?</div>
-    <Chip class="my-8 text-2xl" text="VISIT OUR PORTFOLIO ↗" link="/projects" />
+    <Chip class="my-8 text-2xl" text="VISIT OUR PORTFOLIO" link="/projects" />
 </div>
 </template>
 

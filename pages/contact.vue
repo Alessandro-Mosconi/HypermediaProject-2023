@@ -60,7 +60,7 @@
                 </div>
                 <button class="mt-10" @click="sendEmail()">
                     <Chip
-                        :text="'SEND ↗'">
+                        :text="'SEND'">
                     </Chip>
                 </button>
 

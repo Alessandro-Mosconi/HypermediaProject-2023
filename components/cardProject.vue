@@ -80,6 +80,10 @@ export default defineNuxtComponent({
 .selection:hover i{
     transform: rotate(-45deg);
 }
+
+i { 
+    transition: transform ease 0.5s;
+}
 .over-card {
     transition: all ease 0.5s;
     opacity: 0;
@@ -89,7 +93,4 @@ export default defineNuxtComponent({
     opacity: 1;
 }
 
-i { 
-    transition: transform ease 0.5s;
-}
 </style>

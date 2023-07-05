@@ -8,10 +8,10 @@
         </div>
                  
         <div class="centerText z-20 mr-3 ml-3 w-[85%] md:w-[90%] lg:w-[95%]">
-            <div class="centerTitle w-4/5 md:w-1/2 text-4xl md:text-7xl text-center lg:text-8xl">
+            <div class="centerTitle w-4/5 md:w-1/2 text-4xl md:text-7xl text-center lg:text-[7rem]">
                 <div>{{ title }}</div>
             </div>
-            <div v-if="true" class="centerDescription text-lg md:text-4xl text-center lg:text-5xl">
+            <div v-if="true" class="centerDescription !leading-snug text-lg md:text-4xl text-center lg:text-5xl">
                 <div>{{ description }}</div>
             </div>
         </div>
@@ -56,7 +56,6 @@ export default {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.2;
     justify-content: center;
     text-align: justify ;
 }

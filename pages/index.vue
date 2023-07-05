@@ -16,7 +16,7 @@
     </TitlePos>
     <RightParagraph
         class="mb-10"
-        :chipText="'FIND OUT MORE ↗'"
+        :chipText="'FIND OUT MORE'"
         :chipLink="'/about'"
         :position="'right'"
         paragraph="We are a dynamic venture capital firm driving the acceleration of space innovation.
@@ -25,7 +25,7 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
     <Manifest
     ></Manifest>
     <SingleItemImgBg
-        title="INVESTMENT AREAS ↗"
+        title="INVESTMENT AREAS"
         link="/areas"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/areas/Satellites%20-%20Descriptive%20Picture.jpg?t=2023-06-29T07%3A35%3A12.540Z"
     />
