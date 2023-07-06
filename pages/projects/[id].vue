@@ -50,10 +50,11 @@ export default defineNuxtComponent({
         const route = useRoute()
 
         const project = await $fetch('/api/projects/' + route.params.id);
-        const [supervisor, team, area] = await Promise.all([
+        const [supervisor, team, area, projects] = await Promise.all([
             $fetch('/api/people/' + project.id_supervisor),
             $fetch('/api/people/team/' + project.id),
-            $fetch('/api/areas/' + project.area)
+            $fetch('/api/areas/' + project.area),
+            $fetch('/api/projects/')
         ]);
 
         project.top = project?.top?.toString() || '';
@@ -73,14 +74,13 @@ export default defineNuxtComponent({
         })
 
         project.capital_mln = project.capital_mln + ' mln';
+        const totalProjects = 15;
+        const prevProjectId = (project.id - 1 + totalProjects) % totalProjects || totalProjects;
+        const nextProjectId = (project.id + 1 + totalProjects) % totalProjects || 1;
 
-        console.log('/api/projects/' + ((project.id - 1) % 16))
-
-        const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todox
-        console.log('2')
-        const nextProject = await $fetch('/api/projects/' + ((project.id + 1) % 16)); //todo
+        const prevProject = await $fetch('/api/projects/' + prevProjectId); //todox
+        const nextProject = await $fetch('/api/projects/' + nextProjectId); //todo
         console.log('3')
-        console.log(project.name)
 
 
         return {
