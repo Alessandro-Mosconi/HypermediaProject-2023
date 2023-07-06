@@ -36,7 +36,7 @@ export default defineNuxtComponent({
                 $fetch('/api/projects'),
                 $fetch('/api/areas'),
             ]);
-            
+
         const filteredProject = projects;
         return {
             projects,

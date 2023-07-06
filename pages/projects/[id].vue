@@ -4,6 +4,7 @@
             :name="project.name"
             :areaCode="project.area"
             :img="project.img_url"
+            :area="area"
             :top="project.top" />
         <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
             <div class="mt-10 md:mt-20">
@@ -75,10 +76,11 @@ export default defineNuxtComponent({
             
             console.log('/api/projects/' + ((project.id - 1) % 16))
 
-            const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todox
+            const prevProject = await $fetch('/api/projects/2'); // + ((project.id - 1) % 16)); //todox
 console.log('2')
-            const nextProject = await $fetch('/api/projects/3' + ((project.id + 1) % 16)); //todo
+            const nextProject = await $fetch('/api/projects/3');// + ((project.id + 1) % 16)); //todo
 console.log('3')
+            console.log(project.name)
 
 
             return {

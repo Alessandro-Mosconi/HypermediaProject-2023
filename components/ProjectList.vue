@@ -1,4 +1,4 @@
-<template scoped>
+<template>
     <div>
         <div class="flex flex-col sm:flex-row justify-center w-full">
             <!-- single column (small display)-->
