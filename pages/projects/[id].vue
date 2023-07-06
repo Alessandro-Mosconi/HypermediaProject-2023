@@ -6,13 +6,13 @@
             :img="project.img_url"
             :area="area"
             :top="project.top"/>
-        <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
-            <div class="mt-10 md:mt-20">
+        <div class="md:ml-10 ml-5 mr-5 ">
+            <div class="mt-16">
                 <div class="mb-10">
                     <ProjectDetails
                         :img="project.logo_url"
                         :investment="project.capital_mln"
-                        :dates="project.starting_date + ' - ' + project.ending_date"
+                        :dates="getDate(project.starting_date) + ' - ' + getDate(project.ending_date)"
                         :areaCode="project.area"
                         :area="area"
                     />
@@ -80,9 +80,7 @@ export default defineNuxtComponent({
 
         const prevProject = await $fetch('/api/projects/' + prevProjectId); //todox
         const nextProject = await $fetch('/api/projects/' + nextProjectId); //todo
-        console.log('3')
-
-
+        
         return {
             project,
             supervisors: listSupervisor,
@@ -90,6 +88,16 @@ export default defineNuxtComponent({
             prevProject,
             nextProject,
             area
+        }
+    },
+    methods: {
+        getDate(value) {
+            const date = new Date(value)
+            console.log(date.getUTCFullYear())
+            const month = date.toLocaleString('default', { month: 'long' });
+            const capitalMont = month.charAt(0).toUpperCase() + month.slice(1);
+            const stringDate = capitalMont + ' ' + date.getUTCFullYear() ;
+            return stringDate;
         }
     }
 })

@@ -1,18 +1,14 @@
-<!--
-    Big text with paragraph on the right
--->
-
 <template>
-    <div class="component flex">
-        <div class="2-full lg:w-2/5">
+    <div class="flex md:flex-row flex-col text-center md:text-start">
+        <div class="2-full md:w-2/5 mb-10 ">
             <div class="field" :style="{color: getColorByArea(areaCode)}">CLIENT</div>
-            <img :src="img" v-if="img" class="max-h-12 max-w-[85vw] mb-10">
+            <div class="w-full"><img :src="img" v-if="img" class="max-h-12 max-w-[100%] md:ml-0 md:mr-0 mr-auto ml-auto"></div>
         </div>
-        <div class="mt-3 md:mt-0 w-full lg:w-3/5">
+        <div class="mt-3 md:mt-0 w-full md:w-[30%] mb-10 ">
              <div class="field" :style="{color: getColorByArea(areaCode)}">INVESTMENT</div>
             <p>{{ investment }}</p>
         </div>
-        <div class="">
+        <div class="mb-10 ">
             <div class="field" :style="{color: getColorByArea(areaCode)}">DATES</div>
             <p>{{ dates }}</p>
         </div>
@@ -56,10 +52,4 @@ p {
     margin-bottom: 0.2em;
 }
 
-@media only screen and (max-width: 55em) {
-    .component {
-        flex-direction: column;
-        text-align: center;
-    }
-}
 </style>
