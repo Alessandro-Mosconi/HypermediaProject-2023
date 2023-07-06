@@ -10,7 +10,7 @@
 
         <div
             class="absolute font-[500] uppercase leading-[4vh] text-4xl left-[5vh] bottom-[3vh] md:text-6xl lg:text-7xl mt-[25%]">
-            <div v-if="top" class="text-xl mb-4 font-light md-8 mb:text-4xl md:mb-8">#0{{ top }} BEST PROJECT
+            <div v-if="top" class="text-xl mb-4 font-light md-8 md:text-4xl md:mb-8">#0{{ top }} BEST PROJECT
             </div>
             <div class="mb-10">{{ name }}</div>
             <!--
