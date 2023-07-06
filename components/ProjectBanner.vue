@@ -1,14 +1,16 @@
 <template>
     <div class="relative w-full">
         <img class="w-full h-[70vh] object-cover md:h-[80vh]" :src="img" alt="Banner Image"/>
-        <NuxtLink :to="'/projects/' + areaCode">
-            <div class="absolute top-0 font-light md:mt-28 mt-4 leading-[4vh] text-xs left-[5vh] bottom-[3vh] md:text-base">
-                <p class="p-0 hover:underline cursor-pointer">← see all</p>
-            </div>
-        </NuxtLink>
+
+        <div class="absolute top-0 font-light md:mt-28 mt-4 leading-[4vh] text-xs left-[5vh] bottom-[3vh] md:text-base">
+            <NuxtLink :to="'/projects/'">
+                <p class="p-0">← see all</p>
+            </NuxtLink>
+        </div>
+
         <div
             class="absolute font-[500] uppercase leading-[4vh] text-4xl left-[5vh] bottom-[3vh] md:text-6xl lg:text-7xl mt-[25%]">
-            <div v-if="top !== '0'" class="text-3xl mb-4 font-light md-8 mb:text-4xl md:mb-8">#0{{ top }} BEST PROJECT
+            <div v-if="top" class="text-xl mb-4 font-light md-8 mb:text-4xl md:mb-8">#0{{ top }} BEST PROJECT
             </div>
             <div class="mb-10">{{ name }}</div>
             <!--
