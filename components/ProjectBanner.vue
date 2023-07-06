@@ -25,8 +25,8 @@
 <script>
 import {useColor} from '~/stores/color';
 
-export default defineNuxtComponent({
-    async asyncData({$pinia}) {
+export default {
+    data({$pinia}) {
         const areaColors = useColor($pinia).areaColors;
 
         return {
@@ -46,7 +46,7 @@ export default defineNuxtComponent({
             return color ? color : '#FFFFFF';
         }
     }
-})
+}
 </script>
 
 <style scoped>

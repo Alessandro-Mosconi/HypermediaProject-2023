@@ -22,7 +22,7 @@
                 {{ area.name }}
             </button>
         </div>
-        <projectList class="w-full" :projects="filteredProject"/>
+        <projectList class="w-full" :projects="filteredProject" :areas="areas"/>
     </div>
 </template>
 
@@ -30,19 +30,29 @@
 import { useColor } from '~/stores/color';
 
 export default defineNuxtComponent({
-    async asyncData({ $pinia }) {
-        const areaColors = useColor($pinia).areaColors;
+    async asyncData() {
 
-        const projects = await $fetch('/api/projects')
-        const areas = await $fetch('/api/areas')
+        const [projects, areas] = await Promise.all([
+                $fetch('/api/projects'),
+                $fetch('/api/areas'),
+            ]);
+            
         const filteredProject = projects;
         return {
             projects,
             filteredProject,
-            currentArea: "",
-            areas,
+            areas
+        }
+    },
+    data({ $pinia }) {
+        const areaColors = useColor($pinia).areaColors;
+        const currentArea = '';
+        
+        return {
+            currentArea,
             areaColors
         }
+
     },
     methods: {
         filterItems(filter) {

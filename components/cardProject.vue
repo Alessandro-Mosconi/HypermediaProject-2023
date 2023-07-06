@@ -33,8 +33,9 @@
 
 import {useColor} from '~/stores/color';
 
-export default defineNuxtComponent({
-    async asyncData({$pinia}) {
+export default {
+
+    data({$pinia}) {
         const areaColors = useColor($pinia).areaColors;
 
         return {
@@ -42,27 +43,22 @@ export default defineNuxtComponent({
         }
     },
     props: {
-        projectName: String,
-        projectId: Number,
-        area: String,
-        areaName: String,
-        img: String,
-        hiddenTopElement: String,
-        hiddenBottomElement: String,
-        bottomElement: String
+            projectName: String,
+            projectId: Number,
+            area: String,
+            areaName: String,
+            img: String,
+            hiddenTopElement: String,
+            hiddenBottomElement: String,
+            bottomElement: String
     },
     methods: {
         getColorByArea(areaCode) {
-            const color = this.areaColors.find(row => row.code === areaCode).color;
-            return color ? color : '#FFFFFF';
-        },
-        
-        getAreaByCode(areaCode) {
-            const name = this.areas.find(row => row.code === areaCode).name;
-            return name ? name : '';
+            const color = this.areaColors.find(row => row.code === areaCode).color || '#FFFFFF';
+            return color;
         }
     }
-})
+}
 </script>
 
 

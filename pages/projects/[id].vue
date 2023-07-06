@@ -28,57 +28,58 @@
                 </div>
             </div>
         </div>
-        <LittleCarousel
-            :imageLeft="prevProject.img_url"
-            :subtitleLeft="'previous project'"
-            :titleLeft="prevProject.name"
-            :linkLeft="'/projects/' + prevProject.id"
-            :imageRight="nextProject.img_url"
-            :subtitleRight="'next project'"
-            :titleRight="nextProject.name"
-            :linkRight="'/projects/' + nextProject.id">
-        </LittleCarousel>
     </main>
 </template>
 
 <script>
+
+
 export default defineNuxtComponent({
-    async asyncData() {
-        const route = useRoute()
-        const project = await $fetch('/api/projects/' + route.params.id)
-        const supervisor = await $fetch('/api/people/' + project.id_supervisor)
-        const team = await $fetch('/api/people/team/' + project.id)
-        let area = await $fetch('/api/areas/')
-        area = area.filter(a => a.code === project.area)[0]
-        project.top = project.top.toString()
-        let listWorkersProject = [];
-        for (let p of team) {
-            listWorkersProject.push({
-                text: p.name + ' ' + p.surname,
-                link: '/team/' + p.id,
+        async asyncData() {
+            const route = useRoute()
+
+            const project = await  $fetch('/api/projects/' + route.params.id);
+            const [supervisor, team, area] = await Promise.all([
+                $fetch('/api/people/' + project.id_supervisor),
+                $fetch('/api/people/team/' + project.id),
+                $fetch('/api/areas/' + project.area)
+                ]);
+                
+            project.top = project?.top?.toString() || '';
+            console.log(project)
+
+            let listWorkersProject = [];
+            for (let p of team) {
+                listWorkersProject.push({
+                    text: p.name + ' ' + p.surname,
+                    link: '/team/' + p.id,
+                })
+            }
+
+            let listSupervisor = [];
+            listSupervisor.push({
+                text: supervisor.name + ' ' + supervisor.surname,
+                link: '/team/' + supervisor.id,
             })
+
+            const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todox
+console.log('2')
+            const nextProject = await $fetch('/api/projects/3' + ((project.id + 1) % 16)); //todo
+console.log('3')
+
+            project.capital_mln = project.capital_mln + ' mln';
+
+            return {
+                project,
+                supervisors: listSupervisor,
+                team: listWorkersProject,
+                prevProject,
+                nextProject,
+                area
+            }
         }
+    })
 
-        let listSupervisor = [];
-        listSupervisor.push({
-            text: supervisor.name + ' ' + supervisor.surname,
-            link: '/team/' + supervisor.id,
-        })
 
-        const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todo
-        const nextProject = await $fetch('/api/projects/' + ((project.id + 1) % 16)); //todo
-
-        console.log(project.top)
-        project.capital_mln = project.capital_mln + ' mln';
-        return {
-            project,
-            supervisors: listSupervisor,
-            team: listWorkersProject,
-            prevProject,
-            nextProject,
-            area
-        }
-    }
-})
 </script>
 

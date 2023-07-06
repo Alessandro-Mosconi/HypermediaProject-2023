@@ -9,7 +9,7 @@
             :widthImage="'contain'"
             class="md:mt-20 h-[40vh]"
             />
-    <projectList :projects= "projects"/>
+    <projectList :projects= "projects" :areas="areas"/>
 
     <div class="uppercase text-6xl font-ABCbold">want to see more?</div>
     <Chip class="my-8 text-2xl" text="VISIT OUR PORTFOLIO" link="/projects" :isButton="true"  />
@@ -17,17 +17,18 @@
 </template>
 
 <script>
-import { useColor } from '~/stores/color';
 
     export default defineNuxtComponent({
-        async asyncData({ $pinia }) {
-            const areaColors = useColor($pinia).areaColors
+        async asyncData() {
             
-            const projects = await $fetch('/api/projects/best-projects')
+            const [projects, areas] = await Promise.all([
+                $fetch('/api/projects/best-projects'),
+                $fetch('/api/areas'),
+            ]);
 
             return {
                 projects,
-                areaColors
+                areas
             }
         }
     })

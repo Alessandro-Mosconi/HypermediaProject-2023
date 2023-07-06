@@ -1,10 +1,10 @@
-<template>
+<template scoped>
     <div>
         <div class="flex flex-col sm:flex-row justify-center w-full">
             <!-- single column (small display)-->
             <div class="md:hidden mx-[10px] flex flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 mt-10">
-                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddentopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
+                    <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddentopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                 </div>
             </div>
             <!-- first column -->
@@ -33,25 +33,22 @@
 
 <script>
 
-export default defineNuxtComponent({
-    async asyncData() {
-        const areas = await $fetch('/api/areas')
-
-        return {
-            areas
-        }
-    },
+export default {
     props: {
-        projects: Array
+        projects: Array,
+        areas: Array,
     },
     methods: {
         getAreaByCode(areaCode) {
-            const name = this.areas.find(row => row.code === areaCode).name;
-            return name ? name : '';
+            
+            let name = '';
+            if (this.areas && this.areas.length > 0) {
+                name = this.areas.find(row => row?.code === areaCode).name || '';
+            }
+            return name;
         }
     }
-})
-
+}
 </script>
 
 <style scoped>
