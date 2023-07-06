@@ -76,7 +76,7 @@ export default defineNuxtComponent({
         project.capital_mln = project.capital_mln + ' mln';
         const totalProjects = 15;
         const prevProjectId = (project.id - 1 + totalProjects) % totalProjects || totalProjects;
-        const nextProjectId = (project.id + 1 + totalProjects) % totalProjects || 1;
+        const nextProjectId = (project.id + 1) % totalProjects || totalProjects;
 
         const prevProject = await $fetch('/api/projects/' + prevProjectId); //todox
         const nextProject = await $fetch('/api/projects/' + nextProjectId); //todo
