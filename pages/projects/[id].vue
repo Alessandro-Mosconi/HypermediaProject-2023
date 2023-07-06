@@ -4,17 +4,18 @@
             :name="project.name"
             :areaCode="project.area"
             :img="project.img_url"
-            :top="project.top" />
-        <div class="md:ml-10 ml-5 mr-5 mt-[2em]">
-            <div class="mt-10 md:mt-20">
+            :area="area"
+            :top="project.top"/>
+        <div class="md:ml-10 ml-5 mr-5 ">
+            <div class="mt-16">
                 <div class="mb-10">
                     <ProjectDetails
                         :img="project.logo_url"
                         :investment="project.capital_mln"
-                        :dates="project.starting_date + ' - ' + ending_date"
+                        :dates="getDate(project.starting_date) + ' - ' + getDate(project.ending_date)"
                         :areaCode="project.area"
                         :area="area"
-                        />
+                    />
                 </div>
                 <div class="mb-10 ">
                     <SmallTextList :smallText="'Supervised by'" :list="supervisors"/>
@@ -42,15 +43,22 @@
 </template>
 
 <script>
+
+
 export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
-        const project = await $fetch('/api/projects/' + route.params.id)
-        const supervisor = await $fetch('/api/people/' + project.id_supervisor)
-        const team = await $fetch('/api/people/team/' + project.id)
-        let area = await $fetch('/api/areas/')
-        area = area.filter(a => a.code === project.area)[0]
-        project.top = project.top.toString()
+
+        const project = await $fetch('/api/projects/' + route.params.id);
+        const [supervisor, team, area, projects] = await Promise.all([
+            $fetch('/api/people/' + project.id_supervisor),
+            $fetch('/api/people/team/' + project.id),
+            $fetch('/api/areas/' + project.area),
+            $fetch('/api/projects/')
+        ]);
+
+        project.top = project?.top?.toString() || '';
+
         let listWorkersProject = [];
         for (let p of team) {
             listWorkersProject.push({
@@ -65,11 +73,14 @@ export default defineNuxtComponent({
             link: '/team/' + supervisor.id,
         })
 
-        const prevProject = await $fetch('/api/projects/' + ((project.id - 1) % 16)); //todo
-        const nextProject = await $fetch('/api/projects/' + ((project.id + 1) % 16)); //todo
-
-        console.log(project.top)
         project.capital_mln = project.capital_mln + ' mln';
+        const totalProjects = projects.length;
+        const prevProjectId = (project.id - 1 + totalProjects) % totalProjects || totalProjects;
+        const nextProjectId = (project.id + 1) % totalProjects || totalProjects;
+
+        const prevProject = await $fetch('/api/projects/' + prevProjectId); //todox
+        const nextProject = await $fetch('/api/projects/' + nextProjectId); //todo
+        
         return {
             project,
             supervisors: listSupervisor,
@@ -78,7 +89,19 @@ export default defineNuxtComponent({
             nextProject,
             area
         }
+    },
+    methods: {
+        getDate(value) {
+            const date = new Date(value)
+            console.log(date.getUTCFullYear())
+            const month = date.toLocaleString('default', { month: 'long' });
+            const capitalMont = month.charAt(0).toUpperCase() + month.slice(1);
+            const stringDate = capitalMont + ' ' + date.getUTCFullYear() ;
+            return stringDate;
+        }
     }
 })
+
+
 </script>
 
