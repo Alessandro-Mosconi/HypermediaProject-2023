@@ -93,8 +93,7 @@ export default defineNuxtComponent({
     methods: {
         getDate(value) {
             const date = new Date(value)
-            console.log(date.getUTCFullYear())
-            const month = date.toLocaleString('default', { month: 'long' });
+            const month = date.toLocaleString( 'en-US', { month: 'long' });
             const capitalMont = month.charAt(0).toUpperCase() + month.slice(1);
             const stringDate = capitalMont + ' ' + date.getUTCFullYear() ;
             return stringDate;
