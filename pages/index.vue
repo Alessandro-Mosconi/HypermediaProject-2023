@@ -31,9 +31,9 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/areas/Satellites%20-%20Descriptive%20Picture.jpg?t=2023-06-29T07%3A35%3A12.540Z"
     />
     <div class="flex w-full p-6 mt-10 justify-start text-start font-semibold text-3xl md:text-5xl md:p-10">FROM OUR PORTFOLIO</div>
-    <BigCarousel2
+    <BigCarousel
         :projects="projects">
-    </BigCarousel2>
+    </BigCarousel>
 
 </template>
 
