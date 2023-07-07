@@ -5,11 +5,11 @@
          @mouseup="stopScroll"
          @mouseleave="stopScroll">
         <!-- Carousel wrapper -->
-        <div class="flex relative h-56 overflow-y-hidden md:h-96"
+        <div class="flex relative h-75 overflow-y-hidden md:h-120"
              ref="carouselWrapper"
              :style="{ cursor: isScrolling ? 'grabbing' : 'grab' }">
             <div class="flex">
-                <div class=" ml-7 md:ml-12"></div>
+                <div class="ml-7 md:ml-12"></div>
                 <CardProject
                     :id="'card-' + project.id"
                     v-for="project in projects"
@@ -25,14 +25,14 @@
         <!-- Slider controls -->
         <button
             type="button"
-            class="absolute top-0 left-0 z-30 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-0 left-0 z-2 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev
             @click="prevSlide">
             ←
         </button>
         <button
             type="button"
-            class="absolute top-0 right-0 z-30 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-0 right-0 z-2 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next
             @click="nextSlide">
             →
