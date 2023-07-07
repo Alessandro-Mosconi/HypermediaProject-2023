@@ -13,9 +13,9 @@
             </div>
         </div>
         <div class="flex w-full p-6 justify-start text-start font-semibold text-3xl md:text-5xl p-10">RELATED PROJECTS</div>
-        <BigCarousel2
+        <BigCarousel
             :projects="projects">
-        </BigCarousel2>
+        </BigCarousel>
 
         <LittleCarousel
             :imageLeft="area1.thumb_url"

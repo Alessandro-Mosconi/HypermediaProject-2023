@@ -5,7 +5,7 @@
     <div class='bigTitle ml-auto mr-auto w-[95%] bg-top md:bg-center-down md:h-full bg-contain md:bg-auto' :style="bgImage + ' ' + customWidth + ' ' + customPos">
         <div class="gradient flex flex-col md:min-h-[50vh] h-full">
             <div class="testo w-[95%] flex flex-col h-full ml-auto mr-auto"> 
-                <div class="text-[2.5rem] leading-tight mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
+                <div class="md:max-w-[75vw] mr-auto ml-auto text-[2.5rem] leading-tight mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
                     
                 <div v-if="subtitle" class="hidden md:visible mt-20">
                 
@@ -38,9 +38,6 @@ export default {
             return `background-image: url("${this.img}");`;
         },
         customWidth () {
-            if(!this.widthImage) {
-                return '';
-            }
             return `background-size: ${this.widthImage?this.widthImage:'75%'};`;
         },
         customPos () {

@@ -9,7 +9,8 @@
               :autoWidth="true"
               :text="title"
               :link="link"
-              :isButton="true" >
+              :isButton="true"
+              :backgroundColor="'#121212'" >
               </Chip>
           </div>
           <div class="mr-auto ml-auto md:basis-1/3 basis-full mb-14">
