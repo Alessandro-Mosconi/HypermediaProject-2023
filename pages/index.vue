@@ -38,9 +38,6 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
 </template>
 
 <script>
-
-import {useColor} from "~/stores/color";
-
 export default defineNuxtComponent({
     async asyncData() {
         const projects = await $fetch('/api/projects')
