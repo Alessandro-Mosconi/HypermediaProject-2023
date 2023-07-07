@@ -1,7 +1,7 @@
 <template>
     <NuxtLink class="selection" id="about" :to="'/projects/' + projectId">
         <div>
-            <div class="relative h-72">
+            <div class="relative xl:h-72 md:h-56 aspect-[1.6/1]">
                 <div class="h-full w-full">
                     <button class="absolute top-2 right-2 bg-transparent z-10">
                         <i class="fa-solid fa-arrow-right text-xl"></i>
