@@ -1,11 +1,13 @@
 <!--
     Contact Page
 -->
-<template>
-    <CenterTitlewithLateralImage
-        title="CONTACT US"
-        :widthImage="'30em'"
-        class="z-0 mt-20 md:mt-0" />
+<template>        
+    <centerTitleImg 
+        class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
+        title="CONTACT US" 
+        :posImage="'left'"
+        :widthImage="'clamp(50vh, 50vw, 50vw) auto'"
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>
 <div class="flex flex-col md:flex-row ml-[5%] mr-[5%] z-10">
     <div class="basis-1/2">
         <div class="flex flex-col space-y-4">
@@ -26,22 +28,25 @@
     <div class="basis-1/2">
         <div class="flex flex-col space-y-4">
             <div class="md:text-3xl text-2xl font-ABCbold">Have an investment to propose?<br>Drop us a line!</div>
-            <form class="flex flex-col">
+            <form  id="contactForm" class="flex flex-col">
                 <input 
                     type = "text" 
                     id = "name" 
-                    v-model="name"
+                    v-model="form.name"
+                    required
                     class="md:text-2xl placeholder-white placeholder-opacity-100 mt-5" 
                     placeholder = "NAME">
                 <input 
                     type = "email" 
                     id = "mail" 
-                    v-model="mail"
+                    required
+                    v-model="form.mail"
                     class="md:text-2xl placeholder-white placeholder-opacity-100 mt-5"  
                     placeholder = "EMAIL">
                 <textarea 
                     id = "message" 
-                    v-model="message"
+                    v-model="form.message"
+                    required
                     class="md:text-2xl text-lg placeholder-white placeholder-opacity-100 mt-5"  
                     placeholder = "MESSAGE"></textarea>  
                 <div class="flex flex-row mt-10">
@@ -50,7 +55,8 @@
                             class="accent-transparent" 
                             type="checkbox"
                             id = "termAndCondition" 
-                            v-model="termAndCondition">
+                            required
+                            v-model="form.termAndCondition">
                         <span>
                         </span>
                     </label>
@@ -58,14 +64,12 @@
                         I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*
                     </div> 
                 </div>
-                <button class="mt-10 ml-auto text-xs md:text-2xl" @click="sendEmail()">
+                <button type="submit" form="contactForm" value="Submit" class="mt-10 ml-auto text-xs md:text-2xl" @click="handleSubmit">
                     <Chip
                         :text="'SEND'"
                         :isButton="true" >
                     </Chip>
                 </button>
-
-                
             </form>
         </div>
     </div>
@@ -78,21 +82,17 @@ export default {
   name: 'ContactUs',
   data() {
     return {
-      name: '',
-      mail: '',
-      message: '',
-      termAndCondition: false
+        form : {
+            name: '',
+            mail: '',
+            message: '',
+            termAndCondition: false
+        }      
     }
   },
   methods: {
     sendEmail() {
-      try {/*
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target,
-        'YOUR_USER_ID', {
-          name: this.name,
-          email: this.email,
-          message: this.message
-        })*/
+      try {
         console.log(this.name + this.mail + this.message + this.termAndCondition)
 
       } catch(error) {
@@ -103,7 +103,21 @@ export default {
       this.email = ''
       this.message = ''
     },
-  }
+    async handleSubmit() {
+        const isValidForm =document.getElementById('termAndCondition').checkValidity() && document.getElementById('mail').checkValidity() && document.getElementById('name').checkValidity() && document.getElementById('message').checkValidity();
+        if(!isValidForm) {
+            return
+        }
+        const { data: response } = await useFetch('/api/message', {
+                method: 'post',
+                body: {
+                    data: this.form
+                }
+            })
+
+        alert(response.value);
+    }
+}
 }
 </script>
 
