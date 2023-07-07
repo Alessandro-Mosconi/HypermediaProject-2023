@@ -91,18 +91,6 @@ export default {
     }
   },
   methods: {
-    sendEmail() {
-      try {
-        console.log(this.name + this.mail + this.message + this.termAndCondition)
-
-      } catch(error) {
-          console.log({error})
-      }
-      // Reset form field
-      this.name = ''
-      this.email = ''
-      this.message = ''
-    },
     async handleSubmit() {
         const isValidForm =document.getElementById('termAndCondition').checkValidity() && document.getElementById('mail').checkValidity() && document.getElementById('name').checkValidity() && document.getElementById('message').checkValidity();
         if(!isValidForm) {
@@ -114,7 +102,7 @@ export default {
                     data: this.form
                 }
             })
-
+            
         alert(response.value);
     }
 }
