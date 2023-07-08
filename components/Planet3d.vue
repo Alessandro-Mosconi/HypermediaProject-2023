@@ -26,11 +26,11 @@
         camera.position.z = 4;
   
         // Renderer Setup
-        renderer = new THREE.WebGLRenderer();
+        renderer = new THREE.WebGLRenderer({alpha: true});
         
         // Set the size of the rendering window.
-        const width = window.innerWidth * 0.5;
-        const height = window.innerHeight * 0.5;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         camera.aspect = width / height;
        camera.updateProjectionMatrix();
 
@@ -42,18 +42,18 @@
         }
   
           // Geometry and Material Setup
-          geometry = new THREE.SphereGeometry(2, 50, 50);
+          geometry = new THREE.SphereGeometry(2.1, 50, 50);
           
           material = new THREE.MeshPhysicalMaterial({
-             map: new THREE.TextureLoader().load("/images/2k_moon.jpg"),
+             map: new THREE.TextureLoader().load("/images/2k_mars.jpg"),
             });
   
-            const ambientLight = new THREE.AmbientLight(0x7777ff, 0.1);
+            const ambientLight = new THREE.AmbientLight(0x121212, 1.4);
           scene.add(ambientLight);
 
           // Lights
-          light = new THREE.PointLight(0xffffff, 1);
-          light.position.set(2, 2, 5);
+          light = new THREE.PointLight(0xffffff, 1.5);
+          light.position.set(3, 3, 3);
           scene.add(light);
 
   
