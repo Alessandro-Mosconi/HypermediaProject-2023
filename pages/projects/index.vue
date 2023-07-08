@@ -12,17 +12,17 @@
             class="md:!h-[85vh] h-[60vh]"
         />
         <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-xs md:text-2xl">
-            <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14"
+            <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14 transition-transform transform hover:scale-110"
                     @click="filterItems('')">
                 All
             </button>
             <button :style="{ backgroundColor: currentArea === area.code ? getColorByArea(currentArea) : '' }"
                     v-for="(area, index) in areas" :key="index" @click="filterItems(area.code)"
-                    class="uppercase itemButton mb-14">
+                    class="uppercase itemButton mb-14 transition-transform transform hover:scale-110">
                 {{ area.name }}
             </button>
         </div>
-        <projectList class="w-full" :projects="filteredProject" :areas="areas"/>
+        <projectList :projects="filteredProject" :areas="areas"/>
     </div>
 </template>
 

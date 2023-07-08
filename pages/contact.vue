@@ -1,47 +1,62 @@
 <!--
     Contact Page
 -->
-<template>
-    <CenterTitlewithLateralImage
-        title="CONTACT US"
-        :widthImage="'30em'"
-        class="z-0 mt-20 md:mt-0" />
+<template>        
+    <centerTitleImg 
+        class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
+        title="CONTACT US" 
+        :posImage="'left'"
+        :widthImage="'clamp(50vh, 50vw, 50vw) auto'"
+        img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>
 <div class="flex flex-col md:flex-row ml-[5%] mr-[5%] z-10">
     <div class="basis-1/2">
         <div class="flex flex-col space-y-4">
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Email</div>
-                <div class="md:text-3xl text-xl font-ABCbold">{{contacts.email}}</div>
+                <div class="md:text-3xl text-xl font-ABCbold">
+                    <a :href = "'mailto: '+contacts.email">
+                        {{contacts.email}}
+                    </a></div>
             </div>
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Phone number</div>
-                <div v-for="n in contacts.phoneNumbers" class="md:text-3xl text-xl font-ABCbold last:mb-0 mb-5">{{n}}</div>
+                <div v-for="number in contacts.phoneNumbers" class="md:text-3xl text-xl font-ABCbold last:mb-0 mb-5">
+                    <a :href = "'tel: '+number">
+                        {{number}}
+                    </a></div>
             </div>
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Address</div>
-                <div class="md:text-3xl text-xl font-ABCbold">{{contacts.address}}</div>
+                <div class="md:text-3xl text-xl font-ABCbold">
+                    <a :href="'http://www.google.com/maps/place/' + contacts.addressX + ',' + contacts.addressY" target="_blank">
+                        {{contacts.address}}
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <div class="basis-1/2">
         <div class="flex flex-col space-y-4">
             <div class="md:text-3xl text-2xl font-ABCbold">Have an investment to propose?<br>Drop us a line!</div>
-            <form class="flex flex-col">
+            <form  id="contactForm" class="flex flex-col">
                 <input 
                     type = "text" 
                     id = "name" 
-                    v-model="name"
+                    v-model="form.name"
+                    required
                     class="md:text-2xl placeholder-white placeholder-opacity-100 mt-5" 
                     placeholder = "NAME">
                 <input 
                     type = "email" 
                     id = "mail" 
-                    v-model="mail"
+                    required
+                    v-model="form.mail"
                     class="md:text-2xl placeholder-white placeholder-opacity-100 mt-5"  
                     placeholder = "EMAIL">
                 <textarea 
                     id = "message" 
-                    v-model="message"
+                    v-model="form.message"
+                    required
                     class="md:text-2xl text-lg placeholder-white placeholder-opacity-100 mt-5"  
                     placeholder = "MESSAGE"></textarea>  
                 <div class="flex flex-row mt-10">
@@ -50,22 +65,21 @@
                             class="accent-transparent" 
                             type="checkbox"
                             id = "termAndCondition" 
-                            v-model="termAndCondition">
+                            required
+                            v-model="form.termAndCondition">
                         <span>
                         </span>
                     </label>
                     <div class="lg:text-lg md:text:sm text:xs ml-5 text-center align-middle">
-                        I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*
+                        <a href="https://policies.google.com/terms?hl=en-US" target="_blank">I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*</a>
                     </div> 
                 </div>
-                <button class="mt-10 ml-auto text-xs md:text-2xl" @click="sendEmail()">
+                <button type="submit" form="contactForm" value="Submit" class="mt-10 ml-auto text-xs md:text-2xl" @click="handleSubmit">
                     <Chip
                         :text="'SEND'"
                         :isButton="true" >
                     </Chip>
                 </button>
-
-                
             </form>
         </div>
     </div>
@@ -78,32 +92,30 @@ export default {
   name: 'ContactUs',
   data() {
     return {
-      name: '',
-      mail: '',
-      message: '',
-      termAndCondition: false
+        form : {
+            name: '',
+            mail: '',
+            message: '',
+            termAndCondition: false
+        }      
     }
   },
   methods: {
-    sendEmail() {
-      try {/*
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target,
-        'YOUR_USER_ID', {
-          name: this.name,
-          email: this.email,
-          message: this.message
-        })*/
-        console.log(this.name + this.mail + this.message + this.termAndCondition)
-
-      } catch(error) {
-          console.log({error})
-      }
-      // Reset form field
-      this.name = ''
-      this.email = ''
-      this.message = ''
-    },
-  }
+    async handleSubmit() {
+        const isValidForm =document.getElementById('termAndCondition').checkValidity() && document.getElementById('mail').checkValidity() && document.getElementById('name').checkValidity() && document.getElementById('message').checkValidity();
+        if(!isValidForm) {
+            return
+        }
+        const { data: response } = await useFetch('/api/message', {
+                method: 'post',
+                body: {
+                    data: this.form
+                }
+            })
+            
+        alert(response.value);
+    }
+}
 }
 </script>
 
@@ -111,13 +123,40 @@ export default {
 const contacts = useContact()
 </script>
 
-<style>
+<style scoped>
+
+
+a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
 main {
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 form {
@@ -140,7 +179,7 @@ textarea::placeholder {
 
 .checkbox > span {
     color: #34495E;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .checkbox > input {
@@ -192,8 +231,14 @@ textarea {
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid white;
+    padding: 12px 12px;
 }
-    @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
+    .checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.5rem;
+}
+
     input::placeholder {
         font-weight: 300;
         font-size: large;

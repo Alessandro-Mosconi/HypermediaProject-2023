@@ -4,11 +4,14 @@
 -->
 <template>
     <main>
-        <CenterTitlewithLateralImage
-            title="MEET OUR TEAM"
+        <centerTitleImg 
+            class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
+            title="MEET OUR TEAM" 
+            :posImage="'left'"
+            :widthImage="'clamp(50vh, 50vw, 50vw) auto'"
             description="A FUSION OF VISIONARY STRATEGISTS, SEASONED INVESTORS, AND INDUSTRY PIONEERS, UNITED BY A PASSION FOR FUELLING SPACE INNOVATION AND DRIVING TRANSFORMATIVE IMPACT." 
-            />
-        <div class="p-[5%] mt-20">
+            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/image%2012.png"/>
+        <div class="p-[5%]">
             <TeamList :people="people"/>
         </div>
     </main>

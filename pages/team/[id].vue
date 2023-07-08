@@ -4,7 +4,7 @@
 -->
 <template>
     <main>
-        <div class="profile-page md:ml-10 ml-5 mr-5 mt-[2em]">
+        <div class="profile-page md:ml-10 ml-5 mr-5 md:mt-[6em]">
             <NuxtLink id="about" class="pg" to="/team/" style="font-size: 20px;">
                 <i class="fa-solid fa-arrow-left"></i> See all
             </NuxtLink>

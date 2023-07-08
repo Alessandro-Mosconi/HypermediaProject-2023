@@ -9,10 +9,13 @@
                 <NuxtLink v-if="toggle" @click="toggleVariable" to="/">
                     <img class="h-8 w-8 object-contain" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital"/>
                 </NuxtLink>
-                <NuxtLink v-if="!toggle" to="/">
-                    <img class="h-8 w-8 object-contain" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital"/>
-                </NuxtLink>
-                <h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
+                <NuxtLink v-if="!toggle" to="/" class="flex items-center">
+
+<img class="h-8 w-8 object-contain mr-2" src="@/assets/img/CELESTA_WHITE.png" alt="Celesta Capital"/>
+
+<h1 class="text-white font-bold text-xl tracking-wide"> Celesta Capital</h1>
+
+</NuxtLink>
             </div>
             <!-- Standard menu -->
             <nav class="lg:ml-auto lg:mr-auto min-w-max w-auto flex items-center lg:space-x-8 xl:space-x-12 lg:flex hidden">
