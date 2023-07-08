@@ -13,15 +13,25 @@
         <div class="flex flex-col space-y-4">
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Email</div>
-                <div class="md:text-3xl text-xl font-ABCbold">{{contacts.email}}</div>
+                <div class="md:text-3xl text-xl font-ABCbold">
+                    <a :href = "'mailto: '+contacts.email">
+                        {{contacts.email}}
+                    </a></div>
             </div>
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Phone number</div>
-                <div v-for="n in contacts.phoneNumbers" class="md:text-3xl text-xl font-ABCbold last:mb-0 mb-5">{{n}}</div>
+                <div v-for="number in contacts.phoneNumbers" class="md:text-3xl text-xl font-ABCbold last:mb-0 mb-5">
+                    <a :href = "'tel: '+number">
+                        {{number}}
+                    </a></div>
             </div>
             <div class="pb-10">
                 <div class="md:text-3xl text-xl font-light uppercase mb-5">Address</div>
-                <div class="md:text-3xl text-xl font-ABCbold">{{contacts.address}}</div>
+                <div class="md:text-3xl text-xl font-ABCbold">
+                    <a :href="'http://www.google.com/maps/place/' + contacts.addressX + ',' + contacts.addressY" target="_blank">
+                        {{contacts.address}}
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -113,7 +123,34 @@ export default {
 const contacts = useContact()
 </script>
 
-<style>
+<style scoped>
+
+
+a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
 main {
 width: 100%;
 display: flex;
@@ -142,7 +179,7 @@ textarea::placeholder {
 
 .checkbox > span {
     color: #34495E;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .checkbox > input {

@@ -9,18 +9,26 @@
         <div class="md:grid md:grid-cols-2 md:gap-10flex flex-col  space-y-4">
             <div class="flex flex-col  space-y-4">
                 <div>
-                    {{contacts.email}}
+                    <a :href = "'mailto: '+contacts.email">
+                        {{contacts.email}}
+                    </a>
                 </div>
                 <div v-for="phoneNumber in contacts.phoneNumbers">
-                    {{ phoneNumber }}
+                    <a :href = "'tel: '+phoneNumber">
+                        {{phoneNumber}}
+                    </a>
                 </div>
             </div>
             <div class="flex flex-col  space-y-4">
                 <div>
-                    Cookies 
+                    <a href="https://policies.google.com/technologies/cookies?hl=en-US" target=”_blank”>
+                        Cookies
+                    </a>
                 </div>
                 <div>
-                    Privacy
+                    <a href="https://policies.google.com/privacy?hl=en-US" target=”_blank”>
+                        Privacy
+                    </a>
                 </div>
             </div>
         </div>
@@ -49,6 +57,32 @@ h2 {
     text-transform: uppercase;
     text-align:center;
 }
+
+
+a {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
 
 footer {
     background-color: rgb(0, 0, 0);
