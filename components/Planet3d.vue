@@ -13,6 +13,7 @@
       let camera: THREE.PerspectiveCamera;
       let renderer: THREE.WebGLRenderer;
       let geometry: THREE.BoxGeometry;
+      let light: THREE.PointLight;
       let material: THREE.MeshBasicMaterial;
       let cube: THREE.Mesh;
   
@@ -22,13 +23,18 @@
   
         // Camera Setup
         camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.z = 5;
+        camera.position.z = 4;
   
         // Renderer Setup
         renderer = new THREE.WebGLRenderer();
         
         // Set the size of the rendering window.
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        const width = window.innerWidth * 0.5;
+        const height = window.innerHeight * 0.5;
+        camera.aspect = width / height;
+       camera.updateProjectionMatrix();
+
+    renderer.setSize(width, height);
   
         // Append Renderer to DOM 
         if (mount.value) {
@@ -36,8 +42,20 @@
         }
   
           // Geometry and Material Setup
-          geometry = new THREE.BoxGeometry(1, 1, 1);
-          material = new THREE.MeshBasicMaterial({ color: '#433F81' });
+          geometry = new THREE.SphereGeometry(2, 50, 50);
+          
+          material = new THREE.MeshPhysicalMaterial({
+             map: new THREE.TextureLoader().load("/images/2k_moon.jpg"),
+            });
+  
+            const ambientLight = new THREE.AmbientLight(0x7777ff, 0.1);
+          scene.add(ambientLight);
+
+          // Lights
+          light = new THREE.PointLight(0xffffff, 1);
+          light.position.set(2, 2, 5);
+          scene.add(light);
+
   
           // Cube Mesh Setup and add it to Scene.
           cube = new THREE.Mesh(geometry, material);
@@ -47,9 +65,7 @@
   
                 requestAnimationFrame(animateScene);
   
-                // Rotate Cube 
-                cube.rotation.x += .01; 
-                cube.rotation.y += .01;
+                cube.rotation.y += .0002;
   
                renderer.render(scene,camera); 
   

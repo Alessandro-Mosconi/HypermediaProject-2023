@@ -2,7 +2,9 @@
     Homepage
 -->
 <template>
-    <Planet3d></Planet3d>
+    <div class="w-full flex items-center justify-center">
+        <Planet3d></Planet3d>
+    </div>
     <centerTitleImg
         title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
