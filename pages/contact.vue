@@ -71,7 +71,7 @@
                         </span>
                     </label>
                     <div class="lg:text-lg md:text:sm text:xs ml-5 text-center align-middle">
-                        I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*
+                        <a href="https://policies.google.com/terms?hl=en-US" target="_blank">I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*</a>
                     </div> 
                 </div>
                 <button type="submit" form="contactForm" value="Submit" class="mt-10 ml-auto text-xs md:text-2xl" @click="handleSubmit">
@@ -142,7 +142,7 @@ a {
     left: 0;
     background-color: white;
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.5s ease-out;
   }
   
   a:hover::after {
@@ -152,11 +152,11 @@ a {
 
 
 main {
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 form {
@@ -231,8 +231,14 @@ textarea {
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid white;
+    padding: 12px 12px;
 }
-    @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
+    .checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.5rem;
+}
+
     input::placeholder {
         font-weight: 300;
         font-size: large;
