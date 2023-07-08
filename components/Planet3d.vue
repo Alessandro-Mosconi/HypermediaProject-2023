@@ -15,7 +15,7 @@
       let geometry: THREE.BoxGeometry;
       let light: THREE.PointLight;
       let material: THREE.MeshBasicMaterial;
-      let cube: THREE.Mesh;
+      let planet: THREE.Mesh;
   
       onMounted(() => {
         // Create Scene
@@ -57,15 +57,15 @@
           scene.add(light);
 
   
-          // Cube Mesh Setup and add it to Scene.
-          cube = new THREE.Mesh(geometry, material);
-             scene.add(cube);
+          // Planet Mesh Setup and add it to Scene.
+          planet = new THREE.Mesh(geometry, material);
+             scene.add(planet);
   
              const animateScene= () => {
   
                 requestAnimationFrame(animateScene);
   
-                cube.rotation.y += .0002;
+                planet.rotation.y += .0006;
   
                renderer.render(scene,camera); 
   
