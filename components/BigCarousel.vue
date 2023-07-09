@@ -11,6 +11,7 @@
             <div class="flex">
                 <div class="ml-7 md:ml-12"></div>
                 <CardProject
+                    class="p-6"
                     :id="'card-' + project.id"
                     v-for="project in projects"
                     :key="project.id"
@@ -18,7 +19,6 @@
                     :projectId="project.id"
                     :img="project.img_url"
                     :area="project.area"
-                    class="m-6"
                 />
             </div>
         </div>
@@ -67,7 +67,9 @@ export default {
             }
         },
         scrollToSlide() {
-            const slideWidth = this.$refs.carouselWrapper.children[0].offsetWidth;
+            console.log(this.$refs.carouselWrapper.children[0].children[1])
+            console.log(this.$refs.carouselWrapper.children[0].children[2])
+            const slideWidth = this.$refs.carouselWrapper.children[0].children[1].offsetWidth;
             const scrollOffset = this.currentIndex * slideWidth;
 
             this.$refs.carouselWrapper.scrollTo({
