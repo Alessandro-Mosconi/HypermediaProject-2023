@@ -18,11 +18,11 @@
         </BigCarousel>
 
         <LittleCarousel
-            :imageLeft="area1.thumb_url"
+            :imageLeft="area1.banner_url"
             :subtitleLeft="'investment area'"
             :titleLeft="area1.name"
             :linkLeft="'/areas/' + area1.code"
-            :imageRight="area2.thumb_url"
+            :imageRight="area2.banner_url"
             :subtitleRight="'investment area'"
             :titleRight="area2.name"
             :linkRight="'/areas/' + area2.code">
