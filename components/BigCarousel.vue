@@ -10,8 +10,8 @@
              ref="carouselWrapper"
              :style="{ cursor: isScrolling ? 'grabbing' : 'grab' }">
             <div class="flex">
-                <div v-for="project in projects" class="extreme-margin p-6">                
-                    <CardProject                    
+                <div v-for="project in projects" class="extreme-margin p-6">
+                    <CardProject
                     :id="'card-' + project.id"
                     :key="project.id"
                     :projectName="project.name"
