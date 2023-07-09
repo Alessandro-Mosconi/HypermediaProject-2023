@@ -47,11 +47,11 @@ export default {
            map: new THREE.TextureLoader().load("/images/2k_mars.jpg"),
           });
 
-          const ambientLight = new THREE.AmbientLight(0x121212, 1.4);
+          const ambientLight = new THREE.AmbientLight(0x121212, 1);
         scene.add(ambientLight);
 
         // Lights
-        light = new THREE.PointLight(0xffffff, 1.5);
+        light = new THREE.PointLight(0xffffff, 1.2);
         light.position.set(3, 3, 3);
         scene.add(light);
 
