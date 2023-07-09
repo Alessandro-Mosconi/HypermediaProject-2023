@@ -10,7 +10,7 @@
             :subtitle="filteredProject?.length + ' projects, ' + areas?.length + ' investment areas'"
             :posImage="'center 100px'"
             planet="moon"
-            class="md:!h-[85vh] h-[60vh]"
+            class="w-full md:!h-[85vh] h-[60vh]"
         />
         <div class="flex flex-wrap items-center justify-center !h-[15vh] mb-10 text-xs md:text-2xl">
             <button :style="{ backgroundColor: currentArea === '' ? getColorByArea(currentArea) : ''}" class="uppercase itemButton mb-14 transition-transform transform hover:scale-110"

@@ -58,17 +58,14 @@ export default {
         scene.add(light);
 
 
-        // Planet Mesh Setup and add it to Scene.
-        planet = new THREE.Mesh(geometry, material);
-           scene.add(planet);
+          // Planet Mesh Setup and add it to Scene.
+          planet = new THREE.Mesh(geometry, material);
+          scene.add(planet);
 
            const animateScene= () => {
-
-              requestAnimationFrame(animateScene);
-
-              planet.rotation.y += .002;
-
-             renderer.render(scene,camera); 
+            requestAnimationFrame(animateScene);
+            planet.rotation.y += .002;
+            renderer.render(scene,camera); 
 
            };
 
