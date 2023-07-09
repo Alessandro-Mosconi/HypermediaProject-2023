@@ -7,7 +7,7 @@
         <centerTitleImg
             title="WHERE WE INVEST"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
-            planet="fictional"
+            planet="venus"
             :widthImage="'contain'"
             :posImage="'center 50px'"
             class="md:!h-[75vh] h-[60vh]"
