@@ -66,7 +66,8 @@ export default {
 
            const animateScene= () => {
             requestAnimationFrame(animateScene);
-            planet.rotation.y += .002;
+            planet.rotation.y -= .002;
+            planet.rotation.x += .001;
             renderer.render(scene,camera); 
 
            };
