@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { useColor } from '~/stores/color';
+
 
 export default {
 

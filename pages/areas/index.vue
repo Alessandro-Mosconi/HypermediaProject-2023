@@ -19,9 +19,6 @@
 </template>
 
 <script>
-
-import { useColor } from '~/stores/color';
-
 export default defineNuxtComponent({
     async asyncData({ $pinia }) {
         const areas = await $fetch('/api/areas');

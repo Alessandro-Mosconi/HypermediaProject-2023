@@ -10,7 +10,7 @@
                 <div v-if="subtitle" class="hidden md:visible mt-20">
                 
                 </div> 
-                    {{ title }}   
+                    <h1>{{ title }} </h1>  
                 <div v-if="subtitle" class="text-2xl uppercase md:text-[3.2rem] lg:text-[3.35rem] md:leading-tight lg:leading-tight  text-center mt-4 md:mt-8 font-ABClight">
                     {{ subtitle }}
                 </div> 

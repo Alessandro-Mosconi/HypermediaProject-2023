@@ -7,8 +7,6 @@ export default defineNuxtConfig({
         '@nuxtjs/supabase',
         '@pinia/nuxt',
     ],
-    
-
     imports: {
       dirs: ['./stores'],
     },

@@ -41,13 +41,13 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
 export default defineNuxtComponent({
     async asyncData() {
         const projects = await $fetch('/api/projects')
+        console.log(projects.length)
         return {
             projects
         }
     },
     methods: {
         bgImage() {
-            console.log(screen.width)
             return '';
         },
     }

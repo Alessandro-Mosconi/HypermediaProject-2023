@@ -43,8 +43,6 @@
 </template>
 
 <script>
-
-
 export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
