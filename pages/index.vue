@@ -6,9 +6,9 @@
         title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         class="md:!h-[100vh] !h-[50vh]"
+        planet="mars"
         :widthImage="'110%'"
         :posImage="'top'"
-        :planet="true"
     />
     <posTitle
         paragraph="We are Visionaries aiming for a boundless universe."

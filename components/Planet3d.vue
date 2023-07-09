@@ -7,7 +7,10 @@ import { onMounted, ref } from 'vue';
 import * as THREE from 'three';
 
 export default {
-  setup() {
+  props: {
+        texture: String,
+  },
+  setup(props) {
     const mount = ref(null);
     let scene: THREE.Scene;
     let camera: THREE.PerspectiveCamera;
@@ -41,12 +44,11 @@ export default {
       }
 
         // Geometry and Material Setup
-        geometry = new THREE.SphereGeometry(2.1, 50, 50);
-        
+        geometry = new THREE.SphereGeometry(2.7, 100, 100);
         material = new THREE.MeshPhysicalMaterial({
-           map: new THREE.TextureLoader().load("/images/2k_mars.jpg"),
+           map: new THREE.TextureLoader().load("/images/"+props.texture+".jpg"),
           });
-
+          console.log("/images/"+props.texture+".jpg");
           const ambientLight = new THREE.AmbientLight(0x121212, 1);
         scene.add(ambientLight);
 
@@ -64,7 +66,7 @@ export default {
 
               requestAnimationFrame(animateScene);
 
-              planet.rotation.y += .0006;
+              planet.rotation.y += .002;
 
              renderer.render(scene,camera); 
 

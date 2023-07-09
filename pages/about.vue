@@ -6,6 +6,7 @@
         <centerTitleImg 
             class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
             title="ABOUT US" 
+            planet="jupiter"
             :posImage="'top'"
             description="Igniting breakthroughs, shaping the future of exploration, and propelling humanity towards a boundless universe, where the stars are no longer out of reach." 
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/home_planet_tmp.png"/>
