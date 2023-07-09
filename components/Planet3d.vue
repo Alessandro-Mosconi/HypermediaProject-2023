@@ -32,8 +32,11 @@ export default {
       renderer = new THREE.WebGLRenderer({alpha: true});
       
       // Set the size of the rendering window.
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      var width = window.innerWidth;
+      var coefficientResponsive = 2;
+      if(width>775)coefficientResponsive=1.3;
+      if(width<775&&width>700)coefficientResponsive=1.8;
+      var height = window.innerHeight/coefficientResponsive;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
@@ -48,7 +51,6 @@ export default {
         material = new THREE.MeshPhysicalMaterial({
            map: new THREE.TextureLoader().load("/images/"+props.texture+".jpg"),
           });
-          console.log("/images/"+props.texture+".jpg");
           const ambientLight = new THREE.AmbientLight(0x121212, 1);
         scene.add(ambientLight);
 
@@ -72,8 +74,11 @@ export default {
           animateScene();  
           window.addEventListener('resize', () => {
             var width = window.innerWidth;
-            var height = window.innerHeight;
-            renderer.setSize( width, height );
+            var coefficientResponsive = 2;
+            if(width>775)coefficientResponsive=1.3;
+            if(width<775&&width>700)coefficientResponsive=1.8;
+            var height = window.innerHeight/coefficientResponsive;
+            renderer.setSize( width, height);
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             });

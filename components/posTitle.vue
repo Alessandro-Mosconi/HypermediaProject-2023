@@ -1,6 +1,6 @@
 <template>
-    <div :class="{ 'mr-[5%] flex flex-row-reverse': isRight, 'ml-[5%] flex flex-row text-left': isLeft}" >
-      <div :class="{'ml-auto mr-auto text-center': isCenter}" class="w-[90%] md:w-[45%] text-2xl md:text-6xl font-medium">{{ paragraph }}</div>
+    <div :class="{ 'mr-[5%] flex flex-row-reverse': isRight, 'z-[1] ml-[5%] flex flex-row text-left': isLeft}" >
+      <div :class="{'ml-auto mr-auto text-center': isCenter}" class="z-[1]  w-[90%] md:w-[45%] text-2xl md:text-6xl font-medium">{{ paragraph }}</div>
     </div>
   </template>
   
