@@ -66,8 +66,6 @@ export default {
             }
         },
         scrollToSlide() {
-            console.log(this.$refs.carouselWrapper.children[0].children[1])
-            console.log(this.$refs.carouselWrapper.children[0].children[2])
             const slideWidth = this.$refs.carouselWrapper.children[0].children[1].offsetWidth;
             const scrollOffset = this.currentIndex * slideWidth;
 

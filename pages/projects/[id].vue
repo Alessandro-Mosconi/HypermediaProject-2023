@@ -4,7 +4,7 @@
             :name="project.name"
             :areaCode="project.area"
             :img="project.img_url"
-            :area="area"
+            :area="area.name"
             :top="project.top"/>
         <div class="md:ml-10 ml-5 mr-5 ">
             <div class="mt-16">
@@ -14,7 +14,7 @@
                         :investment="project.capital_mln"
                         :dates="getDate(project.starting_date) + ' - ' + getDate(project.ending_date)"
                         :areaCode="project.area"
-                        :area="area"
+                        :area="area.name"
                     />
                 </div>
                 <div class="mb-10 ">
@@ -85,7 +85,7 @@ export default defineNuxtComponent({
             team: listWorkersProject,
             prevProject,
             nextProject,
-            area
+            area: area
         }
     },
     methods: {

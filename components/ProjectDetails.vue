@@ -1,8 +1,8 @@
 <template>
-    <div class="flex md:flex-row flex-col text-center md:text-start">
+    <div class="flex md:flex-row flex-col text-start">
         <div class="2-full md:w-2/5 mb-10 ">
             <div class="field" :style="{color: getColorByArea(areaCode)}">CLIENT</div>
-            <div class="w-full"><img :src="img" v-if="img" class="max-h-12 max-w-[100%] md:ml-0 md:mr-0 mr-auto ml-auto"></div>
+            <div class="w-full"><img :src="img" v-if="img" class="max-h-12 max-w-[100%] md:ml-0 md:mr-0 mr-auto"></div>
         </div>
         <div class="mt-3 md:mt-0 w-full md:w-[30%] mb-10 ">
              <div class="field" :style="{color: getColorByArea(areaCode)}">INVESTMENT</div>

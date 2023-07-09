@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         getColorByArea(areaCode) {
-            console.log(areaCode)
             const color = this.areaColors?.find( row => row.code === areaCode ).color;
             return color? color : '#FFFFFF' ;
         }
