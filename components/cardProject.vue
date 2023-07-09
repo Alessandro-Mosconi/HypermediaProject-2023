@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink class="selection" id="about" :to="'/projects/' + projectId">
+    <NuxtLink class="selection" id="about" :to="disableLink? '':'/projects/' + projectId">
         <div>
             <div class="relative xl:h-72 h-56 aspect-[1.6/1]">
                 <div class="h-full w-full">
@@ -50,7 +50,8 @@ export default {
             img: String,
             hiddenTopElement: String,
             hiddenBottomElement: String,
-            bottomElement: String
+            bottomElement: String,
+            disableLink: Boolean
     },
     methods: {
         getColorByArea(areaCode) {
