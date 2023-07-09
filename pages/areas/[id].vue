@@ -19,11 +19,11 @@
 
         <LittleCarousel
             :imageLeft="area1.banner_url"
-            :subtitleLeft="'investment area'"
+            :subtitleLeft="'previous area'"
             :titleLeft="area1.name"
             :linkLeft="'/areas/' + area1.code"
             :imageRight="area2.banner_url"
-            :subtitleRight="'investment area'"
+            :subtitleRight="'next area'"
             :titleRight="area2.name"
             :linkRight="'/areas/' + area2.code">
 
