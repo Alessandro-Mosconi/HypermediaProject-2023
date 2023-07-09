@@ -88,7 +88,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtComponent({
   name: 'ContactUs',
   data() {
     return {
@@ -106,17 +106,20 @@ export default {
         if(!isValidForm) {
             return
         }
+        
         const { data: response } = await useFetch('/api/message', {
                 method: 'post',
                 body: {
                     data: this.form
-                }
+                },
+                headers: useRequestHeaders()
             })
+            
             
         alert(response.value);
     }
 }
-}
+})
 </script>
 
 <script setup>
