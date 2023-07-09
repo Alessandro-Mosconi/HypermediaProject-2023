@@ -59,22 +59,22 @@
                     required
                     class="md:text-2xl text-lg placeholder-white placeholder-opacity-100 mt-5"  
                     placeholder = "MESSAGE"></textarea>  
-                <div class="flex flex-row mt-10">
-                    <label class="checkbox">
+                <div class="flex md:flex-row flex-col mt-10">
+                    <label class="ml-auto mr-auto checkbox">
                         <input 
                             class="accent-transparent" 
                             type="checkbox"
                             id = "termAndCondition" 
                             required
                             v-model="form.termAndCondition">
-                        <span>
+                        <span class="absolute">
                         </span>
                     </label>
-                    <div class="lg:text-lg md:text:sm text:xs ml-5 text-center align-middle">
-                        <a href="https://policies.google.com/terms?hl=en-US" target="_blank">I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*</a>
+                    <div class="lg:text-lg md:text:sm text:xs md:ml-5 text-center align-middle">
+                        <a href="https://policies.google.com/terms?hl=en-US" class="leading-[2.5]" target="_blank">I ACCEPT THE TERMS & CONDITIONS OF THE WEBSITE*</a>
                     </div> 
                 </div>
-                <button type="submit" form="contactForm" value="Submit" class="mt-10 ml-auto text-xs md:text-2xl" @click="handleSubmit">
+                <button type="submit" form="contactForm" value="Submit" class="mt-10 ml-auto mr-auto md:mr-0 text-xs md:text-2xl" @click="handleSubmit">
                     <Chip
                         :text="'SEND'"
                         :isButton="true" >
@@ -210,8 +210,8 @@ textarea::placeholder {
     text-align: center;
     color: black;
     position: absolute;
-    left: 0.4rem;
-    top: 0.1rem;
+    left: 0.5rem;
+    top: 0.5rem;
 }
 
 .checkbox > input:active {
@@ -238,8 +238,7 @@ textarea {
 }
 @media screen and (max-width: 650px) {
     .checkbox > span {
-    color: #34495E;
-    padding: 0.5rem 0.5rem;
+    padding: 12px 12px;
 }
 
     input::placeholder {
@@ -254,7 +253,7 @@ input {
     background-color: transparent;
     height: 2.5em;
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 12px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
