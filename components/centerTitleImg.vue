@@ -4,7 +4,7 @@
 <template>
     <div class='overflow-hidden bigTitle ml-auto mr-auto bg-top md:bg-center-down md:h-full bg-contain md:bg-auto' :style="bgImage + ' ' + customWidth + ' ' + customPos">
         <div v-if="planet" class="z-[0] absolute"><Planet3d :texture="planet" ></Planet3d></div>
-        <div class="gradient flex flex-col md:min-h-[50vh] h-full">
+        <div class="flex flex-col md:min-h-[50vh] h-full">
             <div class="testo z-[1] w-[95%] flex flex-col h-full ml-auto mr-auto"> 
                 <div class="md:max-w-[75vw] mr-auto ml-auto text-[2.5rem] leading-tight mt-auto mb-auto md:text-8xl lg:text-9xl text-center md:h-auto inline-block align-center">
                     
@@ -52,18 +52,6 @@ export default {
 
 
 <style scoped>
-
-.gradient{
-    background-image: linear-gradient(transparent, #121212); 
-    width: 100%;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center 500px;
-}
 
 .bigTitle {
     background-repeat: no-repeat;
