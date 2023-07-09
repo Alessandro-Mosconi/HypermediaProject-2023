@@ -29,10 +29,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
         background-color:#121212;
     }
 
-    h1 {
-        font-size: 6vw;
-    }
-
     p {
         padding: 3em 0 0 0;
         font-size: 1.3em;

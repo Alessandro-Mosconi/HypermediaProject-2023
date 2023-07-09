@@ -9,17 +9,16 @@
              ref="carouselWrapper"
              :style="{ cursor: isScrolling ? 'grabbing' : 'grab' }">
             <div class="flex">
-                <div class="ml-7 md:ml-12"></div>
-                <CardProject
+                <div v-for="project in projects" class="extreme-margin p-6">                
+                    <CardProject                    
                     :id="'card-' + project.id"
-                    v-for="project in projects"
                     :key="project.id"
                     :projectName="project.name"
                     :projectId="project.id"
                     :img="project.img_url"
                     :area="project.area"
-                    class="m-6"
                 />
+                </div>
             </div>
         </div>
         <!-- Slider controls -->
@@ -28,14 +27,14 @@
             class="absolute top-0 left-0 z-2 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev
             @click="prevSlide">
-            ←
+            <i class="fa-solid fa-arrow-left text-4xl"></i>
         </button>
         <button
             type="button"
             class="absolute top-0 right-0 z-2 text-3xl md:text-5xl transition-transform transform hover:scale-125 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next
             @click="nextSlide">
-            →
+            <i class="fa-solid fa-arrow-right text-4xl"></i>
         </button>
     </div>
 </template>
@@ -67,7 +66,7 @@ export default {
             }
         },
         scrollToSlide() {
-            const slideWidth = this.$refs.carouselWrapper.children[0].offsetWidth;
+            const slideWidth = this.$refs.carouselWrapper.children[0].children[1].offsetWidth;
             const scrollOffset = this.currentIndex * slideWidth;
 
             this.$refs.carouselWrapper.scrollTo({
@@ -107,6 +106,13 @@ export default {
 </script>
 
 <style scoped>
+.extreme-margin:first-child {
+    padding-left: 0px!important;
+}
+.extreme-margin:last-child {
+    padding-right: 0px!important;
+}
+
 /* width */
 ::-webkit-scrollbar {
     height: 1vh;

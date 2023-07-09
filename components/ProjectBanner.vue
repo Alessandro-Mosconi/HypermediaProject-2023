@@ -13,17 +13,9 @@
             <div v-if="top" class="text-xl mb-4 font-light md-8 md:text-4xl md:mb-8">#0{{ top }} BEST PROJECT
             </div>
             <div class="mb-10">{{ name }}</div>
-            <!--
-            <NuxtLink :to="'/areas/' + areaCode">
-                <button class="text-xs bg-[#121212] mt-3 mx-[5px] rounded-[40px] border-2 border-solid font-normal mb-1 uppercase itemButton px-[10px] py-[8px]
-                                md:mb-4 md:text-xl md:px-[25px] md:py-[15px]"
-                        :style="`border-color: ${getColorByArea(areaCode)};`">
-                    {{ area.name + ' ↗' }}
-                </button>
-            </NuxtLink>-->
             <Chip class="text-lg"
               :autoWidth="false"
-              :text="area.name"
+              :text="area"
               :link="'/areas/' + areaCode"
               :isButton="true" 
               :borderColor="getColorByArea(areaCode)"

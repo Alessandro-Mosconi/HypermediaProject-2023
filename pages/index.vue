@@ -9,12 +9,12 @@
         :widthImage="'110%'"
         :posImage="'top'"
     />
-    <TitlePos
+    <posTitle
         paragraph="We are Visionaries aiming for a boundless universe."
         :position="'left'"
         class="mb-10">
-    </TitlePos>
-    <RightParagraph
+    </posTitle>
+    <PosParagraph
         class="mb-10"
         :chipText="'FIND OUT MORE'"
         :chipLink="'/about'"
@@ -22,7 +22,7 @@
         :position="'right'"
         paragraph="We are a dynamic venture capital firm driving the acceleration of space innovation.
 We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology."
-    ></RightParagraph>
+    ></PosParagraph>
     <Manifest
     ></Manifest>
     <SingleItemImgBg
@@ -47,7 +47,6 @@ export default defineNuxtComponent({
     },
     methods: {
         bgImage() {
-            console.log(screen.width)
             return '';
         },
     }
