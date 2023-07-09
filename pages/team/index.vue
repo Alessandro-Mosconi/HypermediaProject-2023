@@ -5,7 +5,7 @@
 <template>
     <main>
         <centerTitleImg 
-            class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
+            class="md:!h-[110vh] !h-[60vh] mb-20 md:mb-40"
             title="MEET OUR TEAM" 
             :posImage="'left'"
             :widthImage="'clamp(50vh, 50vw, 50vw) auto'"
