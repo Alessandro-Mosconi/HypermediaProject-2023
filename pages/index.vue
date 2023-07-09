@@ -8,6 +8,7 @@
         class="md:!h-[100vh] !h-[50vh]"
         :widthImage="'110%'"
         :posImage="'top'"
+        :planet="true"
     />
     <posTitle
         paragraph="We are Visionaries aiming for a boundless universe."
