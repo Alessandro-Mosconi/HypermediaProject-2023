@@ -12,11 +12,11 @@
                 </div> 
                     <h1>{{ title }} </h1>  
                 <div v-if="subtitle" class="text-2xl uppercase md:text-[3.2rem] lg:text-[3.35rem] md:leading-tight lg:leading-tight  text-center mt-4 md:mt-8 font-ABClight">
-                    {{ subtitle }}
+                    <h2>{{ subtitle }}</h2>
                 </div> 
                 </div>            
                 <div v-if="description" class="text-lg md:text-4xl lg:text-5xl  text-justify !leading-snug uppercase inline-block align-baseline">
-                    {{ description }}
+                    <h2>{{ description }}</h2>
                 </div>
             </div>
         </div>
