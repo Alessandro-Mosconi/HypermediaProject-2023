@@ -2,9 +2,6 @@
     Default layout used by all the page
 -->
 <template>
-    <Head>
-        <Title>Celesta Capital</Title>
-    </Head>
     <div>
         <TheHeader />
         <div class = 'page'>
