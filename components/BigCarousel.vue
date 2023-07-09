@@ -3,7 +3,8 @@
          class="relative w-full mb-20"
          @mousedown="startScroll"
          @mouseup="stopScroll"
-         @mouseleave="stopScroll">
+         @mouseleave="stopScroll"
+        >
         <!-- Carousel wrapper -->
         <div class="flex relative h-75 overflow-y-hidden md:h-120"
              ref="carouselWrapper"
@@ -17,6 +18,7 @@
                     :projectId="project.id"
                     :img="project.img_url"
                     :area="project.area"
+                    :disableLink="isScrolling && isMoving"
                 />
                 </div>
             </div>
@@ -50,6 +52,7 @@ export default {
             startX: 0,
             scrollLeft: 0,
             currentIndex: 0,
+            isMoving: false,
         };
     },
     methods: {
@@ -90,11 +93,13 @@ export default {
                 window.removeEventListener("mousemove", this.scrollCarousel);
             }
         },
-        stopScroll() {
+        stopScroll(event) {
             this.isScrolling = false;
+            this.isMoving = false;
             window.removeEventListener("mousemove", this.scrollCarousel);
         },
         scrollCarousel(event) {
+            this.isMoving = true;
             if (!this.isScrolling) return;
             event.preventDefault();
             const x = event.clientX - this.$refs.carouselWrapper.offsetLeft;
