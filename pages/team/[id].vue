@@ -1,7 +1,3 @@
-<!--
-    Page description for a single location.
-    As described in the SmallCard component, the same component was used for both Dog and Location since they have the same structure.
--->
 <template>
     <main>
         <div class="profile-page md:ml-10 ml-5 mr-5 md:mt-[6em]">
@@ -26,8 +22,8 @@
                             {{ person.role.toUpperCase() }}
                         </div>
                         <div class="md:text-left text-center text-2xl md:text-4xl">
-                            <a v-if="person.linkedin_url" :href="person.linkedin_url"  target="_blank"><i class="fa-brands fa-linkedin-in ml-1 mr-8 "></i></a>
-                            <a v-if="person.email" :href = "'mailto: '+person.email"><i class="fa-regular fa-envelope"></i></a>
+                            <a v-if="person.linkedin_url" :href="person.linkedin_url" target="_blank"><i class="hover:scale-125 transition-all fa-brands fa-linkedin-in ml-1 mr-8 "></i></a>
+                            <a v-if="person.email" :href = "'mailto: '+person.email"><i class=" hover:scale-125 transition-all fa-regular fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>

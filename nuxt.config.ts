@@ -1,5 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    app: {
+        head: {
+            title: 'Celesta Capital',
+            charset: 'utf-8',
+            meta: [
+                {
+                    name: 'description',
+                    content: 'Celesta Capital is a venture capital for space-related startups.'
+                },
+                {
+                    name: 'keywords',
+                    content: 'celesta, capital, venture, firm, space, startup'
+                }
+            ]
+        },
+    },
     css: [
         '~/assets/css/general.css'
     ],
@@ -7,8 +23,6 @@ export default defineNuxtConfig({
         '@nuxtjs/supabase',
         '@pinia/nuxt',
     ],
-    
-
     imports: {
       dirs: ['./stores'],
     },

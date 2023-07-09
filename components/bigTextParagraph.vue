@@ -4,7 +4,7 @@
 
 <template>
     <div class="component mt-10">
-    <div class="big-text md:text-6xl text-xl md:uppercase">{{ bigText }}</div>
+    <div class="z-[1] big-text md:text-6xl text-xl md:uppercase">{{ bigText }}</div>
     <div class="paragraph-section">
         <div class="md:text-xl text-sm md:mt-0 mt-3">
             {{ paragraph }}

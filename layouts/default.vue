@@ -2,9 +2,6 @@
     Default layout used by all the page
 -->
 <template>
-    <Head>
-        <Title>Celesta Capital</Title>
-    </Head>
     <div>
         <TheHeader />
         <div class = 'page'>
@@ -27,10 +24,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
     .page {
         min-height: 100vh;
         background-color:#121212;
-    }
-
-    h1 {
-        font-size: 6vw;
     }
 
     p {

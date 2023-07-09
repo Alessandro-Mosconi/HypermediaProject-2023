@@ -1,17 +1,24 @@
-<!--
-    This is an error page.
-    Whenever a route that doesn't exist is called, this page will be shown.
--->
 <template>
     <NuxtLayout>
-        <main>
-            <h1>Oops, something went wrong with your request</h1>
-            
-            <NuxtLink to = "/">RETURN TO HOME PAGE</NuxtLink>
-        </main>
+            <div class="flex flex-col w-[90vw]">
+                <div class="ml-auto mr-auto inizio" >
+                    <h1 class="text-6xl text-center">404</h1>
+                    <div class="text-4xl text-center p-6 md:p-10">Oops, something went wrong with your request</div>
+                </div>
+                <div >
+                    <oblo class="pl-20"></oblo>
+                </div>
+            </div>
+    
     </NuxtLayout>
 </template>
 
-<script setup>
+<style scoped>
 
-</script>
+@media only screen and (min-width: 768px) {
+	 .inizio{
+        margin-top: 150px;
+     }
+}
+</style>
+
