@@ -55,8 +55,8 @@ export default {
         scene.add(ambientLight);
 
         // Lights
-        light = new THREE.PointLight(0xffffff, 1.2);
-        light.position.set(3, 3, 3);
+        light = new THREE.PointLight(0xffffff, 2);
+        light.position.set(4, 8, 6);
         scene.add(light);
 
 
