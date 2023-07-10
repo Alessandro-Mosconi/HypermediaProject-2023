@@ -96,6 +96,9 @@ export default defineNuxtComponent({
     },
     methods: {
         getDate(value) {
+            if(!value) {
+                return "Ongoing"
+            }
             const date = new Date(value)
             const month = date.toLocaleString( 'en-US', { month: 'long' });
             const capitalMont = month.charAt(0).toUpperCase() + month.slice(1);
