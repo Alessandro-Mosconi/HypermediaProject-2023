@@ -1,3 +1,6 @@
+<!--
+    Semirounded cropped element for person profile page
+-->
 <template>
   <div class="relative">
     <div class="mask-cornice absolute h-full" >

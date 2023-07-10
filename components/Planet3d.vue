@@ -1,7 +1,6 @@
 <!--
     3D planet visualization component
 -->
-
 <template>
   <div ref="mount"></div>
 </template>

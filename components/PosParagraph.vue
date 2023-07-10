@@ -1,3 +1,6 @@
+<!--
+    Conditional positioning paragraph element used in homepage
+-->
 <template>
   <div :class="{ 'md:mr-[5%] md:flex md:flex-row-reverse ml-[5%] flex flex-row text-left': isRight, 'ml-[5%] flex flex-row text-left': isLeft}" >
       <div :class="{'ml-auto mr-auto text-center': isCenter}" class="w-[90%] md:w-[45%] text-xs md:text-3xl font-light">

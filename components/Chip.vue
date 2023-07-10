@@ -1,3 +1,6 @@
+<!--
+    Chip graphical element, standard for buttons
+-->
 <template>
     <NuxtLink id="about" class="selection pg" :to='link?link:""'>
         <div :style="getBorderColor + ' ' + getBgColor" :class="{'md:w-auto mx-5': isAuto, 'border-0': isEmpty, 'md:border-2 border-2': !isEmpty}" class="w-fit flex flex-row justify-center items-center py-2 px-4 rounded-full ">

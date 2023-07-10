@@ -1,7 +1,6 @@
 <!--
     Carousel to display all projects, in the home page and in the single projects page
 -->
-
 <template>
     <div id="carousel"
          class="relative w-full mb-20"

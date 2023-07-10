@@ -1,3 +1,6 @@
+<!--
+    Conditional positioning title element used in homepage
+-->
 <template>
     <div :class="{ 'mr-[5%] z-[1] flex flex-row-reverse': isRight, 'z-[1] ml-[5%] flex flex-row text-left': isLeft}" >
       <div :class="{'ml-auto mr-auto text-center': isCenter}" class="z-[1]  w-[90%] md:w-[45%] text-2xl md:text-6xl font-medium">{{ title }}</div>

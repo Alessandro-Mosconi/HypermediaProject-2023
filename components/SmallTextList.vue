@@ -1,7 +1,6 @@
 <!--
     Big text with paragraph on the right
 -->
-
 <template>
     <div class="flex-col md:flex-row flex">
         <div class="text-left md:w-2/5 whitespace-nowrap text-[1.5em]">{{ smallText }}</div>

@@ -1,3 +1,6 @@
+<!--
+    Semirounded cropped element for AreaList and TeamList single elements
+-->
 <template>
     <div class="external-frame relative m-0" @mouseover="mouseIn" @mouseleave="mouseOut">
         <div class="mask-cornice absolute h-full z-10">

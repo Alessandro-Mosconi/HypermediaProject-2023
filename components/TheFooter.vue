@@ -1,7 +1,6 @@
 <!--
     Footer of the website
 -->
-
 <template>
     <hr class="solid mt-16 mb-16 ">
     <div class="w-auto ml-7 mr-7  lg:text-xl text-xs ">
