@@ -33,14 +33,16 @@ export default {
       
       // Set the size of the rendering window.
       var width = window.innerWidth;
-      var coefficientResponsive = 2;
+      var coefficientResponsive;
+
       if(width>775)coefficientResponsive=1.3;
       if(width<775&&width>700)coefficientResponsive=1.8;
+      
       var height = window.innerHeight/coefficientResponsive;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-
+      renderer.setPixelRatio( window.devicePixelRatio );
       // Append Renderer to DOM 
       if (mount.value) {
         mount.value.appendChild(renderer.domElement);
@@ -69,7 +71,6 @@ export default {
             planet.rotation.y -= .002;
             planet.rotation.x += .001;
             renderer.render(scene,camera); 
-
            };
 
           animateScene();  

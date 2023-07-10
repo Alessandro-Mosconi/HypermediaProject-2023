@@ -11,7 +11,7 @@
             description="Igniting breakthroughs, shaping the future of exploration, and propelling humanity towards a boundless universe, where the stars are no longer out of reach." 
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/home_planet_tmp.png"/>
             <threeItemsImgBg
-            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/space_image_tmp.jpg">
+            img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/Galaxy%20-%20Descriptive%20Image.jpg">
             </threeItemsImgBg>
             <bigTextParagraph
                 bigText="Our vision"
