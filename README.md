@@ -1,93 +1,29 @@
-# TUTORING
 
-* http://localhost:3000/ -> "Ops, something went wrong error"
-* come facciamo che si illumina solo la pagina attiva nel titolo? qual é il modo piú corretto?
-* quale sarebbe il modo corretto per non far "collidere" il CSS? Ci sono "best practices" ?
-* il form di invio messaggio deve funzionare per davvero?
+# Hypermedia Applications project
 
-# T08 - Template (Vercel)
+Group name: **Codebusters**
+Members: 
+- *Chiara Cucurachi*
+- *Lorenzo Morelli*
+- *Alessandro Mosconi*
+- *Martino Piaggi*
 
-This is the implementation of the project for Vercel + Supabase
+[Website Link](http://codebusters.vercel.app)
 
-## Preliminary steps
+Our Hypermedia project aims to create a user-friendly website which is the portfolio related to a **fictional** venture capitalist in the Space Industry.
 
-As usual, the first things to do are:
+Hosting Service Used: **Vercel**.
+We decided to host our website on Vercel due to its simplicity, scalability, and seamless integration with Vue.js projects. Vercel's deployment process ensures fast loading times for our web pages while providing reliable hosting services.
 
-* moving inside the folder with the terminal (or opening the project with VSCode) and then using:
+Rendering Mode: **SSR**.
+We opted for SSR (Server-Side Rendering) for our project due to its numerous advantages. It accelerates initial load times, improves SEO, enhances performance, enables progressive enhancement, allows for code sharing, and facilitates seamless transitions between pages.
 
-```
-npm install
-```
+Database for Backend: **Supabase**.
+We have implemented server endpoints using Supabase for efficient data management operations such as fetching project details or retrieving the team. This allows us to retrieve and display dynamic content from the server.
 
-* To run the project you have to use:
-
-```
-npm run dev
-```
-
-or
-npm run dev -- -o
-to automatically open your project in a new tab of your browser.
-
-## Configuration
-
-To make the project work on GH-Pages there are a few steps to do:
-
-* install gh-pages
-
-```
-npm install @nuxtjs/supabase --save-dev
-```
-
-* add the module to the nuxt.config.ts file:
-
-```
-export default defineNuxtConfig({
-  modules: ['@nuxtjs/supabase'],
-})
-```
-
-* add SUPABASE\_URL and SUPABASE\_KEY to the .env (for local use):
-
-```
-SUPABASE_URL="<Supabase URL>"
-SUPABASE_KEY="<Supabase API Key>"
-```
-
-## Deployment
-
-Vercel is connected to your repository. Any time you push something on the main/master branch, Vercel will automatically retrieve the project, build it and deploy it.
-This is why it's better to have two branches:
-
-* one for deployment
-* one for development
-
-In general, the command to build the "ready to deploy" project is:
-
-```
-npm run build
-```
-
-## Content
-
-The project contains:
-
-* 5 components
-    * Card
-    * SmallCard
-    * TextImage
-    * TheFooter
-    * TheHeader
-* 1 layout: default
-* 1 error page (currently it's not displayed properly when the project is generated)
-* 7 pages reachable at:
-    * /
-    * /contact
-    * /about
-    * /dogs
-    * /dogs/:id
-    * /locations
-    * /locations/:id
-* The server implemented using the serverless implementation with the Supabase functionality
-
-Most of the content is commented to explain how things works.
+Extra Modules Used:
+- Supabase for database management
+- Pinia for store management
+- Nuxt
+- Tailwind CSS for styling.
+- Three.js for the 3D planet visualization
