@@ -28,3 +28,23 @@
     </main>
 </template>
 
+<script>
+export default defineNuxtComponent({
+    app: {
+        head: {
+            title: 'About us',
+            charset: 'utf-8',
+            meta: [
+                {
+                    name: 'description',
+                    content: 'Celesta Capital aims to become a leading venture capital firm in the space industry, investing in innovative companies and driving positive impact for humanity.'
+                },
+                {
+                    name: 'keywords',
+                    content: 'about us, celesta, capital, venture, firm, space, startup'
+                }
+            ]
+        },
+    },
+})
+</script>
