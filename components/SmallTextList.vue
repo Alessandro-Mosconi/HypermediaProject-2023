@@ -1,5 +1,5 @@
 <!--
-    Big text with paragraph on the right
+    Component used to list supervisor in the projects page or supervised projects in person page
 -->
 <template>
     <div class="flex-col md:flex-row flex">
