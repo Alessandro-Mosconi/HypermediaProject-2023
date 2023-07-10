@@ -29,7 +29,7 @@
 
 <script>
 const title = 'Projects - Celesta Capital 🪐'
-const description = `Discover our portfolio: ${projects.length} projects divided in ${ares.length} different areas of investment.`
+const description = `Discover our portfolio: ${projects.length} projects divided in ${areas.length} different areas of investment.`
 const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
 useSeoMeta({
     title: title,
