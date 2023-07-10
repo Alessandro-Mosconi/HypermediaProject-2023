@@ -20,11 +20,11 @@
 
 <script>
 export default {
-    props: [
-        'smallText',
-        'list',
-        'hideTitle',
-    ]
+    props: {
+        smallText: String,
+        list: String,
+        hideTitle: Boolean
+    }
 }
 </script>
 

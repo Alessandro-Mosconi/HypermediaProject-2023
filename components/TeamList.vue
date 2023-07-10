@@ -23,9 +23,9 @@
 
 <script>
    export default {
-        props: [
-            'people'
-        ]
+        props: {
+            people: Array
+        }
     }
 </script>
 

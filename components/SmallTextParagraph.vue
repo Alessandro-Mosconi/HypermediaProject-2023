@@ -1,5 +1,5 @@
 <!--
-    
+    Component used to list all the team people    
 -->
 
 <template>
