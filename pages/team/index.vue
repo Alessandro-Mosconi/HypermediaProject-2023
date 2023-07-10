@@ -17,19 +17,6 @@
     </main>
 </template>
 
-<script setup>
-const title = 'Team - Celesta Capital 🪐'
-const description = 'Meet the members of our team: a fusion of visionary strategists, investors and industry pioneers.'
-const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
-useSeoMeta({
-    title: title,
-    ogTitle: title,
-    description: description,
-    ogDescription: description,
-    ogImage: image,
-})
-</script>
-
 <script>
 export default defineNuxtComponent({
     async asyncData() {
@@ -37,6 +24,18 @@ export default defineNuxtComponent({
         return {
             people
         }
-    }
+    },
+    setup() {
+        const title = 'Team - Celesta Capital 🪐'
+        const description = 'Meet the members of our team: a fusion of visionary strategists, investors and industry pioneers.'
+        const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
+        useSeoMeta({
+            title: title,
+            ogTitle: title,
+            description: description,
+            ogDescription: description,
+            ogImage: image,
+        })
+    },
 })
 </script>
