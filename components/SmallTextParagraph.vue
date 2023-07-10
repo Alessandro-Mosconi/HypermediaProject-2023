@@ -1,5 +1,5 @@
 <!--
-    Component used to list all the team people    
+    Small paragraph used in the areas,projects and people page   
 -->
 <template>
     <div class="component">
