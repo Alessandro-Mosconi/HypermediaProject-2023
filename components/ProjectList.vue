@@ -1,3 +1,6 @@
+<!--
+    Component to show project list using CardProject components for each project 
+-->
 <template>
     <div>
         <div class="flex flex-col sm:flex-row justify-center w-full">
@@ -11,7 +14,7 @@
             <div class="2xl:mx-[100px] lg:mx-[50px] md:mx-[25px] basis-1/2 md:flex hidden flex-col justify-center">
                 <div v-for="(p, index) in projects" :key="index" class="p-4 ">
                     <div v-if="index % 2 === 0" class="mt-10 mb-10">
-                        <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
+                        <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                     </div>
 
                 </div>
@@ -21,7 +24,7 @@
                 <div v-for="(p, index) in projects" :key="index" class="p-4">
                     <div v-if="index % 2 === 1"  class="mt-10 mb-10">
                         <div>
-                            <cardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
+                            <CardProject :areaName="getAreaByCode(p.area)" :projectName="p.name" :projectId="p.id" :img="p.img_url" :area="p.area" :bottomElement="p.top?('#0'+p.top+' best project'):''" :hiddenTopElement="p.starting_date" :hiddenBottomElement="p.capital_mln + ' mln dollars'"/>
                         </div>
                     </div>
                 </div>

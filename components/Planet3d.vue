@@ -1,5 +1,9 @@
+<!--
+    3D planet visualization component
+-->
+
 <template>
-  <div class="relative" ref="mount"></div>
+  <div ref="mount"></div>
 </template>
 
 <script lang="ts">
@@ -33,8 +37,7 @@ export default {
       
       // Set the size of the rendering window.
       var width = window.innerWidth;
-      var coefficientResponsive;
-
+      var coefficientResponsive=2;
       if(width>775)coefficientResponsive=1.3;
       if(width<775&&width>700)coefficientResponsive=1.8;
       

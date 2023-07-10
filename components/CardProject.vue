@@ -1,3 +1,6 @@
+<!--
+    Card to display single project, used in the ProjectList component
+-->
 <template>
     <NuxtLink class="selection" id="about" :to="disableLink? '':'/projects/' + projectId">
         <div>

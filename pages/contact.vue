@@ -2,7 +2,7 @@
     Contact Page
 -->
 <template>        
-    <centerTitleImg 
+    <CenterTitleImg 
         class="md:!h-[120vh] !h-[60vh] mb-20 md:mb-40"
         title="CONTACT US" 
         :posImage="'left'"

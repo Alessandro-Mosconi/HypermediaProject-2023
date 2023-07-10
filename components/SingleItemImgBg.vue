@@ -1,5 +1,5 @@
 <!--
-    Centered title with image background
+    Centered item/chip with image background
 -->
 <template>
   <div class="threeItems relative" :style="bgImage">
