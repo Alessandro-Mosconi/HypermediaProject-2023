@@ -2,7 +2,7 @@
     Page with the list of all the projects.
 -->
 <template>
-<div class="flex flex-col items-center">
+<div class="overflow-hidden flex flex-col items-center">
     <CenterTitleImg 
             title="OUR BEST PROJECTS" 
             img=""
