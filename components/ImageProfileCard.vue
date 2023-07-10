@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div class="mask-cornice absolute h-full" >
-      <img class="bg-light-blue h-full ml-auto mr-auto" src="@/assets/img/transparent.png" alt="ciao" >
+      <img class="bg-light-blue h-full ml-auto mr-auto" src="@/assets/img/transparent.png" alt="transparent" >
     </div>
     <div class="mask-persona z-10" >
       <img class="img-person ml-auto mr-auto" :src="img_link" :alt="alt" >
@@ -11,10 +11,10 @@
 
 <script>
  export default {
-      props: [
-          'img_link',
-          'alt'
-      ]
+      props: {
+          img_link: String,
+          alt: String
+        }
   }
 </script>
 
