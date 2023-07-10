@@ -4,7 +4,7 @@
 
 <template>
     <main>
-        <centerTitleImg
+        <CenterTitleImg
             title="WHERE WE INVEST"
             img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
             planet="venus"

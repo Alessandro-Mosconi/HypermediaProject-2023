@@ -1,5 +1,9 @@
+<!--
+    3D planet visualization component
+-->
+
 <template>
-  <div class="relative" ref="mount"></div>
+  <div ref="mount"></div>
 </template>
 
 <script lang="ts">
@@ -33,14 +37,15 @@ export default {
       
       // Set the size of the rendering window.
       var width = window.innerWidth;
-      var coefficientResponsive = 2;
+      var coefficientResponsive=2;
       if(width>775)coefficientResponsive=1.3;
       if(width<775&&width>700)coefficientResponsive=1.8;
+      
       var height = window.innerHeight/coefficientResponsive;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-
+      renderer.setPixelRatio( window.devicePixelRatio );
       // Append Renderer to DOM 
       if (mount.value) {
         mount.value.appendChild(renderer.domElement);
@@ -66,9 +71,9 @@ export default {
 
            const animateScene= () => {
             requestAnimationFrame(animateScene);
-            planet.rotation.y += .002;
+            planet.rotation.y -= .002;
+            planet.rotation.x += .001;
             renderer.render(scene,camera); 
-
            };
 
           animateScene();  

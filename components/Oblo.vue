@@ -1,3 +1,6 @@
+<!--
+    "Oblo" used in the error page as a decoration
+-->
 <template>
     <div class="window_group">
             <div class="wrapper">

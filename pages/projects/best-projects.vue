@@ -3,7 +3,7 @@
 -->
 <template>
 <div class="flex flex-col items-center">
-    <centerTitleImg 
+    <CenterTitleImg 
             title="OUR BEST PROJECTS" 
             img=""
             :widthImage="'contain'"

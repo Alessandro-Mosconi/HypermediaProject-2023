@@ -6,7 +6,7 @@
                     <div class="text-4xl text-center p-6 md:p-10">Oops, something went wrong with your request</div>
                 </div>
                 <div >
-                    <oblo class="pl-20"></oblo>
+                    <Oblo class="pl-20"></Oblo>
                 </div>
             </div>
     

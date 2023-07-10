@@ -4,7 +4,7 @@
 -->
 <template>
     <main>
-        <centerTitleImg 
+        <CenterTitleImg 
             class="md:!h-[110vh] !h-[60vh] mb-20 md:mb-40"
             title="MEET OUR TEAM" 
             :posImage="'left'"

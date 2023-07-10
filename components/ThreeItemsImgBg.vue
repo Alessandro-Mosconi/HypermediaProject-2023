@@ -1,3 +1,6 @@
+<!--
+    Component with a background image and three "chips"/"items" 
+-->
 <template>
     <div class="threeItems relative" :style="bgImage">
         <div class="flex md:flex-row flex-col uppercase md:text-3xl text-lg absolute inset-x-0 md:bottom-5 bottom-32">

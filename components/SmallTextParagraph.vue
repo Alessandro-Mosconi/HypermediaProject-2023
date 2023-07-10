@@ -1,5 +1,5 @@
 <!--
-    Big text with paragraph on the right
+    
 -->
 
 <template>

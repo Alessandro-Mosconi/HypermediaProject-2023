@@ -2,7 +2,7 @@
     Homepage
 -->
 <template>
-    <centerTitleImg
+    <CenterTitleImg
         title="SHAPING THE FUTURE OF SPACE"
         img="https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/wallpaper/earth_homepagee.png"
         class="md:!h-[100vh] !h-[50vh]"
@@ -10,11 +10,11 @@
         :widthImage="'110%'"
         :posImage="'top'"
     />
-    <posTitle
+    <PosTitle
         paragraph="We are Visionaries aiming for a boundless universe."
         :position="'left'"
         class="mb-10">
-    </posTitle>
+    </PosTitle>
     <PosParagraph
         class="mb-10"
         :chipText="'FIND OUT MORE'"

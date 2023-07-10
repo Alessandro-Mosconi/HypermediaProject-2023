@@ -1,3 +1,6 @@
+<!--
+    Component used to list all the team people
+-->
 <template>
     <div  class="selection flex flex-wrap">
         <div v-for="p in people" class="lg:basis-72 sm:basis-52 basis-32 justify-center ml-auto mr-auto mb-5" >
