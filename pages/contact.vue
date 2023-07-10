@@ -92,16 +92,6 @@
 </template>
 
 <script>
-const title = 'Contact us - Celesta Capital 🪐'
-const description = 'Please drop us line for any investment proposals.'
-const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
-useSeoMeta({
-    title: title,
-    ogTitle: title,
-    description: description,
-    ogDescription: description,
-    ogImage: image,
-})
 export default defineNuxtComponent({
     name: 'ContactUs',
     data() {
@@ -138,6 +128,16 @@ export default defineNuxtComponent({
 
 <script setup>
 const contacts = useContact()
+const title = 'Contact us - Celesta Capital 🪐'
+const description = 'Please drop us line for any investment proposals.'
+const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
+useSeoMeta({
+    title: title,
+    ogTitle: title,
+    description: description,
+    ogDescription: description,
+    ogImage: image,
+})
 </script>
 
 <style scoped>
