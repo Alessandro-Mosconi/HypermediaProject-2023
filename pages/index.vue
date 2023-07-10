@@ -44,14 +44,12 @@ We empower visionary entrepreneurs, provide strategic investments and resources 
 <script>
 const title = 'Celesta Capital 🪐'
 const description = 'Celesta Capital is a dynamic venture capital firm driving the acceleration of space innovation, empowering visionary entrepreneurs and providing investments and resources.'
-const keywords = 'celesta, capital, venture, firm, space, startup, investment, areas, portfolio, projects'
 const image = 'https://kcrxtzylutpqgnipxzbq.supabase.co/storage/v1/object/public/logo/avatar-834545934%20(1).jpg?t=2023-07-10T17%3A06%3A43.844Z'
 useSeoMeta({
     title: title,
     ogTitle: title,
     description: description,
     ogDescription: description,
-    keywords: keywords,
     ogImage: image,
 })
 export default defineNuxtComponent({
