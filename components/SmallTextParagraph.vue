@@ -1,7 +1,6 @@
 <!--
-    
+    Component used to list all the team people    
 -->
-
 <template>
     <div class="component">
         <div class="small-text 2-full lg:w-2/5 md:text-2xl text-lg">

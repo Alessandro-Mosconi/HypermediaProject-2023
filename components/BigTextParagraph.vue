@@ -1,7 +1,6 @@
 <!--
     Big text with paragraph on the right
 -->
-
 <template>
     <div class="component mt-10">
     <div class="z-[1] big-text md:text-6xl text-xl md:uppercase">{{ bigText }}</div>

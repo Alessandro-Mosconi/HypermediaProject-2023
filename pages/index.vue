@@ -11,7 +11,7 @@
         :posImage="'top'"
     />
     <PosTitle
-        paragraph="We are Visionaries aiming for a boundless universe."
+        title="We are Visionaries aiming for a boundless universe."
         :position="'left'"
         class="mb-10">
     </PosTitle>
@@ -25,6 +25,7 @@
 We empower visionary entrepreneurs, provide strategic investments and resources to shape the future of space exploration and technology."
     ></PosParagraph>
     <Manifest
+    text="SATELLITES SPACE MINING SPACE TOURISM"
     ></Manifest>
     <SingleItemImgBg
         title="INVESTMENT AREAS"

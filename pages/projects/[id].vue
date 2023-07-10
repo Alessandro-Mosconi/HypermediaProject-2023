@@ -47,12 +47,16 @@ export default defineNuxtComponent({
     async asyncData() {
         const route = useRoute()
 
-        const project = await $fetch('/api/projects/' + route.params.id);
-        const [supervisor, team, area, projects] = await Promise.all([
-            $fetch('/api/people/' + project.id_supervisor),
-            $fetch('/api/people/team/' + project.id),
-            $fetch('/api/areas/' + project.area),
+        const [project, projects] = await  Promise.all([
+            $fetch('/api/projects/' + route.params.id),
             $fetch('/api/projects/')
+        ]);
+
+
+        const [supervisor, team, area] = await Promise.all([
+            $fetch('/api/people/' + project?.id_supervisor),
+            $fetch('/api/people/team/' + project?.id),
+            $fetch('/api/areas/' + project?.area)
         ]);
 
         project.top = project?.top?.toString() || '';
@@ -76,9 +80,11 @@ export default defineNuxtComponent({
         const prevProjectId = (project.id - 1 + totalProjects) % totalProjects || totalProjects;
         const nextProjectId = (project.id + 1) % totalProjects || totalProjects;
 
-        const prevProject = await $fetch('/api/projects/' + prevProjectId); //todox
-        const nextProject = await $fetch('/api/projects/' + nextProjectId); //todo
-        
+        const [prevProject, nextProject] = await  Promise.all([
+            $fetch('/api/projects/' + prevProjectId),
+            $fetch('/api/projects/' + nextProjectId)
+        ]);
+
         return {
             project,
             supervisors: listSupervisor,

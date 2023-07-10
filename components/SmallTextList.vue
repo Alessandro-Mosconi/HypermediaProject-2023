@@ -1,16 +1,15 @@
 <!--
     Big text with paragraph on the right
 -->
-
 <template>
     <div class="flex-col md:flex-row flex">
         <div class="text-left md:w-2/5 whitespace-nowrap text-[1.5em]">{{ smallText }}</div>
         <div class="md:w-3/5 mt-3 text-[1em]">
-            <ul>
+            <ul v-if="list && list.length>0">
                 <li v-for="item in list" >
                     <NuxtLink class="pg" :to='item.link'>
-                        <span v-if="item.text && !hideTitle">{{ item.text }}</span>
-                        <img :src="item.img" v-if="item.img" class="max-h-16 max-w-[85vw] mb-10">
+                        <span v-if="item?.text && !hideTitle">{{ item?.text }}</span>
+                        <img :src="item?.img" v-if="item?.img" class="max-h-16 max-w-[85vw] mb-10">
                     </NuxtLink>
                 </li>
             </ul>
@@ -20,11 +19,11 @@
 
 <script>
 export default {
-    props: [
-        'smallText',
-        'list',
-        'hideTitle',
-    ]
+    props: {
+        smallText: String,
+        list: Array,
+        hideTitle: Boolean
+    }
 }
 </script>
 

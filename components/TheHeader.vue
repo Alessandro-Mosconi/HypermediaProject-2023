@@ -1,5 +1,5 @@
 <!--
-    Header of the page
+    Header of the website
 -->
 <template>
     <header
