@@ -1,3 +1,7 @@
+<!--
+    Little guided tour to navigate through areas or projects
+-->
+
 <template>
     <div class="flex flex-col items-center justify-center w-full">
         <div class="flex justify-between w-full">

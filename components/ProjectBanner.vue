@@ -1,3 +1,6 @@
+<!--
+    Banner used on top of the single project page
+-->
 <template>
     <div class="relative w-full">
         <img class="w-full h-[70vh] object-cover md:h-[80vh]" :src="img" alt="Banner Image"/>

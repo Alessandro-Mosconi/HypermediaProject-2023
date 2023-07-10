@@ -1,3 +1,7 @@
+<!--
+    Little paragraphs to show project specifications (client, investment, dates)
+-->
+
 <template>
     <div class="flex md:flex-row flex-col text-start">
         <div class="2-full md:w-2/5 mb-10 ">

@@ -1,5 +1,5 @@
 <!--
-    Footer of the page
+    Footer of the website
 -->
 
 <template>

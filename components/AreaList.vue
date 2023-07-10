@@ -1,3 +1,7 @@
+<!--
+    List of all investment areas present in the "areas" page
+-->
+
 <template>
     <main>
         <div class="flex flex-wrap h-full">

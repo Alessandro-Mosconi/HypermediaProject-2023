@@ -1,3 +1,7 @@
+<!--
+    Banner used on top of the single area page
+-->
+
 <template>
     <div class="relative w-full">
         <img class="w-full h-[40vh] object-cover md:h-[70vh]" :src="imageUrl" alt="Banner Image"/>
