@@ -1,17 +1,17 @@
 
 # Hypermedia Applications project
 
-Group name: **Codebusters**
+Our Hypermedia project aims to create a user-friendly website which is the portfolio related to a **fictional** venture capitalist in the Space Industry.
+You can check out the final result by visiting this link: http://codebusters.vercel.app 
 
-Members: 
+### Members
+
 - *Chiara Cucurachi*
 - *Lorenzo Morelli*
 - *Alessandro Mosconi*
 - *Martino Piaggi*
 
-[Website Link](http://codebusters.vercel.app)
-
-Our Hypermedia project aims to create a user-friendly website which is the portfolio related to a **fictional** venture capitalist in the Space Industry.
+### Technologies Used
 
 Hosting Service Used: **Vercel**.
 We decided to host our website on Vercel due to its simplicity, scalability, and seamless integration with Vue.js projects. Vercel's deployment process ensures fast loading times for our web pages while providing reliable hosting services.
