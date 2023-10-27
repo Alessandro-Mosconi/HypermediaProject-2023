@@ -7,9 +7,9 @@ You can check out the final result by visiting this link: http://codebusters.ver
 ### Members
 
 - *Chiara Cucurachi*
-- @lorenzo-morelli
-- @Alessandro-Mosconi
-- @martinopiaggi
+- [@lorenzo-morelli](https://github.com/lorenzo-morelli)
+- [@Alessandro-Mosconi](https://github.com/Alessandro-Mosconi)
+- [@martinopiaggi](https://github.com/martinopiaggi)
 
 ### Technologies Used
 
